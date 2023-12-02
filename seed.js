@@ -127,14 +127,144 @@ const seedHorses = [
         notes: {
             content: 'Owner will be away Dec 21-Jan 1.'
         }
-    }
+    },
+    {
+        name: 'Shadow',
+        age: 15,
+        color: 'black',
+        sex: 'gelding',
+        feed: {
+          amFeed: '2 flakes hay, 1 scoop grain',
+          middayFeed: '1 flake hay',
+          pmFeed: '2 flakes hay, 1 scoop grain',
+          night: '1 flake hay',
+          supps: '1 scoop joint supplement',
+          meds: 'none',
+        },
+        turnout: '6',
+        blanket: '40-50deg light blanket, <40 heavy',
+        importantInfo: 'Prefers to be in a quiet environment.',
+        notes: {
+          content: 'Experienced jumper.'
+        }
+      },
+      {
+        name: 'Rosie',
+        age: 9,
+        color: 'chestnut',
+        sex: 'mare',
+        feed: {
+          amFeed: '2 flakes hay, 1 scoop grain',
+          middayFeed: '1 flake hay',
+          pmFeed: '2 flakes hay, 1 scoop grain',
+          night: '1 flake hay',
+          supps: '1 scoop electrolyte supplement',
+          meds: 'none',
+        },
+        turnout: '5',
+        blanket: '35-45deg light sheet, <35 heavy',
+        importantInfo: 'Needs regular hoof trimming.',
+        notes: {
+          content: 'Loves apples as treats!'
+        }
+      },
+      {
+        name: 'Spirit',
+        age: 12,
+        color: 'palomino',
+        sex: 'mare',
+        feed: {
+          amFeed: '1 flake hay, 1 scoop low carb',
+          middayFeed: '1 flake hay',
+          pmFeed: '1/2 scoop low carb',
+          night: 'none',
+          supps: '1/2 scoop joint supplement',
+          meds: 'none',
+        },
+        turnout: '7',
+        blanket: '45-55deg light blanket, <45 heavy',
+        importantInfo: 'Needs regular dental check-ups.',
+        notes: {
+          content: 'Enjoys spending time outdoors.'
+        }
+      },
+      {
+        name: 'Thunder',
+        age: 6,
+        color: 'bay',
+        sex: 'gelding',
+        feed: {
+          amFeed: '2 flakes hay, 1 scoop grain',
+          middayFeed: '1 flake hay',
+          pmFeed: '2 flakes hay, 1 scoop grain',
+          night: '1 flake hay',
+          supps: 'none',
+          meds: 'none',
+        },
+        turnout: '6',
+        blanket: '40-50deg light blanket, <40 heavy',
+        importantInfo: 'Needs regular exercise.',
+        notes: {
+          content: 'Great with children.'
+        }
+      },
+      {
+        name: 'Misty',
+        age: 10,
+        color: 'grey',
+        sex: 'mare',
+        feed: {
+          amFeed: '1 scoop senior',
+          middayFeed: '1 flake hay',
+          pmFeed: '1 scoop senior',
+          night: '1 flake hay',
+          supps: '1 scoop Cosequin AM only',
+          meds: '1 tab Prascend AM only',
+        },
+        turnout: '4',
+        blanket: '35-45deg light sheet, <35 heavy',
+        importantInfo: 'Needs regular grooming.',
+        notes: {
+          content: 'Enjoys trail rides.'
+        }
+      }
 ]
 
 const seedDB = async () => {
-    await Barn.deleteMany({});
-    await Barn.insertMany(seedBarns);
-    await Horse.deleteMany({});
-    await Horse.insertMany(seedHorses);
+    try {
+        await Barn.deleteMany({});
+        await Horse.deleteMany({});
+
+        const addedHorses = await Horse.insertMany(seedHorses);
+        const barnsWithHorses = [
+            { ...seedBarns[0], 
+                horses: [
+                    addedHorses[0]._id, 
+                    addedHorses[1]._id,
+                    addedHorses[2]._id,
+                ] 
+            },
+            { ...seedBarns[1], 
+                horses: [
+                    addedHorses[3]._id,
+                    addedHorses[4]._id,
+                    addedHorses[5]._id,
+                ] 
+            },
+            { ...seedBarns[2], 
+                horses: [
+                    addedHorses[6]._id,
+                    addedHorses[7]._id,
+                    addedHorses[8]._id,
+                ] 
+            }
+        ];
+
+        // Insert barns with references to horses
+        await Barn.insertMany(barnsWithHorses);
+    } catch (err) {
+        console.error(err);
+    }
 };
 
 seedDB().then(() => {

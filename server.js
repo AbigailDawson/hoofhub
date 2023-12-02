@@ -48,7 +48,7 @@ app.use((req, res, next) => {
 });
 
 app.use('/', indexRouter);
-// app.use('/barns', barnsRouter);
+app.use('/barns', barnsRouter);
 app.use('/', horsesRouter);
 
 // app.use('/users', usersRouter);

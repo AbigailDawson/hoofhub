@@ -5,6 +5,7 @@ const feedSchema = new Schema({
     amFeed: String,
     middayFeed: String,
     pmFeed: String,
+    nightFeed: String,
     supps: String,
     meds: String
 });

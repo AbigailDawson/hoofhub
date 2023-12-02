@@ -13,6 +13,7 @@ require('./config/passport');
 
 const indexRouter = require('./routes/index');
 const barnsRouter = require('./routes/barns');
+const horsesRouter = require('./routes/barns');
 // const usersRouter = require('./routes/users');
 
 var app = express();
@@ -41,8 +42,15 @@ app.use(function (req, res, next) {
   next();
 });
 
+app.use((req, res, next) => {
+  console.log(`Received ${req.method} request for ${req.url}`);
+  next();
+});
+
 app.use('/', indexRouter);
-app.use('/barns', barnsRouter);
+// app.use('/barns', barnsRouter);
+app.use('/horses', horsesRouter);
+
 // app.use('/users', usersRouter);
 
 // catch 404 and forward to error handler

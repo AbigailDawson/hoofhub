@@ -3,6 +3,6 @@ var router = express.Router();
 const horsesCtrl = require('../controllers/horses');
 
 // GET /horses
-router.get('/', horsesCtrl.index);
+router.get('/horses', horsesCtrl.index);
 
 module.exports = router;

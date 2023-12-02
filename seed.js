@@ -3,7 +3,7 @@ require('./config/database');
 
 const mongoose = require('mongoose');
 const Barn = require('./models/barn');
-const Horse = require('./models/horse')
+const Horse = require('./models/horse');
 
 const seedBarns = [
     {
@@ -67,7 +67,7 @@ const seedHorses = [
         notes: {
             content: 'Owner requests that hay be given 1 flake at a time, only if no hay is left in stall.'
         }
-    }
+    },
     {
         name: 'Max',
         age: 8,

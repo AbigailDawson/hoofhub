@@ -13,7 +13,7 @@ require('./config/passport');
 
 const indexRouter = require('./routes/index');
 const barnsRouter = require('./routes/barns');
-const horsesRouter = require('./routes/barns');
+const horsesRouter = require('./routes/horses');
 // const usersRouter = require('./routes/users');
 
 var app = express();
@@ -49,7 +49,7 @@ app.use((req, res, next) => {
 
 app.use('/', indexRouter);
 // app.use('/barns', barnsRouter);
-app.use('/horses', horsesRouter);
+app.use('/', horsesRouter);
 
 // app.use('/users', usersRouter);
 

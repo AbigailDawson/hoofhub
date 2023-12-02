@@ -1,7 +1,8 @@
 const Barn = require('../models/barn')
 
 module.exports = {
-    index
+    index,
+    show
 };
 
 async function index(req, res) {
@@ -9,5 +10,13 @@ async function index(req, res) {
     res.render('barns/index', {
         title: 'All Barns',
         barns
+    })
+}
+
+async function show(req, res) {
+    const barn = await Barn.findById(req.params.id);
+    res.render('barns/show', {
+        barn,
+        title: barn.name
     })
 }

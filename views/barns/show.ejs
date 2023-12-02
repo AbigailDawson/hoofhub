@@ -1,0 +1,16 @@
+<%- include('../partials/header') %>
+
+<a href="/barns">Go Back</a>
+
+<h3>Address</h3>
+    <p> <%= barn.address[0].houseNumber %> <%= barn.address[0].street %></p>
+    <p> <%= barn.address[0].city %>, <%= barn.address[0].state %> <%= barn.address[0].zip %></p>
+
+<h3>Horses</h3>
+<h3>Chores</h3>
+
+<h3>Notes</h3>
+<p><%= barn.notes[0].content %></p>
+
+
+<%- include('../partials/footer') %>

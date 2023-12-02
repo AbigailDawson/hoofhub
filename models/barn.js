@@ -1,13 +1,13 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-// const addressSchema = new Schema({
-//     houseNumber: String,
-//     street: String,
-//     city: String,
-//     state: String,
-//     zip: Number
-// });
+const addressSchema = new Schema({
+    houseNumber: Number,
+    street: String,
+    city: String,
+    state: String,
+    zip: Number
+});
 
 const barnNoteSchema = new Schema({
     dateAdded: Date,
@@ -21,7 +21,7 @@ const barnNoteSchema = new Schema({
 
 const barnSchema = new Schema({
     name: String,
-    address: String,
+    address: [addressSchema],
     contacts: [{
         type: Schema.Types.ObjectId,
         ref: 'Contact'

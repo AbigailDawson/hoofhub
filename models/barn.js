@@ -41,3 +41,5 @@ const barnSchema = new Schema({
 }, {
     timestamps: true
 })
+
+module.exports = mongoose.model('Barn', barnSchema)

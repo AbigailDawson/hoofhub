@@ -6,7 +6,6 @@ module.exports = {
 };
 
 async function index(req, res) {
-    console.log('barns controller function hit')
     const barns = await Barn.find({});
     res.render('barns/index', {
         title: 'All Barns',

@@ -2,21 +2,19 @@
 
 <a href="/horses">All Horses</a>
 
-<% horses.forEach((horse) => { %>
 
-    <h3><%= horse.name %></h3>
+<h3><%= horse.name %></h3>
 
-    <p><strong></strong><%= horse.name %></strong> is a <strong><%= horse.age %></strong> year old <strong></strong><%= horse.color %></strong> <strong></strong><%= horse.sex %></strong>.</p>
+<p><strong></strong><%= horse.name %></strong> is a <strong><%= horse.age %></strong> year old <strong></strong><%= horse.color %></strong> <strong></strong><%= horse.sex %></strong>.</p>
 
-    <h3>Feed</h3>
-    <p>AM: <%= horse.feed[0].amFeed %></p>
-    <p>Midday: <%= horse.feed[0].middayFeed %></p>
-    <p>PM: <%= horse.feed[0].pmFeed %></p>
-    <p>Night: <%= horse.feed[0].nightFeed %></p>
-    <p>Supplements: <%= horse.feed[0].supps %></p>
-    <p>Medications: <%= horse.feed[0].meds %></p>
+<h3>Feed</h3>
+<p>AM: <%= horse.feed[0].amFeed %></p>
+<p>Midday: <%= horse.feed[0].middayFeed %></p>
+<p>PM: <%= horse.feed[0].pmFeed %></p>
+<p>Night: <%= horse.feed[0].nightFeed %></p>
+<p>Supplements: <%= horse.feed[0].supps %></p>
+<p>Medications: <%= horse.feed[0].meds %></p>
 
-<% }) %>
   
 
 <%- include('../partials/footer') %>

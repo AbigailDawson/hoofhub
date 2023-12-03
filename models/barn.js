@@ -13,7 +13,7 @@ const barnNoteSchema = new Schema({
     dateAdded: Date,
     content: {
         type: String,
-        required: true
+        default: ''
     }
 }, {
     timestamps: true
@@ -21,7 +21,10 @@ const barnNoteSchema = new Schema({
 
 const barnSchema = new Schema({
     name: String,
-    address: [addressSchema],
+    address: {
+        type: [addressSchema],
+        default: [],
+    },
     contacts: [{
         type: Schema.Types.ObjectId,
         ref: 'Contact'

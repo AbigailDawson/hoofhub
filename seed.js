@@ -177,7 +177,5 @@ const data = require('./data');
     await fillWater.save();
     await groomHorses.save();
 
-    console.log(willowBrookRanch.chores)
-
     process.exit();
 })();

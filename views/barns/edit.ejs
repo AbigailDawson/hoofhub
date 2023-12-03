@@ -1,0 +1,9 @@
+
+
+<h3>Contacts</h3>
+<select name="contactId">
+    <%- contacts.map(contact => 
+      `<option value="${contact._id}">${contact.firstName} ${contact.lastName}</option>`
+    ).join('') %>
+</select>
+<button>Add</button> 

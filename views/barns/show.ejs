@@ -21,7 +21,10 @@
 </ul>
 
 <h3>Notes</h3>
-<p><%= barn.notes[0].content %></p>
-
+<% if(barn.notes.length) { %>
+    <p><%= barn.notes[0].content %></p>
+<% } else { %>
+    <p>No Notes Yet</p>
+<% } %>
 
 <%- include('../partials/footer') %>

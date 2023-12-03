@@ -1,7 +1,5 @@
 <%- include('../partials/header') %>
 
-<a href="/">Go Back</a>
-
 <% barns.forEach((barn) => { %>
     <h2><a href='/barns/<%= barn.id %>'><%= barn.name %></a></h2>
     <h3>Address</h3>

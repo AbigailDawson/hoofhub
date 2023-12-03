@@ -1,5 +1,7 @@
 <%- include('../partials/header') %>
 
+<a href="/barns/<%= barn.id %>">Back to <%= barn.name %></a>
+
 <form id="edit-form" action="/barns" method="POST">
 
     <label>Barn Name</label>

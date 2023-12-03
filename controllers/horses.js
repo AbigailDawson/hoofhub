@@ -1,4 +1,5 @@
 const Horse = require('../models/horse')
+const Contact = require('../models/contact')
 
 module.exports = {
     index,
@@ -14,7 +15,7 @@ async function index(req, res) {
 }
 
 async function show(req, res) {
-    const horse = await Horse.findById(req.params.id).populate('barns');
+    const horse = await Horse.findById(req.params.id).populate({path: 'contacts', model: Contact}).populate('barns');
     console.log('HORSE:', horse);
     res.render('horses/show', {
         horse,

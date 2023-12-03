@@ -9,13 +9,20 @@
 <p><strong></strong><%= horse.name %></strong> is a <strong><%= horse.age %></strong> year old <strong></strong><%= horse.color %></strong> <strong></strong><%= horse.sex %></strong>.</p>
 
 <h3>Feed</h3>
-<p>AM: <%= horse.feed[0].amFeed %></p>
-<p>Midday: <%= horse.feed[0].middayFeed %></p>
-<p>PM: <%= horse.feed[0].pmFeed %></p>
-<p>Night: <%= horse.feed[0].nightFeed %></p>
-<p>Supplements: <%= horse.feed[0].supps %></p>
-<p>Medications: <%= horse.feed[0].meds %></p>
+<p>AM Feed: <%= horse.feed[0].amFeed %></p>
+<p>AM Meds: <%= horse.feed[0].amMeds %></p>
+<p>Midday Feed: <%= horse.feed[0].middayFeed %></p>
+<p>PM Feed: <%= horse.feed[0].pmFeed %></p>
+<p>PM Meds: <%= horse.feed[0].pmMeds %></p>
+<p>Night Feed: <%= horse.feed[0].nightFeed %></p>
 
+<h3>Contacts</h3>
+<% horse.contacts.forEach((contact) => { %>
+<p><%= contact.firstName %> <%= contact.lastName %></p>
+<p><%= contact.role %></p>
+<p><%= contact.phone %></p> 
+<p><%= contact.email %></p>
+<% }) %>
   
 
 <%- include('../partials/footer') %>

@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+// const contactSchema = require('./contact');
 const Schema = mongoose.Schema;
 
 const feedSchema = new Schema({
@@ -21,6 +22,10 @@ const horseNoteSchema = new Schema({
 });
 
 const horseSchema = new Schema({
+    contacts: [{
+        type: Schema.Types.ObjectId,
+        ref: 'Contact'
+    }],
     barns: [{
         type: Schema.Types.ObjectId,
         ref: 'Barn'
@@ -33,10 +38,6 @@ const horseSchema = new Schema({
     turnout: String,
     blanket: String,
     importantInfo: String,
-    contacts: [{
-        type: Schema.Types.ObjectId,
-        ref: 'Contact'
-    }],
     notes: [horseNoteSchema]
 }, {
     timestamps: true

@@ -38,7 +38,21 @@ const data = require('./data');
     results[1][7].barns.push(results[0][2]._id);
     results[1][8].barns.push(results[0][2]._id);
 
-    console.log(results[1][0]);
-    
+    // Save barns
+    await results[0][0].save();
+    await results[0][1].save();
+    await results[0][2].save();
+
+    // Save horses
+    await results[1][0].save();
+    await results[1][1].save();
+    await results[1][2].save();
+    await results[1][3].save();
+    await results[1][4].save();
+    await results[1][5].save();
+    await results[1][6].save();
+    await results[1][7].save();
+    await results[1][8].save();
+
     process.exit();
 })();

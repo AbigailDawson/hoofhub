@@ -7,6 +7,12 @@
     <p> <%= barn.address[0].city %>, <%= barn.address[0].state %> <%= barn.address[0].zip %></p>
 
 <h3>Horses</h3>
+<ul>
+<% barn.horses.forEach((horse) => { %>
+    <li><%= horse.name %> | <a href="/horses/<%= horse._id %>">Details</a></li>
+<% }) %>
+</ul>
+
 <h3>Chores</h3>
 
 <h3>Notes</h3>

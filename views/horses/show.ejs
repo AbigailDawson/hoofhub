@@ -1,6 +1,7 @@
 <%- include('../partials/header') %>
 
 <a href="/horses">All Horses</a>
+<a href="/barns/<%= horse.barns[0].id %>">Back to <%= horse.barns[0].name %></a>
 
 
 <h3><%= horse.name %></h3>

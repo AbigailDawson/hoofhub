@@ -21,6 +21,10 @@ const horseNoteSchema = new Schema({
 });
 
 const horseSchema = new Schema({
+    barns: [{
+        type: Schema.Types.ObjectId,
+        ref: 'Barn'
+    }],
     name: String,
     age: Number,
     color: String,

@@ -33,6 +33,10 @@ const horseSchema = new Schema({
     turnout: String,
     blanket: String,
     importantInfo: String,
+    contacts: [{
+        type: Schema.Types.ObjectId,
+        ref: 'Contact'
+    }],
     notes: [horseNoteSchema]
 }, {
     timestamps: true

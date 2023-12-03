@@ -38,7 +38,7 @@ exports.barns = [
             content: 'Send text to owner when leaving for the day!'
         }
     },
-]
+];
 
 exports.horses = [
     {
@@ -223,4 +223,147 @@ exports.horses = [
           content: 'Enjoys trail rides.'
         }
       }
-]
+];
+
+exports.contacts = [
+  {
+    firstName: 'Emily',
+    lastName: 'Johnson',
+    phone: '555-111-1111',
+    email: 'emilyjohnson@emails.com',
+    role: 'Barn Owner'
+  },
+  {
+    firstName: 'Sophia',
+    lastName: 'Smith',
+    phone: '555-222-2222',
+    email: 'sophiasmith@emails.com',
+    role: 'Barn Manager'
+  }, 
+  {
+    firstName: 'Isabella',
+    lastName: 'Williams',
+    phone: '555-333-3333',
+    email: 'isabellawilliams@emails.com',
+    role: 'Horse Owner'
+  },  
+  {
+    firstName: 'Ava',
+    lastName: 'Brown',
+    phone: '555-444-4444',
+    email: 'avabrown@emails.com',
+    role: 'Trainer'
+  },
+  {
+    firstName: 'Mia',
+    lastName: 'Jones',
+    phone: '555-555-5555',
+    email: 'miajones@emails.com',
+    role: 'Veterinarian'
+  },
+  {
+    firstName: 'Liam',
+    lastName: 'Davis',
+    phone: '555-666-6666',
+    email: 'liamdavis@emails.com',
+    role: 'Farrier'
+  },
+  {
+    firstName: 'Noah',
+    lastName: 'Miller',
+    phone: '555-777-7777',
+    email: 'noahmiller@emails.com',
+    role: 'Other'
+  },
+  {
+    firstName: 'Olivia',
+    lastName: 'Wilson',
+    phone: '555-888-8888',
+    email: 'oliviawilson@emails.com',
+    role: 'Barn Owner'
+  },
+  {
+    firstName: 'Emma',
+    lastName: 'Moore',
+    phone: '555-999-9999',
+    email: 'emmamoore@emails.com',
+    role: 'Barn Manager'
+  },
+  {
+    firstName: 'Charlotte',
+    lastName: 'Taylor',
+    phone: '555-123-4567',
+    email: 'charlottetaylor@emails.com',
+    role: 'Horse Owner'
+  },
+  {
+    firstName: 'Elijah',
+    lastName: 'Anderson',
+    phone: '555-987-6543',
+    email: 'elijahanderson@emails.com',
+    role: 'Trainer'
+  },
+  {
+    firstName: 'Grace',
+    lastName: 'Thomas',
+    phone: '555-567-8901',
+    email: 'gracethomas@emails.com',
+    role: 'Veterinarian'
+  },  
+  {
+    firstName: 'Harper',
+    lastName: 'White',
+    phone: '555-345-6789',
+    email: 'harperwhite@emails.com',
+    role: 'Farrier'
+  },  
+  {
+    firstName: 'Aiden',
+    lastName: 'Thomas',
+    phone: '555-789-0123',
+    email: 'aidenthomas@emails.com',
+    role: 'Other'
+  },
+  {
+    firstName: 'Amelia',
+    lastName: 'Garcia',
+    phone: '555-234-5678',
+    email: 'ameliagarcia@emails.com',
+    role: 'Barn Owner'
+  },
+  {
+    firstName: 'Martina',
+    lastName: 'Rodriguez',
+    phone: '555-456-7890',
+    email: 'martinarodriguez@emails.com',
+    role: 'Barn Manager'
+  },  
+  {
+    firstName: 'Ethan',
+    lastName: 'Lopez',
+    phone: '555-678-9012',
+    email: 'ethanlopez@emails.com',
+    role: 'Horse Owner'
+  },  
+  {
+    firstName: 'Evelyn',
+    lastName: 'Perez',
+    phone: '555-890-1234',
+    email: 'evelynperez@emails.com',
+    role: 'Trainer'
+  },  
+  {
+    firstName: 'Mason',
+    lastName: 'Lee',
+    phone: '555-012-3456',
+    email: 'masonlee@emails.com',
+    role: 'Veterinarian'
+  },
+  {
+    firstName: 'Layla',
+    lastName: 'Smith',
+    phone: '555-321-0987',
+    email: 'laylasmith@emails.com',
+    role: 'Farrier'
+  }
+];

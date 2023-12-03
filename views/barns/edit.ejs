@@ -2,25 +2,25 @@
 
 <a href="/barns/<%= barn.id %>">Back to <%= barn.name %></a>
 
-<form id="edit-form" action="/barns" method="POST">
+<form id="edit-form" action="/barns/<%= barn.id %>?_method=PUT" method="POST">
 
     <label>Barn Name</label>
-    <input type="text" name="name">
+    <input type="text" name="name" value="<%= barn.name %>">
 
     <h3>Address</h3>
     <label for="houseNumber">Number</label>
-    <input type="number" name="houseNumber"><br>
+    <input type="number" name="houseNumber" value="<%= barn.address[0].houseNumber %>"><br>
     <label for="street">Street</label>
-    <input type="text" name="street"><br>
+    <input type="text" name="street" value="<%= barn.address[0].street %>"><br>
     <label for="city">City</label>
-    <input type="text" name="city"><br>
+    <input type="text" name="city" value="<%= barn.address[0].city %>"><br>
     <label for="state">State</label>
-    <input type="text" name="state"><br>
+    <input type="text" name="state" value="<%= barn.address[0].state %>"><br>
     <label for="zip">Zip</label>
-    <input type="number" name="zip"><br>
+    <input type="number" name="zip" value="<%= barn.address[0].zip %>"><br>
 
     <br><br>
-    <input type="submit" value="Edit Barn">
+    <input type="submit" value="Update">
     </form>
 
     <h3>Contacts</h3>

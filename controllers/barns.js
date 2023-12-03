@@ -7,7 +7,8 @@ module.exports = {
     show,
     new: newBarn,
     create,
-    edit
+    edit,
+    update
 };
 
 async function index(req, res) {
@@ -19,7 +20,10 @@ async function index(req, res) {
 }
 
 async function show(req, res) {
-    const barn = await Barn.findById(req.params.id).populate({path: 'chores', model: Chore}).populate({path: 'contacts', model: Contact}).populate('horses');
+    const barn = await Barn.findById(req.params.id)
+        .populate({path: 'chores', model: Chore})
+        .populate({path: 'contacts', model: Contact})
+        .populate('horses');
     res.render('barns/show', {
         barn,
         title: barn.name
@@ -49,11 +53,21 @@ async function create(req, res) {
 }
 
 async function edit(req, res) {
-    const barn = await Barn.findById(req.params.id).populate({path: 'chores', model: Chore}).populate({path: 'contacts', model: Contact}).populate('horses');
+    const barn = await Barn.findById(req.params.id)
+        .populate({path: 'chores', model: Chore})
+        .populate({path: 'contacts', model: Contact})
+        .populate('horses');
     const contacts = await Contact.find({ _id: { $nin: barn.contacts } }).sort('name');
     res.render('barns/edit', {
         barn,
         contacts,
         title: `Edit ${barn.name}`
     })
+}
+
+async function update(req, res) {
+    const barn = await Barn.findOneAndUpdate( { _id: req.params.id }, req.body);
+    barn.address.splice(0, 1, req.body);
+    await barn.save();
+    res.redirect(`/barns/${barn.id}`)
 }

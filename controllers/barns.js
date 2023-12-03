@@ -1,5 +1,5 @@
-const Barn = require('../models/barn')
-const Horse = require('../models/horse')
+const Barn = require('../models/barn');
+const Chore = require('../models/chore');
 
 module.exports = {
     index,
@@ -15,8 +15,7 @@ async function index(req, res) {
 }
 
 async function show(req, res) {
-    const barn = await Barn.findById(req.params.id).populate('horses');
-    // const horses = await Horse.find({});
+    const barn = await Barn.findById(req.params.id).populate({path: 'chores', model: Chore}).populate('horses');
     res.render('barns/show', {
         barn,
         title: barn.name

@@ -126,9 +126,9 @@ const data = require('./data');
     layla.horses.push(luna._id);
  
     // Push chore IDs into barns
-    willowBrookRanch.contacts.push(feedGrain._id, feedHay._id, turnOut._id);
-    pineGroveFarm.contacts.push(feedGrain._id, feedHay._id, turnIn._id, muckStalls._id, fillWater._id);
-    sporthorseStable.contacts.push(muckStalls._id, fillWater._id, groomHorses._id);
+    willowBrookRanch.chores.push(feedGrain._id, feedHay._id, turnOut._id);
+    pineGroveFarm.chores.push(feedGrain._id, feedHay._id, turnIn._id, muckStalls._id, fillWater._id);
+    sporthorseStable.chores.push(muckStalls._id, fillWater._id, groomHorses._id);
 
     // Save barns
     await willowBrookRanch.save();
@@ -176,6 +176,8 @@ const data = require('./data');
     await turnIn.save();
     await fillWater.save();
     await groomHorses.save();
+
+    console.log(willowBrookRanch.chores)
 
     process.exit();
 })();

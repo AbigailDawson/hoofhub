@@ -367,3 +367,55 @@ exports.contacts = [
     role: 'Farrier'
   }
 ];
+
+exports.chores = [
+  {
+    chore: 'Feed grain',
+    shift: ['AM', 'PM'],
+    estDuration: 20,
+    estAmount: 30,
+    completed: false,
+  },
+  {
+    chore: 'Feed hay',
+    shift: ['AM', 'Midday', 'PM', 'Night'],
+    estDuration: 10,
+    estAmount: 15,
+    completed: false,
+  },
+  {
+    chore: 'Muck stalls',
+    shift: ['AM', 'Midday', 'PM'],
+    estDuration: 30,
+    estAmount: 45,
+    completed: false,
+  },
+  {
+    chore: 'Turn out',
+    shift: ['AM', 'Midday', 'PM'],
+    estDuration: 10,
+    estAmount: 15,
+    completed: false,
+  },
+  {
+    chore: 'Turn in',
+    shift: ['AM', 'Midday', 'PM'],
+    estDuration: 10,
+    estAmount: 15,
+    completed: false,
+  },
+  {
+    chore: 'Fill water buckets',
+    shift: ['AM', 'Midday', 'PM', 'Night'],
+    estDuration: 15,
+    estAmount: 20,
+    completed: false,
+  },
+  {
+    chore: 'Groom horses',
+    shift: ['AM', 'Midday', 'PM'],
+    estDuration: 20,
+    estAmount: 30,
+    completed: false,
+  },
+];

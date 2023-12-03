@@ -32,7 +32,7 @@ const barnSchema = new Schema({
     }],
     chores: [{
         type: Schema.Types.ObjectId,
-        ref: 'Chores'
+        ref: 'Chore'
     }],
     notes: [barnNoteSchema],
 }, {

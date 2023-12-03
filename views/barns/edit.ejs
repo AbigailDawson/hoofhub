@@ -1,9 +1,42 @@
+<%- include('../partials/header') %>
+
+<form id="edit-form" action="/barns" method="POST">
+
+    <label>Barn Name</label>
+    <input type="text" name="name">
+
+    <h3>Address</h3>
+    <label for="houseNumber">Number</label>
+    <input type="number" name="houseNumber"><br>
+    <label for="street">Street</label>
+    <input type="text" name="street"><br>
+    <label for="city">City</label>
+    <input type="text" name="city"><br>
+    <label for="state">State</label>
+    <input type="text" name="state"><br>
+    <label for="zip">Zip</label>
+    <input type="number" name="zip"><br>
+
+    <br><br>
+    <input type="submit" value="Edit Barn">
+    </form>
+
+    <h3>Contacts</h3>
+    <ul>
+        <%- barn.contacts.map(contact => 
+          `<li>${contact.firstName} ${contact.lastName}</li>`
+        ).join('') %>
+    </ul>
+    
+    <form id="add-contact" action="/barns/<%= barn._id %>/contacts" method="POST">
+        <select name="contactId">
+            <%- contacts.map(contact => 
+            `<option value="${contact._id}">${contact.firstName} ${contact.lastName}</option>`
+            ).join('') %>
+        </select>
+        <button>Add Contact</button> 
+    </form>
 
 
-<h3>Contacts</h3>
-<select name="contactId">
-    <%- contacts.map(contact => 
-      `<option value="${contact._id}">${contact.firstName} ${contact.lastName}</option>`
-    ).join('') %>
-</select>
-<button>Add</button> 
+
+<%- include('../partials/footer') %>

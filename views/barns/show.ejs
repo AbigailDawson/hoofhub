@@ -20,11 +20,26 @@
 <% }) %>
 </ul>
 
+<h3>Contacts</h3>
+<% if(barn.contacts.length) { %>
+    <ul>
+    <% barn.contacts.forEach((contact) => { %>
+        <li><%= contact.firstName %> <%= contact.lastName %></li>
+    <% }) %>
+    </ul>
+<% } else { %>
+    <p>No Contacts Yet</p>
+<% } %>
+
 <h3>Notes</h3>
 <% if(barn.notes.length) { %>
     <p><%= barn.notes[0].content %></p>
 <% } else { %>
     <p>No Notes Yet</p>
 <% } %>
+
+
+
+<a href="/barns/<%= barn._id %>/edit">Edit Barn</a>
 
 <%- include('../partials/footer') %>

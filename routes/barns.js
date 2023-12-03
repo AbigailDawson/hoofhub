@@ -11,7 +11,10 @@ router.get('/new', barnsCtrl.new);
 // GET /barns/:id
 router.get('/:id', barnsCtrl.show);
 
+// GET /barns/:id/edit
+router.get('/:id/edit', barnsCtrl.edit);
+
 // POST /barns
-router.post('/', barnsCtrl.create)
+router.post('/', barnsCtrl.create);
 
 module.exports = router;

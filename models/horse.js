@@ -3,11 +3,11 @@ const Schema = mongoose.Schema;
 
 const feedSchema = new Schema({
     amFeed: String,
+    amMeds: String,
     middayFeed: String,
     pmFeed: String,
+    pmMeds: String,
     nightFeed: String,
-    supps: String,
-    meds: String
 });
 
 const horseNoteSchema = new Schema({

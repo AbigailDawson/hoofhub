@@ -1,5 +1,6 @@
 require('dotenv').config();
 require('./config/database');
+const mongoose = require('mongoose');
 
 const Barn = require('./models/barn');
 const Horse = require('./models/horse');

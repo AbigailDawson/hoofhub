@@ -13,7 +13,7 @@ exports.barns = [
         }
     },
     {
-        name: 'Retirement Farm',
+        name: 'Pine Grove Farm',
         address: {
             houseNumber: 456,
             street: 'Side St',

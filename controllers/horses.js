@@ -3,7 +3,9 @@ const Contact = require('../models/contact');
 
 module.exports = {
     index,
-    show
+    show,
+    new: newHorse,
+    create
 };
 
 async function index(req, res) {
@@ -20,4 +22,26 @@ async function show(req, res) {
         horse,
         title: horse.name
     })
+}
+
+function newHorse(req, res) {
+    res.render('horses/new', {
+        title: 'Add Horse', 
+        errorMsg: '' 
+    });
+}
+
+async function create(req, res) {
+    for (let key in req.body) {
+        if (req.body[key] === '') delete req.body[key];
+    }
+    try {
+        const horse = await Horse.create(req.body);
+        horse.feed.push(req.body);
+        await horse.save();
+        res.redirect(`/horses/${horse._id}`);
+    } catch (err) {
+        console.log(err);
+        res.render('horses/new', { errorMsg: err.message });
+    }
 }

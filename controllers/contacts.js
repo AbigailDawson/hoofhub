@@ -11,7 +11,6 @@ async function index(req, res) {
     const contacts = await Contact.find({})
         .populate({path: 'horses', model: Horse})
         .populate({path: 'barns', model: Barn})
-        console.log(contacts[5]);
     res.render('contacts/index', {
         title: 'All Contacts',
         contacts

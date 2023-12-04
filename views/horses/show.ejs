@@ -1,28 +1,42 @@
 <%- include('../partials/header') %>
 
 <a href="/horses">All Horses</a>
-<a href="/barns/<%= horse.barns[0].id %>">Back to <%= horse.barns[0].name %></a>
+<% if (horse.barns.length) { %>
+    <a href="/barns/<%= horse.barns[0].id %>">Back to <%= horse.barns[0].name %></a>
+<% } else { %>
+    <p>This horse has not been assigned to a barn.</p>
+<% } %>
 
 
 <h3><%= horse.name %></h3>
 
 <p><strong><%= horse.name %></strong> is a <strong><%= horse.age %></strong> year old <strong><%= horse.color %></strong> <strong><%= horse.sex %></strong>.</p>
 
+
 <h3>Feed</h3>
-<p>AM Feed: <%= horse.feed[0].amFeed %></p>
-<p>AM Meds: <%= horse.feed[0].amMeds %></p>
-<p>Midday Feed: <%= horse.feed[0].middayFeed %></p>
-<p>PM Feed: <%= horse.feed[0].pmFeed %></p>
-<p>PM Meds: <%= horse.feed[0].pmMeds %></p>
-<p>Night Feed: <%= horse.feed[0].nightFeed %></p>
+<% if (horse.feed.length) { %>
+    <p>AM Feed: <%= horse.feed[0].amFeed %></p>
+    <p>AM Meds: <%= horse.feed[0].amMeds %></p>
+    <p>Midday Feed: <%= horse.feed[0].middayFeed %></p>
+    <p>PM Feed: <%= horse.feed[0].pmFeed %></p>
+    <p>PM Meds: <%= horse.feed[0].pmMeds %></p>
+    <p>Night Feed: <%= horse.feed[0].nightFeed %></p>
+<% } else { %>
+    <p>This horse has no feed details.</p>
+<% } %>
 
 <h3>Contacts</h3>
-<% horse.contacts.forEach((contact) => { %>
-<p><%= contact.firstName %> <%= contact.lastName %></p>
-<p><%= contact.role %></p>
-<p><%= contact.phone %></p> 
-<p><%= contact.email %></p>
+
+<% if (horse.barns.length) { %>
+    <% horse.contacts.forEach((contact) => { %>
+    <p><%= contact.firstName %> <%= contact.lastName %></p>
+    <p><%= contact.role %></p>
+    <p><%= contact.phone %></p> 
+    <p><%= contact.email %></p>
 <% }) %>
+<% } else { %>
+    <p>This horse has not been assigned any contacts.</p>
+<% } %>
   
 
 <%- include('../partials/footer') %>

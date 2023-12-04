@@ -25,8 +25,10 @@ async function show(req, res) {
         .populate({path: 'chores', model: Chore})
         .populate({path: 'contacts', model: Contact})
         .populate('horses');
+    const contacts = await Contact.find({ _id: { $nin: barn.contacts } }).sort('name');
     res.render('barns/show', {
         barn,
+        contacts,
         title: barn.name
     })
 }

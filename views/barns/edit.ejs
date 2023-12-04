@@ -23,22 +23,4 @@
     <input type="submit" value="Update">
     </form>
 
-    <h3>Contacts</h3>
-    <ul>
-        <%- barn.contacts.map(contact => 
-          `<li>${contact.firstName} ${contact.lastName}</li>`
-        ).join('') %>
-    </ul>
-    
-    <form id="add-contact" action="/barns/<%= barn._id %>/contacts" method="POST">
-        <select name="contactId">
-            <%- contacts.map(contact => 
-            `<option value="${contact._id}">${contact.firstName} ${contact.lastName}</option>`
-            ).join('') %>
-        </select>
-        <button>Add Contact</button> 
-    </form>
-
-
-
 <%- include('../partials/footer') %>

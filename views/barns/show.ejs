@@ -4,6 +4,8 @@
     <p> <%= barn.address[0].houseNumber %> <%= barn.address[0].street %></p>
     <p> <%= barn.address[0].city %>, <%= barn.address[0].state %> <%= barn.address[0].zip %></p>
 
+<a href="/barns/<%= barn._id %>/edit">Update Name and Address</a>
+
 <h3>Horses</h3>
 <ul>
 <% barn.horses.forEach((horse) => { %>
@@ -29,6 +31,16 @@
     <p>No Contacts Yet</p>
 <% } %>
 
+<form id="add-contact" action="/barns/<%= barn._id %>" method="POST">
+    <select name="contactId">
+        <%- contacts.map(contact => 
+        `<option value="${contact._id}">${contact.firstName} ${contact.lastName}</option>`
+        ).join('') %>
+    </select>
+    <button>Add Contact</button> 
+</form>
+
+
 <h3>Notes</h3>
 <% if(barn.notes.length) { %>
     <p><%= barn.notes[0].content %></p>
@@ -36,7 +48,6 @@
     <p>No Notes Yet</p>
 <% } %>
 
-<a href="/barns/<%= barn._id %>/edit">Edit Barn</a>
 
 <br><br>
 

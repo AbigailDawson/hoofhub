@@ -20,4 +20,7 @@ router.put('/:id', barnsCtrl.update)
 // POST /barns
 router.post('/', barnsCtrl.create);
 
+// DELETE /barns/:id
+router.delete('/:id', barnsCtrl.delete);
+
 module.exports = router;

@@ -8,7 +8,8 @@ module.exports = {
     new: newBarn,
     create,
     edit,
-    update
+    update,
+    delete: deleteBarn
 };
 
 async function index(req, res) {
@@ -70,4 +71,9 @@ async function update(req, res) {
     barn.address.splice(0, 1, req.body);
     await barn.save();
     res.redirect(`/barns/${barn.id}`)
+}
+
+async function deleteBarn(req, res) {
+    const barn = await Barn.findOneAndDelete({ _id: req.params.id });
+    res.redirect('/barns')
 }

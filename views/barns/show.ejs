@@ -36,8 +36,12 @@
     <p>No Notes Yet</p>
 <% } %>
 
-
-
 <a href="/barns/<%= barn._id %>/edit">Edit Barn</a>
+
+<br><br>
+
+<form action="/barns/<%= barn.id %>?_method=DELETE" method="POST">
+    <button type="submit">Remove Barn</button> <span>This action cannot be undone.</span>
+</form>
 
 <%- include('../partials/footer') %>

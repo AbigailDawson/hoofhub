@@ -1,13 +1,24 @@
 <%- include('./partials/header') %>
 
-<div class="text-center">
-    <form class="login-form">
-        <img class="mt-4" src="../images/hoofhub_logo.png" height="200" alt="HoofHub logo">
-        <h1 class="h1 mb-3">Please sign in</h1>
-        <a class="btn btn-lg btn-primary" href="/auth/google" role="button">Sign In</a>
 
-    </form>
+<div class="container d-flex justify-content-center align-items-center min-vh-100">
+
+    <div class="row border rounded-5 p-3 bg-white shadow box-arear">
+
+        <div class="col rounded-4 pb-5 d-flex flex-column align-items-center justify-content-center">
+
+                <img class="img-fluid" src="../images/hoofhub_logo.png" style="width: 250px" alt="HoofHub logo">
+                <h1 class="fs-3 pb-3">Welcome to your horse care hub.</h1>
+                <p class="fs-4 pb-3 text-wrap">Please sign in.</p>
+                <a class="btn btn-lg btn-primary w-100 fs-5" href="/auth/google" role="button">Sign In</a>
+                
+            </div>
+        </div>
+    </div>
 </div>
 
+
+            
+    
 
 <%- include('./partials/footer') %>

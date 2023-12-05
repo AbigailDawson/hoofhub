@@ -11,10 +11,15 @@
 body {
     color: var(--text);
     background-color: var(--background);
+    font-family: "Roboto", sans-serif;
 }
 
 .btn {
     color: var(--text);
     background-color: var(--primary);
     border: none;
+}
+
+h1 {
+    font-family: "Francois One", sans-serif;
 }

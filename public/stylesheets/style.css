@@ -1,0 +1,20 @@
+:root {
+    --text: #0f1702;
+    --background: #fafef1;
+    --primary: #b2f7a6;
+    --secondary: #a2f6f0;
+    --accent: #a7d0fb;
+    --grn: #ecf2e6;
+    --gry: #eef2e6;
+}
+
+body {
+    color: var(--text);
+    background-color: var(--background);
+}
+
+.btn {
+    color: var(--text);
+    background-color: var(--primary);
+    border: none;
+}

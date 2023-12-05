@@ -20,6 +20,16 @@ body {
     border: none;
 }
 
+.btn:hover {
+    color: var(--text);
+    background-color: var(--secondary);
+}
+
 h1 {
     font-family: "Francois One", sans-serif;
+}
+
+.navbar {
+    color: var(--text);
+    background-color: var(--primary);
 }

@@ -1,11 +1,13 @@
 const Horse = require('../models/horse');
 const Contact = require('../models/contact');
+const Barn = require('../models/barn');
 
 module.exports = {
     index,
     show,
     new: newHorse,
-    create
+    create,
+    addHorseToBarn
 };
 
 async function index(req, res) {
@@ -17,7 +19,9 @@ async function index(req, res) {
 }
 
 async function show(req, res) {
-    const horse = await Horse.findById(req.params.id).populate({path: 'contacts', model: Contact}).populate('barns');
+    const horse = await Horse.findById(req.params.id)
+    .populate({path: 'contacts', model: Contact})
+    .populate('barns');
     res.render('horses/show', {
         horse,
         title: horse.name
@@ -45,3 +49,8 @@ async function create(req, res) {
         res.render('horses/new', { errorMsg: err.message });
     }
 }
+
+async function addHorseToBarn(req, res) {
+
+}
+

@@ -65,9 +65,11 @@ async function edit(req, res) {
         .populate({path: 'contacts', model: Contact})
         .populate('horses');
     const contacts = await Contact.find({ _id: { $nin: barn.contacts } }).sort('name');
+    const horses = await Horse.find({ _id: { $nin: barn.horses } }).sort('name');
     res.render('barns/edit', {
         barn,
         contacts,
+        horses,
         title: `Edit ${barn.name}`
     })
 }

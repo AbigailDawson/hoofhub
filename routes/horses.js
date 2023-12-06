@@ -14,4 +14,8 @@ router.get('/horses/:id', horsesCtrl.show);
 // POST /horses
 router.post('/horses', horsesCtrl.create);
 
+// POST /horses/:id
+// router.post('/horses/:id', contactsCtrl.addHorseToBarn);
+
+
 module.exports = router;

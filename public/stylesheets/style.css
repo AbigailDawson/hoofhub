@@ -25,11 +25,11 @@ body {
     background-color: var(--secondary);
 }
 
-h1 {
+h1, h2, h5 {
     font-family: "Francois One", sans-serif;
 }
 
-/* CARD STYLES */
+/* BARN CARD STYLES */
 .barn-card {
     background-color: var(--background);
     border: none;
@@ -91,6 +91,12 @@ h1 {
 
 .card-body {
     overflow: hidden;
+}
+
+/* HORSE LIST STYLES */
+.horse-list {
+    max-height: 300px;
+    overflow: scroll;
 }
 
 /* NAVBAR STYLES */

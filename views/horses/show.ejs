@@ -1,16 +1,24 @@
 <%- include('../partials/header') %>
 
-<a href="/horses">All Horses</a>
-<% if (horse.barns.length) { %>
-    <a href="/barns/<%= horse.barns[0].id %>">Back to <%= horse.barns[0].name %></a>
-<% } else { %>
-    <p>This horse has not been assigned to a barn.</p>
-<% } %>
+<div class="container mt-5">
 
+    <div class="card horse-show-card">
+        <h3 class="card-title text-center"><%= horse.name %></h3>
+    
+        <small class="card-text text-center">
+            <%= horse.age %> year old <%= horse.color %> <%= horse.sex %>
+        </small>
 
-<h3><%= horse.name %></h3>
-
-<p><strong><%= horse.name %></strong> is a <strong><%= horse.age %></strong> year old <strong><%= horse.color %></strong> <strong><%= horse.sex %></strong>.</p>
+        
+        <small class="card-text text-center">
+            <% if (horse.barns.length) { %>
+                <a href="/barns/<%= horse.barns[0].id %>">Back to <%= horse.barns[0].name %></a>
+            <% } else { %>
+                <p>This horse has not been assigned to a barn.</p>
+            <% } %>
+        </small>
+        
+    </div>
 
 
 <h3>Feed</h3>

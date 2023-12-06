@@ -52,7 +52,7 @@ h1, h2, h3, h4, h5 {
     font-family: "Francois One", sans-serif;
 }
 
-/* BARN CARD STYLES */
+/* BARN AND HORSE CARD STYLES */
 .barn-card {
     background-color: var(--background);
     border: none;
@@ -123,8 +123,9 @@ h1, h2, h3, h4, h5 {
     overflow: scroll;
 }
 
-/* BARN DETAIL CARD STYLES */
-.barn-show-card {
+/* BARN and HORSE DETAIL CARD STYLES */
+.barn-show-card,
+.horse-show-card {
     background-color: var(--background);
     border: none;
     box-shadow: none;

@@ -25,11 +25,7 @@ async function index(req, res) {
 }
 
 async function show(req, res) {
-    const barn = await Barn.findById(req.params.id)
-        .populate({path: 'chores', model: Chore})
-        .populate({path: 'contacts', model: Contact})
-        .populate('horses');
-        
+    const barn = await Barn.findById(req.params.id).populate('chores contacts horses').sort({'horses.name': 1})
     res.render('barns/show', {
         barn,
         title: barn.name

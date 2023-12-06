@@ -1,12 +1,20 @@
 <%- include('../partials/header') %>
 
-<% horses.forEach((horse) => { %>
-    
-    <h3><%= horse.name %></h3>
+<div class="container mt-5">
+    <% horses.forEach((horse) => { %>
+    <div class="row horse-detail-card">
+        <div class="col-6">
+            <h2 class="mb-2"><%= horse.name %> </h2>
+            <h4 class="mb-2"><%= horse.age %> year old <%= horse.color %> <%= horse.sex %> 
+        </div>
+        <div class="col-6">
+            <a class="btn" href="/horses/<%= horse.id %>">See Details</a>
+        </div>
+    </div>
+       
+    <% }) %>
 
-    <p><strong><%= horse.name %></strong> is a <strong><%= horse.age %></strong> year old <strong><%= horse.color %></strong> <strong><%= horse.sex %></strong>. | <a href="/horses/<%= horse.id %>">Details</a></p>
-
-<% }) %>
+</div>
   
 <a href="/horses/new">Add a Horse</a>
 

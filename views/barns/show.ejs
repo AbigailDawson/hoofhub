@@ -1,52 +1,20 @@
 <%- include('../partials/header') %>
 
 <div class="container mt-5">
+    <div class="row"></div>
     <% barn.horses.forEach((horse) => { %>
 
         <div class="horse-detail-card">
-            <div class="row">
-                <div class="col-12 col-md-3">
-                    <h2 class="mb-2"><%= horse.name %> </h2>
-                    <h4 class="mb-2"><%= horse.age %> year old <%= horse.color %> <%= horse.sex %>  </h4>
-                    <h3>Contacts</h3>
-                    <% if (horse.contacts.length) { %>
-                        <% horse.contacts.forEach((contact) => { %>
-                            <p><%= contact.role %>: <%= contact.firstName %><%= contact.lastName %></p>
-                            <p><%= contact.phone %></p>
-                            <p><%= contact.email %></p>
-                        <% }) %>
-                        <% } else { %>
-                        <p>This horse has no contacts.</p>
-                        <% } %>
-                    
-                </div>
-                <div class="col-12 col-md-4">
-                    <h3>Feed</h3>
-                    <% horse.feed.forEach((feed) => { %>
-                        <p><strong>AM Feed: </strong> <%= feed.amFeed %></p>
-                        <p><strong>AM Meds: </strong> <%= feed.amMeds %></p>
-                        <p><strong>Midday Feed: </strong> <%= feed.middayFeed %></p>
-                        <p><strong>PM Feed: </strong> <%= feed.pmFeed %></p>
-                        <p><strong>PM Meds: </strong> <%= feed.pmMeds %></p>
-                        <p><strong>Night Feed: </strong> <%= feed.nightFeed %></p>
-                    <% }) %>
-                    <h3>Turnout</h3>
-                    <p>Turnout: <%= horse.turnout %></p>
-                    <p>Blankets: <%= horse.blanket %></p>
-                </div>
-                <div class="col-12 col-md-5">
-                    <h3>Horse Notes</h3>
-                    <p><%= horse.importantInfo %></p>
-                    <% horse.notes.forEach((note) => { %>
-                        <p><%= note.dateAdded %></p>
-                        <p><%= note.content %></p>
-                    <% }) %>
-                </div>
-            </div>
-        </div>
-        
-        <% }) %>
-</div>
+            <h2 class="mb-2"><%= horse.name %> </h2>
+            <h4 class="mb-2"><%= horse.age %> year old <%= horse.color %> <%= horse.sex %> 
+            <h3>Horse Notes</h3>
+            <p><%= horse.importantInfo %></p>
+            <% horse.notes.forEach((note) => { %>
+                <p><%= note.dateAdded %></p>
+                <p><%= note.content %></p>
+            <% }) %>
+        </div>        
+    <% }) %>
 </div>
 
 

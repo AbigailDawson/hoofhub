@@ -1,6 +1,6 @@
 <%- include('../partials/header') %>
 
-<div class="container mt-5">
+<div class="container mt-5 mb-5">
     <h2 class="mb-3">Address</h2>
     <form id="edit-barn-form" action="/barns/<%= barn.id %>?_method=PUT" method="POST">
 
@@ -52,15 +52,21 @@
       </div>
 
     <h5 class="mt-2">Add a Horse</h5>
-    <form id="add-horse" action="/barns/<%= barn._id %>/" method="POST">
 
-        <select class="form-control form-control-md horseId">
-            <%- barn.horses.map(horse => 
-            `<option value="${horse._id}">${horse.name}</option>`
-            ).join('') %>
+    <form id="add-horse" action="/barns/<%= barn._id %>/edit" method="POST">
+
+        <select class="form-control form-control-md" name="horseId">
+            <% if (horses.length) { %>
+                <%- horses.map(horse => 
+                `<option value="${horse._id}">${horse.name}</option>`
+                ).join('') %>
+            <% } else { %>
+                <option>No horses available to add</option>
+            <% } %>
+            
         </select>
 
-        <button>Add Horse</button> 
+        <button type="submit" class="btn mt-3">Add Horse</button> 
 
     </form>
     

@@ -51,6 +51,9 @@ async function create(req, res) {
 }
 
 async function addHorseToBarn(req, res) {
-
+    const barn = await Barn.findById(req.params.id);
+    barn.horses.push(req.body.horseId);
+    await barn.save();
+    res.redirect(`/barns/${barn._id}/edit`);
 }
 

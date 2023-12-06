@@ -1,58 +1,36 @@
 <%- include('../partials/header') %>
 
-<h3>Address</h3>
-    <p> <%= barn.address[0].houseNumber %> <%= barn.address[0].street %></p>
-    <p> <%= barn.address[0].city %>, <%= barn.address[0].state %> <%= barn.address[0].zip %></p>
-
-<a href="/barns/<%= barn._id %>/edit">Update Name and Address</a>
-
-<h3>Horses</h3>
-<ul>
 <% barn.horses.forEach((horse) => { %>
-    <li><%= horse.name %> | <a href="/horses/<%= horse._id %>">Details</a></li>
+
+<div class="row">
+    <div class="col-12 col-md-5">
+        <h2><%= horse.name %> </h2>
+        <p><%= horse.age %> year old <%= horse.color %> <%= horse.sex %>  </p>
+        <h3>Contacts</h3>
+        <% horse.contacts.forEach((contact) => { %>
+            <h5><%= contact.role %>: <%= contact.firstName %><%= contact.lastName %></h5>
+            <p><%= contact.phone %></p>
+            <p><%= contact.email %></p>
+        <% }) %>
+    </div>
+    <div class="col-12 col-md-7">
+        <p>Turnout: <%= horse.turnout %></p>
+        <p>Turnout: <%= horse.blanket %></p>
+        <h3>Feed</h3>
+        <% horse.feed.forEach((feed) => { %>
+            <p>AM Feed: <%= feed.amFeed %> | AM Meds: <%= feed.amMeds %></p>
+            <p>Midday Feed: <%= feed.middayFeed %></p>
+            <p>PM Feed: <%= feed.pmFeed %> | PM Meds: <%= feed.pmMeds %></p>
+            <p>Night Feed: <%= feed.nightFeed %></p>
+        <% }) %>
+    </div>
+</div>
+<div class="row col-12">
+    <% horse.notes.forEach((note) => { %>
+        <p><%= note.dateAdded %></p>
+        <p><%= note.content %></p>
+    <% }) %></div>
+
 <% }) %>
-</ul>
-
-<h3>Chores</h3>
-<ul>
-<% barn.chores.forEach((chore) => { %>
-    <li><%= chore.chore %></li>
-<% }) %>
-</ul>
-
-<h3>Contacts</h3>
-<% if(barn.contacts.length) { %>
-    <ul>
-    <% barn.contacts.forEach((contact) => { %>
-        <li><%= contact.firstName %> <%= contact.lastName %>
-    <% }) %>
-    </ul>
-<% } else { %>
-    <p>No Contacts Yet</p>
-<% } %>
-
-<form id="add-contact" action="/barns/<%= barn._id %>" method="POST">
-    <select name="contactId">
-        <%- contacts.map(contact => 
-        `<option value="${contact._id}">${contact.firstName} ${contact.lastName}</option>`
-        ).join('') %>
-    </select>
-    <button>Add Contact</button> 
-</form>
-
-
-<h3>Notes</h3>
-<% if(barn.notes.length) { %>
-    <p><%= barn.notes[0].content %></p>
-<% } else { %>
-    <p>No Notes Yet</p>
-<% } %>
-
-
-<br><br>
-
-<form action="/barns/<%= barn.id %>?_method=DELETE" method="POST">
-    <button type="submit">Remove Barn</button> <span>This action cannot be undone.</span>
-</form>
 
 <%- include('../partials/footer') %>

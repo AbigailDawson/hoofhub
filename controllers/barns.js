@@ -25,6 +25,7 @@ async function index(req, res) {
 }
 
 async function show(req, res) {
+    console.log('controller function hit')
     const barn = await Barn.findById(req.params.id)
         .populate({path: 'chores', model: Chore})
         .populate({path: 'contacts', model: Contact})
@@ -78,7 +79,7 @@ async function update(req, res) {
     const barn = await Barn.findOneAndUpdate( { _id: req.params.id }, req.body);
     barn.address.splice(0, 1, req.body);
     await barn.save();
-    res.redirect(`/barns/${barn.id}`)
+    res.redirect('/barns')
 }
 
 async function deleteBarn(req, res) {

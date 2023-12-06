@@ -10,62 +10,55 @@
 
                     <!-- SM SCREEN: MINIMALIST CARDS -->
 
-                    <div class="d-md-none">
+                    <div class="d-md-none ">
                         <div class="card-body d-flex flex-column">
 
-                            <h5 class="card-title text-center"><a href='/barns/<%= barn.id %>'><%= barn.name %></a></h5>
+                            <h5 class="card-title text-center barn-card-title"><a href='/barns/<%= barn.id %>'><%= barn.name %></a></h5>
 
                             <small class="card-text text-center">
                                 <%= barn.address[0].houseNumber %> <%= barn.address[0].street %><br>
                                 <%= barn.address[0].city %>, <%= barn.address[0].state %> <%= barn.address[0].zip %>
                             </small>
 
+                            <small class="card-text mt-3 text-center barn-contacts-sm">
+                                Primary Contact<br>
+                                Secondary Contact<br>
+                                <button type="button" class="btn barn-edit-btn"><i class="bi bi-pencil-square"></i>&nbsp;</button>
+                            </small>
+
                             <a href="/horses" class="btn mt-3 btn-md w-100 horses-btn">Horses</a>
                             <a href="/chores" class="btn mt-1 btn-md w-100 chores-btn">Chores</a>
-                            <a href="/contacts" class="btn mt-1 btn-md w-100 contacts-btn">Contacts</a>
 
-                            <small class="card-text mt-3 text-center">Edit Details</small>
                         </div>
                     </div>
 
                     <!-- LG SCREEN: BIG CARDS -->
 
-                    <div class="row g-0 d-md-flex barn-card">
+                    <div class="row g-0 d-md-flex barn-card d-none d-md-block">
 
-                        <div class="col-md-2">
-                            <div class="card-body d-none d-md-block">
-                                <h5 class="card-title"><a href='/barns/<%= barn.id %>'><%= barn.name %></a></h5>
-                                <div class="d-flex flex-column">
-                                    <small class="card-text">
-                                        <%= barn.address[0].houseNumber %> <%= barn.address[0].street %><br>
-                                        <%= barn.address[0].city %>, <%= barn.address[0].state %> <%= barn.address[0].zip %>
-                                    </small>
-                                    <small class="card-text">Edit Details</small>
-                                </div>
+                        <div class="row">
+
+                            <div class="col-md-6">
+                                <h5 class="card-title barn-card-title"><a href='/barns/<%= barn.id %>'><%= barn.name %></a><button type="button" class="btn barn-edit-btn"><i class="bi bi-pencil-square"></i>&nbsp;</button></h5>
+                                <p class="card-subtitle fs-6 mt-2"> <%= barn.address[0].houseNumber %> <%= barn.address[0].street %><br>
+                                    <%= barn.address[0].city %>, <%= barn.address[0].state %> <%= barn.address[0].zip %></p>
                             </div>
+                            
+                            <div class="col-md-6 barn-contacts text-end">
+                                <small> 
+                                    Primary contact<br>
+                                    Secondary Contact
+                                </small>
+                            </div>
+
                         </div>
 
-                        <div class="col-md-7 horse-col">
-                            <div class="card-body d-none d-md-block">
-                                <div class="row row-cols-md-4 row-cols-lg-5 g-2">
-                                    <% barn.horses.forEach((horse) => { %>
-                                      <div class="col">
-                                        <div class="card horse-card rounded-1">
-                                          <div class="card-body horse-card-body">
-                                            <p class="card-title horse-card-title"><%= horse.name %></p>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    <% }) %>
-                                  </div>
-                            </div>
+                        <div class="col-md-6 horse-col">
+                            <a href="/horses" class="btn mt-3 btn-md w-100 horses-btn">Horses</a>
                         </div>
 
-                        <div class="col-md-3">
-                            <div class="card-body d-none d-md-block">
-                                <h6>Chore Info</h6>
-                                <p>Details about chores</p>
-                            </div>
+                        <div class="col-md-6 horse-col">
+                            <a href="/chores" class="btn mt-3 btn-md w-100 chores-btn">Chores</a>
                         </div>
 
                     </div>

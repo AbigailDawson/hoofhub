@@ -31,8 +31,34 @@ h1 {
 
 /* CARD STYLES */
 .barn-card {
-    box-shadow: 5px 5px 10px -6px rgba(0,0,0,0.4);
+    background-color: var(--background);
     border: none;
+    box-shadow: none;
+    border-radius: 10px;
+    padding: 8px;
+}
+
+.barn-card-title {
+    font-family: "Francois One", sans-serif;
+    font-size: 25px;
+}
+
+.barn-contacts,
+.barn-edit {
+    display: flex;
+    justify-content: flex-end;
+    align-self: flex-end;
+    flex-direction: row;
+}
+
+.barn-contacts-sm {
+    font-size: 12px;
+}
+
+.barn-edit-btn {
+    background-color: var(--background);
+    color: var(--accent-drk);
+    font-size: 14px;
 }
 
 .card-title a {
@@ -43,6 +69,7 @@ h1 {
 .horses-btn,
 .chores-btn,
 .contacts-btn {
+    font-family: "Francois One", sans-serif;
     height: 50px;
     display: flex;
     flex-direction: column;
@@ -62,47 +89,10 @@ h1 {
     background-color: var(--accent-brwn);
 }
 
-/* BARN CARD STYLES */
-
-.barn-card {
-    background-color: white;
-    box-shadow: none;
-    border-radius: 10px;
-    padding: 8px;
-}
-
-.horse-col {
-}
-
-.horse-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: white;
-    font-size: 16px;
-    height: 50px;
-    width: 75px;
-    padding: 0;
-}
-
-.horse-card-body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 0;
-}
-
-.horse-card-title {
-    padding: 0;
-    margin: 0;
-}
-
 .card-body {
     overflow: hidden;
 }
-  
+
 /* NAVBAR STYLES */
 
 .navbar {
@@ -130,32 +120,20 @@ h1 {
 
 /* MD SCREENS */
 @media (min-width: 768px) {
-    .horse-card {
-        height: 50px;
-        width: 87px;
-    }
+
 }
 
 /* LG SCREENS */
 @media (min-width: 992px) {
-    .horse-card {
-        height: 50px;
-        width: 90px;
-    }
+
 }
 
 /* XL SCREENS */
 @media (min-width: 1200px) {
-    .horse-card {
-        height: 50px;
-        width: 115px;
-    }
+
 }
 
 /* XXL SCREENS */
 @media (min-width: 1400px) {
-    .horse-card {
-        height: 50px;
-        width: 135px;
-    }
+
 }

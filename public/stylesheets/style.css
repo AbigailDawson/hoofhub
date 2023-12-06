@@ -1,5 +1,6 @@
 :root {
     --text: #0f1702;
+    --text-lt: #626262;
     --background: #f6ffef;
     --primary: #8db7ac;
     --accent-ylw: #ded8b2;
@@ -14,6 +15,10 @@ body {
     font-family: "Roboto", sans-serif;
 }
 
+main {
+    padding-top: 80px;
+}
+
 .btn {
     color: var(--text);
     background-color: var(--primary);
@@ -22,7 +27,7 @@ body {
 
 .btn:hover {
     color: var(--text);
-    background-color: var(--secondary);
+    background-color: var(--accent-blu);
 }
 
 h1, h2, h5 {
@@ -100,7 +105,6 @@ h1, h2, h5 {
 }
 
 /* NAVBAR STYLES */
-
 .navbar {
     background-color: var(--primary);
 }
@@ -109,7 +113,14 @@ h1, h2, h5 {
     font-family: "Francois One", sans-serif;
 }
 
+/* FORM STYLES */
+label {
+    font-size: 12px;
+}
 
+input[type="text"] {
+    color: var(--text-lt);
+}
 
 /* SM SCREENS */
 @media (min-width: 576px) {

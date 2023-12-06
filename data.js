@@ -222,7 +222,227 @@ exports.horses = [
         notes: {
           content: 'Enjoys trail rides.'
         }
+      },
+      {
+        name: 'Whisper',
+        age: 10,
+        color: 'black',
+        sex: 'mare',
+        feed: {
+            amFeed: '3 flakes hay, 1.5 scoops grain',
+            amMeds: 'joint supplement',
+            middayFeed: '1 flake hay',
+            pmFeed: '3 flakes hay, 1 scoop grain',
+            pmMeds: 'none',
+            nightFeed: '1 flake hay',
+        },
+        turnout: 4,
+        blanket: '45-55deg light blanket, <40 heavy',
+        importantInfo: 'Whisper can open stable doors!',
+        notes: {
+            content: 'Very curious and loves exploring new trails.'
+        }
+    },
+    {
+      name: 'Willow',
+      age: 8,
+      color: 'bay',
+      sex: 'gelding',
+      feed: {
+          amFeed: '2 flakes hay, 1 scoop grain',
+          amMeds: 'electrolyte supplement',
+          middayFeed: '1 flake hay',
+          pmFeed: '2 flakes hay, 1 scoop grain',
+          pmMeds: 'none',
+          nightFeed: '1 flake hay',
+      },
+      turnout: 6,
+      blanket: '40-50deg light blanket, <40 heavy',
+      importantInfo: 'Thunder loves playing with water hoses!',
+      notes: {
+          content: 'Energetic and enjoys challenging tasks.'
       }
+  },
+  {
+    name: 'Rala',
+    age: 15,
+    color: 'palomino',
+    sex: 'mare',
+    feed: {
+        amFeed: '2 flakes hay, 1 scoop grain',
+        amMeds: 'none',
+        middayFeed: '1 flake hay',
+        pmFeed: '2 flakes hay, 1 scoop grain',
+        pmMeds: 'joint supplement',
+        nightFeed: '1 flake hay',
+    },
+    turnout: 3,
+    blanket: '35-45deg light blanket, <35 heavy',
+    importantInfo: 'Rala loves solving treat puzzles!',
+    notes: {
+        content: 'Gentle and patient with new riders.'
+    }
+},
+{
+    name: 'Amiga',
+    age: 6,
+    color: 'chestnut',
+    sex: 'mare',
+    feed: {
+        amFeed: '3 flakes hay, 1.5 scoops grain',
+        amMeds: 'electrolyte supplement',
+        middayFeed: '1 flake hay',
+        pmFeed: '3 flakes hay, 1 scoop grain',
+        pmMeds: 'joint supplement',
+        nightFeed: '1 flake hay',
+    },
+    turnout: 2,
+    blanket: '50-60deg light blanket, <40 heavy',
+    importantInfo: 'Amiga enjoys playing with small animals!',
+    notes: {
+        content: 'Highly energetic and loves jumping.'
+    }
+},
+{
+  name: 'Star',
+  age: 12,
+  color: 'black',
+  sex: 'mare',
+  feed: {
+      amFeed: '2 flakes hay, 1 scoop grain',
+      amMeds: 'none',
+      middayFeed: '1 flake hay',
+      pmFeed: '2 flakes hay, 1 scoop grain',
+      pmMeds: 'electrolyte supplement',
+      nightFeed: '1 flake hay',
+  },
+  turnout: 5,
+  blanket: '40-50deg light blanket, <40 heavy',
+  importantInfo: 'Midnight Star can do some tricks!',
+  notes: {
+      content: 'Affectionate and loves attention.'
+  }
+},
+{
+  name: 'Phoenix',
+  age: 20,
+  color: 'gray',
+  sex: 'gelding',
+  feed: {
+      amFeed: '2 flakes hay, 1 scoop grain',
+      amMeds: 'joint supplement',
+      middayFeed: '1 flake hay',
+      pmFeed: '2 flakes hay, 1 scoop grain',
+      pmMeds: 'none',
+      nightFeed: '1 flake hay',
+  },
+  turnout: 1,
+  blanket: '30-40deg light blanket, <30 heavy',
+  importantInfo: 'Phoenix is an excellent jumper!',
+  notes: {
+      content: 'Calm and enjoys long hacks in the countryside.'
+  }
+},
+{
+  name: 'Maggie',
+  age: 7,
+  color: 'buckskin',
+  sex: 'mare',
+  feed: {
+      amFeed: '2 flakes hay, 1.5 scoops grain',
+      amMeds: 'electrolyte supplement',
+      middayFeed: '1 flake hay',
+      pmFeed: '2 flakes hay, 1.5 scoops grain',
+      pmMeds: 'none',
+      nightFeed: '1 flake hay',
+  },
+  turnout: 3,
+  blanket: '40-50deg light blanket, <40 heavy',
+  importantInfo: 'Maggie enjoys herding other animals!',
+  notes: {
+      content: 'Eager to please and very loyal.'
+  }
+},
+{
+  name: 'Dakota',
+  age: 9,
+  color: 'roan',
+  sex: 'gelding',
+  feed: {
+      amFeed: '3 flakes hay, 1 scoop grain',
+      amMeds: 'none',
+      middayFeed: '1 flake hay',
+      pmFeed: '3 flakes hay, 1 scoop grain',
+      pmMeds: 'joint supplement',
+      nightFeed: '1 flake hay',
+  },
+  turnout: 4,
+  blanket: '35-45deg light blanket, <35 heavy',
+  importantInfo: 'Dakota loves obstacle courses!',
+  notes: {
+      content: 'Curious and enjoys investigating new environments.'
+  }
+},
+{
+  name: 'Apollo',
+  age: 11,
+  color: 'dapple gray',
+  sex: 'gelding',
+  feed: {
+      amFeed: '2 flakes hay, 1 scoop grain',
+      amMeds: 'none',
+      middayFeed: '1 flake hay',
+      pmFeed: '2 flakes hay, 1 scoop grain',
+      pmMeds: 'joint supplement',
+      nightFeed: '1 flake hay',
+  },
+  turnout: 2,
+  blanket: '45-55deg light blanket, <40 heavy',
+  importantInfo: 'Apollo excels in dressage!',
+  notes: {
+      content: 'Very disciplined and focused.'
+  }
+},
+{
+  name: 'River',
+  age: 14,
+  color: 'palomino',
+  sex: 'mare',
+  feed: {
+      amFeed: '3 flakes hay, 1 scoop grain',
+      amMeds: 'joint supplement',
+      middayFeed: '1 flake hay',
+      pmFeed: '3 flakes hay, 1 scoop grain',
+      pmMeds: 'none',
+      nightFeed: '1 flake hay',
+  },
+  turnout: 6,
+  blanket: '40-50deg light blanket, <40 heavy',
+  importantInfo: 'River loves swimming!',
+  notes: {
+      content: 'Gentle and enjoys leisurely rides.'
+  }
+},
+{
+  name: 'Atlas',
+  age: 17,
+  color: 'chestnut',
+  sex: 'gelding',
+  feed: {
+      amFeed: '2 flakes hay, 1.5 scoops grain',
+      amMeds: 'none',
+      middayFeed: '1 flake hay',
+      pmFeed: '2 flakes hay, 1.5 scoops grain',
+      pmMeds: 'electrolyte supplement',
+      nightFeed: '1 flake hay',
+  },
+  turnout: 5,
+  blanket: '35-45deg light blanket, <35 heavy',
+  importantInfo: 'Atlas enjoys learning new tricks!',
+  notes: {
+      content: 'Intelligent and curious about everything.'
+  }
+}
 ];
 
 exports.contacts = [

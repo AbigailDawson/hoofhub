@@ -41,6 +41,17 @@ const data = require('./data');
     const spirit = results[1][6];
     const thunder = results[1][7];
     const misty = results[1][8];
+    const whisper = results[1][9];
+    const willow = results[1][10];
+    const rala = results[1][11];
+    const amiga = results[1][12];
+    const star = results[1][13];
+    const phoenix = results[1][14];
+    const maggie = results[1][15];
+    const dakota = results[1][16];
+    const apollo = results[1][17];
+    const river = results[1][18];
+    const atlas = results[1][19];
 
     const emily = results[2][0];
     const sophia = results[2][1];
@@ -72,9 +83,72 @@ const data = require('./data');
     const groomHorses = results[3][6];
 
     // Push horse IDs into barns
-    willowBrookRanch.horses.push(luna._id, max._id, bella._id);
-    pineGroveFarm.horses.push(orion._id, shadow._id, rosie._id);
-    sporthorseStable.horses.push(spirit._id, thunder._id, misty._id);
+    willowBrookRanch.horses.push(
+      luna._id, 
+      max._id, 
+      bella._id, 
+      orion._id, 
+      shadow._id,
+      rosie._id,
+      spirit._id,
+      thunder._id,
+      misty._id,
+      whisper._id,
+      willow._id,
+      rala._id,
+      amiga._id,
+      star._id,
+      phoenix._id,
+      maggie._id,
+      dakota._id,
+      apollo._id,
+      river._id,
+      atlas._id,
+      );
+    pineGroveFarm.horses.push(
+      luna._id, 
+      max._id, 
+      bella._id, 
+      orion._id, 
+      shadow._id,
+      rosie._id,
+      spirit._id,
+      thunder._id,
+      misty._id,
+      whisper._id,
+      willow._id,
+      rala._id,
+      amiga._id,
+      star._id,
+      phoenix._id,
+      maggie._id,
+      dakota._id,
+      apollo._id,
+      river._id,
+      atlas._id,
+      );
+    sporthorseStable.horses.push(
+      luna._id, 
+      max._id, 
+      bella._id, 
+      orion._id, 
+      shadow._id,
+      rosie._id,
+      spirit._id,
+      thunder._id,
+      misty._id,
+      whisper._id,
+      willow._id,
+      rala._id,
+      amiga._id,
+      star._id,
+      phoenix._id,
+      maggie._id,
+      dakota._id,
+      apollo._id,
+      river._id,
+      atlas._id,
+      );
 
     // Push contact IDs into barns
     willowBrookRanch.contacts.push(emily._id, olivia._id);
@@ -93,15 +167,25 @@ const data = require('./data');
     misty.contacts.push(harper._id)
 
     // Push barn IDs into horses
-    luna.barns.push(willowBrookRanch._id);
-    max.barns.push(willowBrookRanch._id);
-    bella.barns.push(willowBrookRanch._id);
-    orion.barns.push(pineGroveFarm._id);
-    shadow.barns.push(pineGroveFarm._id);
-    rosie.barns.push(pineGroveFarm._id);
-    spirit.barns.push(sporthorseStable._id);
-    thunder.barns.push(sporthorseStable._id);
-    misty.barns.push(sporthorseStable._id);
+    luna.barns.push(willowBrookRanch._id, pineGroveFarm._id, sporthorseStable._id);
+    max.barns.push(willowBrookRanch._id, pineGroveFarm._id, sporthorseStable._id);
+    bella.barns.push(willowBrookRanch._id, pineGroveFarm._id, sporthorseStable._id);
+    orion.barns.push(willowBrookRanch._id, pineGroveFarm._id, sporthorseStable._id);
+    shadow.barns.push(willowBrookRanch._id, pineGroveFarm._id, sporthorseStable._id);
+    rosie.barns.push(willowBrookRanch._id, pineGroveFarm._id, sporthorseStable._id);
+    spirit.barns.push(willowBrookRanch._id, pineGroveFarm._id, sporthorseStable._id);
+    thunder.barns.push(willowBrookRanch._id, pineGroveFarm._id, sporthorseStable._id);
+    misty.barns.push(willowBrookRanch._id, pineGroveFarm._id, sporthorseStable._id);
+    whisper.barns.push(willowBrookRanch._id, pineGroveFarm._id, sporthorseStable._id);
+    willow.barns.push(willowBrookRanch._id, pineGroveFarm._id, sporthorseStable._id);
+    rala.barns.push(willowBrookRanch._id, pineGroveFarm._id, sporthorseStable._id);
+    amiga.barns.push(willowBrookRanch._id, pineGroveFarm._id, sporthorseStable._id);
+    star.barns.push(willowBrookRanch._id, pineGroveFarm._id, sporthorseStable._id);
+    maggie.barns.push(willowBrookRanch._id, pineGroveFarm._id, sporthorseStable._id);
+    dakota.barns.push(willowBrookRanch._id, pineGroveFarm._id, sporthorseStable._id);
+    apollo.barns.push(willowBrookRanch._id, pineGroveFarm._id, sporthorseStable._id);
+    river.barns.push(willowBrookRanch._id, pineGroveFarm._id, sporthorseStable._id);
+    atlas.barns.push(willowBrookRanch._id, pineGroveFarm._id, sporthorseStable._id);
 
     // push barn IDs into contacts
     emily.barns.push(willowBrookRanch._id);

@@ -1,0 +1,12 @@
+// overriding defaults
+
+$primary: red;
+
+// import bootstrap
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+// any additional css goes below
+
+a {
+    color: red;
+}

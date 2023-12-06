@@ -101,6 +101,7 @@ h1 {
     font-family: "Francois One", sans-serif;
 }
 
+/* SM SCREENS */
 @media (min-width: 576px) {
     .navbar {
       height: 80px;
@@ -113,4 +114,36 @@ h1 {
     .navbar-brand {
         font-size: 40px;
     }
-  }
+}
+
+/* MD SCREENS */
+@media (min-width: 992px) {
+    .horse-card {
+        height: 50px;
+        width: 85px;
+    }
+}
+
+/* LG SCREENS */
+@media (min-width: 1200px) {
+    .horse-card {
+        height: 50px;
+        width: 100px;
+    }
+}
+
+/* XL SCREENS */
+@media (min-width: 1200px) {
+    .horse-card {
+        height: 50px;
+        width: 100px;
+    }
+}
+
+/* XXL SCREENS */
+@media (min-width: 1200px) {
+    .horse-card {
+        height: 50px;
+        width: 120px;
+    }
+}

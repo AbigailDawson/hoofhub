@@ -29,8 +29,9 @@ h1 {
 }
 
 /* CARD STYLES */
-.card {
+.barn-card {
     box-shadow: 5px 5px 10px -6px rgba(0,0,0,0.4);
+    height: 300px;
     border: none;
 }
 
@@ -61,6 +62,35 @@ h1 {
     background-color: var(--accent-brwn);
 }
 
+.horse-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--accent-ylw);
+    font-size: 16px;
+    height: 50px;
+    width: 75px;
+    padding: 0;
+}
+
+.horse-card-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+.horse-card-title {
+    padding: 0;
+    margin: 0;
+}
+
+.card-body {
+    overflow: hidden;
+}
+  
 /* NAVBAR STYLES */
 
 .navbar {

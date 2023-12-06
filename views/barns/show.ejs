@@ -4,23 +4,43 @@
 
 <div class="container mt-5">
 
-    <p>Sort by:</p>
+    
+
+
+<div class="card barn-show-card">
+    <h3 class="card-title text-center"><a href='/barns/<%= barn.id %>'><%= barn.name %></a></h3>
+
+    <small class="card-text text-center">
+        <%= barn.address[0].streetNumber %><br>
+        <%= barn.address[0].city %>, <%= barn.address[0].state %> <%= barn.address[0].zip %>
+    </small>
+    
+    <small class="card-text mt-3 text-center barn-contacts-sm">
+        Primary Contact<br>
+        Secondary Contact<br>
+    </small>
+</div>
+
+
+<div class="row mt-3">
+    <% barn.horses.forEach((horse) => { %>
+
+        <div class="col-12 col-md-6 mb-4">
+            <div class="card horse-detail-card">
+                <h2 class="mb-2"><%= horse.name %> </h2>
+                <p class="mb-2"><%= horse.age %> year old <%= horse.color %> <%= horse.sex %> </p>
+                <a href="/horses/<%= horse.id %>" class="btn mt-3 btn-md w-100 horses-btn">Horse Details</a>
+     
+            </div>
+        </div>
+    <% }) %>
+</div>
+
+<p>Sort by:</p>
 <a href='/barns/<%= barn.id %>?sort=name'>Name</a>
 <a href='/barns/<%= barn.id %>?sort=age'>Age</a>
 
-
-    <% barn.horses.forEach((horse) => { %>
-        <div class="horse-detail-card">
-            <h2 class="mb-2"><%= horse.name %> </h2>
-            <h4 class="mb-2"><%= horse.age %> year old <%= horse.color %> <%= horse.sex %> 
-            <h3>Horse Notes</h3>
-            <p><%= horse.importantInfo %></p>
-            <% horse.notes.forEach((note) => { %>
-                <p><%= note.dateAdded %></p>
-                <p><%= note.content %></p>
-            <% }) %>
-        </div>        
-    <% }) %>
+    
 </div>
 
 

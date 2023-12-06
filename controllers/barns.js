@@ -25,7 +25,8 @@ async function index(req, res) {
 }
 
 async function show(req, res) {
-    const barn = await Barn.findById(req.params.id).populate('chores contacts horses').sort({'horses.name': 1})
+    console.log(req.query.sort)
+    const barn = await Barn.findById(req.params.id).populate('chores contacts horses').sort({[`horses.${req.query.sort}`]: 1})
     res.render('barns/show', {
         barn,
         title: barn.name

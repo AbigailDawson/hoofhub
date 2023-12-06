@@ -155,7 +155,7 @@ input[type="text"] {
     }
   
     .navbar-nav .nav-link {
-      font-size: 25px;
+      font-size: 20px;
     }
 
     .navbar-brand {
@@ -165,9 +165,7 @@ input[type="text"] {
 
 /* MD SCREENS */
 @media (min-width: 768px) {
-    .navbar-nav .nav-link {
-        font-size: 20px;
-    }
+
 }
 
 /* LG SCREENS */

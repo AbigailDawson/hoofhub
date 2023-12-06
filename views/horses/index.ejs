@@ -1,5 +1,10 @@
 <%- include('../partials/header') %>
 
+
+<p>Sort by:</p>
+<a href='/horses?sort=name'>Name</a>
+<a href='/horses?sort=age'>Age</a>
+
 <div class="container mt-5">
     <% horses.forEach((horse) => { %>
     <div class="row horse-detail-card">

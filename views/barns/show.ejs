@@ -1,9 +1,15 @@
 <%- include('../partials/header') %>
 
-<div class="container mt-5">
-    <div class="row"></div>
-    <% barn.horses.forEach((horse) => { %>
 
+
+<div class="container mt-5">
+
+    <p>Sort by:</p>
+<a href='/barns/<%= barn.id %>?sort=name'>Name</a>
+<a href='/barns/<%= barn.id %>?sort=age'>Age</a>
+
+
+    <% barn.horses.forEach((horse) => { %>
         <div class="horse-detail-card">
             <h2 class="mb-2"><%= horse.name %> </h2>
             <h4 class="mb-2"><%= horse.age %> year old <%= horse.color %> <%= horse.sex %> 

@@ -11,7 +11,7 @@ module.exports = {
 };
 
 async function index(req, res) {
-    const horses = await Horse.find({}).sort({ 'name': 1 });
+    const horses = await Horse.find({}).sort({ [req.query.sort]: 1 });
     res.render('horses/index', {
         title: 'All Horses',
         horses

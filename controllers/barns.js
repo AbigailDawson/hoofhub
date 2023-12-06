@@ -1,6 +1,7 @@
 const Barn = require('../models/barn');
 const Chore = require('../models/chore');
 const Contact = require('../models/contact');
+const Horse = require('../models/horse');
 
 module.exports = {
     index,
@@ -13,7 +14,10 @@ module.exports = {
 };
 
 async function index(req, res) {
-    const barns = await Barn.find({});
+    const barns = await Barn.find({})
+        .populate({path: 'chores', model: Chore})
+        .populate({path: 'contacts', model: Contact})
+        .populate({path: 'horses', model: Horse})
     res.render('barns/index', {
         title: 'All Barns',
         barns

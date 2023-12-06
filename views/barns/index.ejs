@@ -1,23 +1,71 @@
 <%- include('../partials/header') %>
 
-<div class="container">
-<div class="row">
-    <% barns.forEach((barn) => { %>
-      <div class="col-12 col-md-4 col-lg-3 gy-4">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title"><a href='/barns/<%= barn.id %>'><%= barn.name %></a></h5>
-            <h6 class="card-subtitle mb-2 text-muted">Address</h6>
-            <p class="card-text">
-              <%= barn.address[0].houseNumber %> <%= barn.address[0].street %><br>
-              <%= barn.address[0].city %>, <%= barn.address[0].state %> <%= barn.address[0].zip %>
-            </p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-          </div>
-        </div>
-      </div>
-    <% }) %>
-  </div>
+<div class="container mt-5">
+    <div class="row">
+
+        <% barns.forEach((barn) => { %>
+
+            <div class="col-12 mb-4">
+                <div class="card">
+
+                    <!-- SM SCREEN: MINIMALIST CARDS -->
+
+                    <div class="d-md-none">
+                        <div class="card-body d-flex flex-column">
+
+                            <h5 class="card-title text-center"><a href='/barns/<%= barn.id %>'><%= barn.name %></a></h5>
+
+                            <small class="card-text text-center">
+                                <%= barn.address[0].houseNumber %> <%= barn.address[0].street %><br>
+                                <%= barn.address[0].city %>, <%= barn.address[0].state %> <%= barn.address[0].zip %>
+                            </small>
+
+                            <a href="/horses" class="btn mt-3 btn-md w-100 horses-btn">Horses</a>
+                            <a href="/chores" class="btn mt-1 btn-md w-100 chores-btn">Chores</a>
+                            <a href="/contacts" class="btn mt-1 btn-md w-100 contacts-btn">Contacts</a>
+
+                            <small class="card-text mt-3 text-center">Edit Details</small>
+                        </div>
+                    </div>
+
+                    <!-- LG SCREEN: BIG CARDS -->
+
+                    <div class="row g-0 d-md-flex">
+
+                        <div class="col-md-3">
+                            <div class="card-body d-none d-md-block">
+                                <h5 class="card-title"><a href='/barns/<%= barn.id %>'><%= barn.name %></a></h5>
+                                <div class="d-flex flex-column">
+                                    <small class="card-text">
+                                        <%= barn.address[0].houseNumber %> <%= barn.address[0].street %><br>
+                                        <%= barn.address[0].city %>, <%= barn.address[0].state %> <%= barn.address[0].zip %>
+                                    </small>
+                                    <small class="card-text">Edit Details</small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-5">
+                            <div class="card-body d-none d-md-block">
+                                <h6>Horses</h6>
+                                <% barn.horses.forEach((horse) => { %>
+                                    <p><%= horse.name %></p>
+                                <% }) %>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="card-body d-none d-md-block">
+                                <h6>Chore Info</h6>
+                                <p>Details about chores</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        <% }) %>
+    </div>
 </div>
 
 <a href="/barns/new">Add a Barn</a>

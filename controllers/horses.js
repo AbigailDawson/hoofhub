@@ -11,10 +11,15 @@ module.exports = {
 };
 
 async function index(req, res) {
-    const horses = await Horse.find({}).sort({ [req.query.sort]: 1 });
+    let query = {};
+    if (req.query.search) {
+        query = { name: { $regex: new RegExp(req.query.search, 'i') } };
+    }
+    const horses = await Horse.find(query).sort({ [req.query.sort]: 1 });
     res.render('horses/index', {
         title: 'All Horses',
-        horses
+        horses,
+        showAllLink: !req.query.search
     })
 }
 

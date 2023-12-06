@@ -1,5 +1,12 @@
 <%- include('../partials/header') %>
 
+<form action="/horses" method="GET">
+    <input type="text" name="search" placeholder="Search by horse's name">
+    <button type="submit">Search</button>
+</form>
+<% if (!showAllLink) { %>
+    <a href="/horses" class="btn btn-secondary">Show All Horses</a>
+<% } %>
 
 <p>Sort by:</p>
 <a href='/horses?sort=name'>Name</a>

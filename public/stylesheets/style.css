@@ -5,6 +5,7 @@
     --accent-ylw: #ded8b2;
     --accent-pnk: #eac0b0;
     --accent-brwn: #d0a7a3;
+    --accent-blu: #cee5ea;
     --accent-drk: #245d67;
 }
 
@@ -31,7 +32,6 @@ h1 {
 /* CARD STYLES */
 .barn-card {
     box-shadow: 5px 5px 10px -6px rgba(0,0,0,0.4);
-    height: 300px;
     border: none;
 }
 
@@ -62,12 +62,24 @@ h1 {
     background-color: var(--accent-brwn);
 }
 
+/* BARN CARD STYLES */
+
+.barn-card {
+    background-color: white;
+    box-shadow: none;
+    border-radius: 10px;
+    padding: 8px;
+}
+
+.horse-col {
+}
+
 .horse-card {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: var(--accent-ylw);
+    background-color: white;
     font-size: 16px;
     height: 50px;
     width: 75px;
@@ -117,18 +129,18 @@ h1 {
 }
 
 /* MD SCREENS */
-@media (min-width: 992px) {
+@media (min-width: 768px) {
     .horse-card {
         height: 50px;
-        width: 85px;
+        width: 87px;
     }
 }
 
 /* LG SCREENS */
-@media (min-width: 1200px) {
+@media (min-width: 992px) {
     .horse-card {
         height: 50px;
-        width: 100px;
+        width: 90px;
     }
 }
 
@@ -136,14 +148,14 @@ h1 {
 @media (min-width: 1200px) {
     .horse-card {
         height: 50px;
-        width: 100px;
+        width: 115px;
     }
 }
 
 /* XXL SCREENS */
-@media (min-width: 1200px) {
+@media (min-width: 1400px) {
     .horse-card {
         height: 50px;
-        width: 120px;
+        width: 135px;
     }
 }

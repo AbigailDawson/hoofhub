@@ -2,11 +2,10 @@ exports.barns = [
     {
         name: 'Willow Brook Ranch',
         address: {
-            houseNumber: 123,
-            street: 'Main St',
+            streetAddress: '123 Main St',
             city: 'Springfield',
             state: 'VA',
-            zip: 12345
+            zip: '12345'
         },
         notes: {
             content: 'Use second driveway'
@@ -15,11 +14,10 @@ exports.barns = [
     {
         name: 'Pine Grove Farm',
         address: {
-            houseNumber: 456,
-            street: 'Side St',
+            streetAddress: '456 Side St',
             city: 'Townesville',
             state: 'VA',
-            zip: 54321
+            zip: '54321'
         },
         notes: {
             content: 'Park behind barn'
@@ -28,11 +26,10 @@ exports.barns = [
     {
         name: 'Sporthorse Stable',
         address: {
-            houseNumber: 404,
-            street: 'West St',
+            streetAddress: '404 West St',
             city: 'Centreville',
             state: 'VA',
-            zip: 40404
+            zip: '40404'
         },
         notes: {
             content: 'Send text to owner when leaving for the day!'

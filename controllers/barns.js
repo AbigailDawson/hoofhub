@@ -25,8 +25,26 @@ async function index(req, res) {
 }
 
 async function show(req, res) {
-    console.log('REQ.QUERY: ', req.query)
-    const barn = await Barn.findById(req.params.id).populate('chores contacts horses').sort({[`horses.${req.query.sort}`]: 1})
+
+    const barn = await Barn.findById(req.params.id).populate('chores contacts horses')
+    console.log(req.query.sort);
+
+    if (req.query.sort === 'age') {
+        barn.horses.sort((a, b) => a[req.query.sort] - b[req.query.sort])
+    } else if (req.query.sort === 'name') {
+        barn.horses.sort((a, b) => {
+            const horseA = a.name.toLowerCase();
+            const horseB = b.name.toLowerCase();
+            if (horseA < horseB) {
+                return -1;
+              }
+              if (horseA > horseB) {
+                return 1;
+              }
+            return horseA - horseB
+          })
+    }
+
     res.render('barns/show', {
         barn,
         title: barn.name

@@ -10,7 +10,8 @@ module.exports = {
     edit,
     update,
     delete: deleteBarn,
-    viewChores
+    viewChores,
+    addChore
 };
 
 async function index(req, res) {
@@ -100,3 +101,17 @@ async function viewChores(req, res) {
         title: 'Chores'
     })
 }
+
+async function addChore(req, res) {
+    const barn = await Barn.findById(req.params.id);
+
+    req.body.completed = false;    
+    barn.chores.push(req.body);
+    try {
+      await barn.save();
+      console.log('BARN.CHORES: ', barn.chores);
+    } catch (err) {
+      console.log(err);
+    }
+    res.redirect(`/barns/${barn._id}/chores`);
+  }

@@ -20,12 +20,12 @@ const barnNoteSchema = new Schema({
 })
 
 const choreSchema = new Schema({
-    chore: {
-        type: String,
-        possibleValues: ['Muck stalls', 'Fill water', 'Feed grain', 'Feed hay']
-    },
+    chore: String,
     notes: String,
-    completed: Boolean
+    completed: {
+        type: Boolean,
+        default: false
+    }
 });
 
 const barnSchema = new Schema({

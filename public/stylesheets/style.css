@@ -10,17 +10,35 @@
 }
 
 body {
+    height: 100vh;
+    max-height: 100vh;
     background-color: var(--background);
     font-family: "Roboto", sans-serif;
-}
-
-main {
     padding-top: 80px;
 }
 
+.homepage {
+    background: url('../images/background-image.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; 
+    margin-top: -80px;
+}
+
+.login-box {
+    margin-top: 100px;
+}
+
+footer {
+    background-color: var(--primary);
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
 /* NAVBAR STYLES */
 .navbar {
-    background-color: var(--primary);
+    background: rgb(237,220,210);
+    background: linear-gradient(180deg, rgba(237,220,210,1) 39%, rgba(9,9,121,0) 91%);
 }
 
 .navbar-brand {

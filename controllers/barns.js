@@ -14,10 +14,7 @@ module.exports = {
 };
 
 async function index(req, res) {
-    const barns = await Barn.find({})
-        .populate({path: 'chores', model: Chore})
-        .populate({path: 'contacts', model: Contact})
-        .populate({path: 'horses', model: Horse})
+    const barns = await Barn.find({}).populate('chores contacts horses');
     res.render('barns/index', {
         title: 'All Barns',
         barns
@@ -27,7 +24,6 @@ async function index(req, res) {
 async function show(req, res) {
 
     const barn = await Barn.findById(req.params.id).populate('chores contacts horses')
-    console.log(req.query.sort);
 
     if (req.query.sort === 'age') {
         barn.horses.sort((a, b) => a[req.query.sort] - b[req.query.sort])
@@ -74,10 +70,7 @@ async function create(req, res) {
 }
 
 async function edit(req, res) {
-    const barn = await Barn.findById(req.params.id)
-        .populate({path: 'chores', model: Chore})
-        .populate({path: 'contacts', model: Contact})
-        .populate('horses');
+    const barn = await Barn.findById(req.params.id).populate('chores contacts horses');
     const contacts = await Contact.find({ _id: { $nin: barn.contacts } }).sort('name');
     const horses = await Horse.find({ _id: { $nin: barn.horses } }).sort('name');
     res.render('barns/edit', {

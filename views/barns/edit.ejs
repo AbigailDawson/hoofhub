@@ -55,7 +55,7 @@
 
     <h5 class="mt-2">Add a Horse</h5>
 
-    <form id="add-horse" action="/barns/<%= barn._id %>/edit" method="POST">
+    <form id="add-horse" action="/barns/<%= barn._id %>/horses" method="POST">
 
         <select class="form-control form-control-md" name="horseId">
             <% if (horses.length) { %>
@@ -71,7 +71,7 @@
         <button type="submit" class="btn mt-3">Add Horse</button> 
 
     </form>
-    
+
     <br><br>
 
     <form action="/barns/<%= barn.id %>?_method=DELETE" method="POST">

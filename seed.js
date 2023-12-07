@@ -5,7 +5,6 @@ const mongoose = require('mongoose');
 const Barn = require('./models/barn');
 const Horse = require('./models/horse');
 const Contact = require('./models/contact');
-const Chore = require('./models/chore');
 
 const data = require('./data');
 
@@ -13,10 +12,10 @@ const data = require('./data');
     const promise1 = Barn.deleteMany({});
     const promise2 = Horse.deleteMany({});
     const promise3 = Contact.deleteMany({});
-    const promise4 = Chore.deleteMany({});
+    // const promise4 = Chore.deleteMany({});
     
     // Promise.all will return a single promise that resolves only after all of the array's promises resolve
-    let results = await Promise.all([promise1, promise2, promise3, promise4]);
+    let results = await Promise.all([promise1, promise2, promise3]);
     // results will be an array of result objects!
   
 
@@ -25,7 +24,7 @@ const data = require('./data');
       Barn.create(data.barns),
       Horse.create(data.horses),
       Contact.create(data.contacts),
-      Chore.create(data.chores)
+      // Chore.create(data.chores)
     ]);
 
     const willowBrookRanch = results[0][0];
@@ -74,13 +73,13 @@ const data = require('./data');
     const mason = results[2][18];
     const layla = results[2][19];
 
-    const feedGrain = results[3][0];
-    const feedHay = results[3][1];
-    const muckStalls = results[3][2];
-    const turnOut = results[3][3];
-    const turnIn = results[3][4];
-    const fillWater = results[3][5];
-    const groomHorses = results[3][6];
+    // const feedGrain = results[3][0];
+    // const feedHay = results[3][1];
+    // const muckStalls = results[3][2];
+    // const turnOut = results[3][3];
+    // const turnIn = results[3][4];
+    // const fillWater = results[3][5];
+    // const groomHorses = results[3][6];
 
     // Push horse IDs into barns
     willowBrookRanch.horses.push(
@@ -210,9 +209,9 @@ const data = require('./data');
     layla.horses.push(luna._id);
  
     // Push chore IDs into barns
-    willowBrookRanch.chores.push(feedGrain._id, feedHay._id, turnOut._id);
-    pineGroveFarm.chores.push(feedGrain._id, feedHay._id, turnIn._id, muckStalls._id, fillWater._id);
-    highMeadows.chores.push(muckStalls._id, fillWater._id, groomHorses._id);
+    // willowBrookRanch.chores.push(feedGrain._id, feedHay._id, turnOut._id);
+    // pineGroveFarm.chores.push(feedGrain._id, feedHay._id, turnIn._id, muckStalls._id, fillWater._id);
+    // highMeadows.chores.push(muckStalls._id, fillWater._id, groomHorses._id);
 
     // Save barns
     await willowBrookRanch.save();
@@ -253,13 +252,13 @@ const data = require('./data');
     await layla.save();
 
     // Save chores
-    await feedGrain.save();
-    await feedHay.save();
-    await muckStalls.save();
-    await turnOut.save();
-    await turnIn.save();
-    await fillWater.save();
-    await groomHorses.save();
+    // await feedGrain.save();
+    // await feedHay.save();
+    // await muckStalls.save();
+    // await turnOut.save();
+    // await turnIn.save();
+    // await fillWater.save();
+    // await groomHorses.save();
 
     process.exit();
 })();

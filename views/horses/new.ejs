@@ -1,46 +1,73 @@
 <%- include('../partials/header') %>
 
+<div class="container mt-5">
+
+    <div class="card barn-show-card">
+        <h3 class="card-title text-center">Add a Horse</h3>
+    </div>
+
 <form id="new-horse-form" action="/horses" method="POST">
-
-    <label for="name">Name</label><br>
-    <input type="text" name="name"><br><br>
-    <label for="age">Age</label><br>
-    <input type="number" name="age"><br><br>
-    <label for="color">Color</label><br>
-    <input type="text" name="color"><br><br>
-    <label for="sex">Sex</label><br>
-    <input type="text" name="sex"><br><br>
-
-    <h3>Horse Care Details</h3>
-    <label for="turnout">Turnout</label>
-    <input type="text" name="turnout"><br><br>
-    <label for="blanket">Blanket</label>
-    <input type="text" name="blanket"><br><br>
-    <label for="importantInfo">Important Information</label><br>
-    <textarea rows="4" cols="40" name="importantInfo"></textarea>
-
-    <h3>Feed</h3>
-    <label for="amFeed">AM Feed</label>
-    <input type="text" name="amFeed"><br>
-
-    <label for="amMeds">AM Meds</label>
-    <input type="text" name="amMeds"><br>
+    <h4>Basic Details</h4>
+    <div class="form-row d-flex flex-column flex-sm-row">
+        <div class="col sm-6">
+        <input name="name" type="text" class="form-control" placeholder="Name">
+        </div>
+        <div class="col sm-6">
+        <input name="age" type="number" class="form-control" placeholder="Age">
+        </div>
+    </div>
+    <div class="form-row d-flex flex-column flex-sm-row">
+        <div class="col sm-6">
+        <input name="color" type="text" class="form-control" placeholder="Color">
+        </div>
+        <div class="col sm-6">
+        <input name="sex" type="text" class="form-control" placeholder="Sex">
+        </div>
+    </div>
+    <h4>Feeding Schedule</h4>
+    <div class="form-row d-flex flex-column flex-sm-row">
+        <div class="col sm-6">
+            <input name="amFeed" type="text" class="form-control" placeholder="AM Feed">
+        </div>
+        <div class="col sm-6">
+            <input name="amMeds" type="text" class="form-control" placeholder="AM Meds">
+        </div>
+    </div>
+    <div class="form-row d-flex flex-column flex-sm-row">
+        <div class="col sm-6">
+            <input name="pmFeed" type="text" class="form-control" placeholder="PM Feed">
+        </div>
+        <div class="col sm-6">
+            <input name="pmMeds" type="text" class="form-control" placeholder="PM Meds">
+        </div>
+    </div>
+    <div class="form-row d-flex flex-column flex-sm-row">
+        <div class="col sm-6">
+            <input name="middayFeed" type="text" class="form-control" placeholder="Midday feed">
+        </div>
+        <div class="col sm-6">
+            <input name="nightFeed" type="text" class="form-control" placeholder="Night feed">
+        </div>
+    </div>
+    <h4>Daily Care Routine</h4>
+    <div class="form-row">
+        <div class="col">
+        <input name="turnout" type="text" class="form-control" placeholder="Turnout">
+        </div>
+        <div class="col">
+        <input name="blanket" type="text" class="form-control" placeholder="Blanket">
+        </div>
+    </div>
+    <h4>Important Notes</h4>
+    <div class="form-group">
+        <label for="importantInfo">Write additional comments here!</label>
+        <textarea name="importantInfo" class="form-control" id="importantInfo" rows="4"></textarea>
+    </div>
     
-    <label for="middayFeed">Midday Feed</label>
-    <input type="text" name="middayFeed"><br>
+    <input class="btn" type="submit" value="Add">
     
-    <label for="pmFeed">PM Feed</label>
-    <input type="text" name="pmFeed"><br>
-    
-    <label for="pmMeds">PM Meds</label>
-    <input type="text" name="pmMeds"><br>
-    
-    <label for="nightFeed">Night Feed</label>
-    <input type="text" name="nightFeed"><br>
-
-    <br><br>
-    <input type="submit" value="Add Horse">
-
 </form>
+
+</div>
 
 <%- include('../partials/footer') %>

@@ -32,6 +32,9 @@ router.post('/', barnsCtrl.create);
 // POST /barns/:id/chores <-- create chore and post to page
 router.post('/:id/chores', barnsCtrl.addChore)
 
+// POST /barns/:id/chores/:choreID
+router.post('/:id/chores/:choreId', barnsCtrl.checkChore);
+
 // DELETE /barns/:id
 router.delete('/:id', barnsCtrl.delete);
 

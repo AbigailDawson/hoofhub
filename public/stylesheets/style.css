@@ -99,7 +99,10 @@ footer a {
     color: var(--button-hover);
 }
 
-
+.form-check-input {
+    outline: 1px solid var(--text);
+    font-size: 25px;
+}
 
 h1, h2, h3, h4, h5 {
     font-family: "Francois One", sans-serif;

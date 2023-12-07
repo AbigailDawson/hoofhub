@@ -1,5 +1,4 @@
 const Barn = require('../models/barn');
-const Chore = require('../models/chore');
 const Contact = require('../models/contact');
 const Horse = require('../models/horse');
 
@@ -10,11 +9,12 @@ module.exports = {
     create,
     edit,
     update,
-    delete: deleteBarn
+    delete: deleteBarn,
+    viewChores
 };
 
 async function index(req, res) {
-    const barns = await Barn.find({}).populate('chores contacts horses');
+    const barns = await Barn.find({}).populate('contacts horses');
     res.render('barns/index', {
         title: 'All Barns',
         barns
@@ -23,7 +23,7 @@ async function index(req, res) {
 
 async function show(req, res) {
 
-    const barn = await Barn.findById(req.params.id).populate('chores contacts horses')
+    const barn = await Barn.findById(req.params.id).populate('contacts horses')
 
     if (req.query.sort === 'age') {
         barn.horses.sort((a, b) => a[req.query.sort] - b[req.query.sort])
@@ -70,7 +70,7 @@ async function create(req, res) {
 }
 
 async function edit(req, res) {
-    const barn = await Barn.findById(req.params.id).populate('chores contacts horses');
+    const barn = await Barn.findById(req.params.id).populate('contacts horses');
     const contacts = await Contact.find({ _id: { $nin: barn.contacts } }).sort('name');
     const horses = await Horse.find({ _id: { $nin: barn.horses } }).sort('name');
     res.render('barns/edit', {
@@ -91,4 +91,12 @@ async function update(req, res) {
 async function deleteBarn(req, res) {
     const barn = await Barn.findOneAndDelete({ _id: req.params.id });
     res.redirect('/barns')
+}
+
+async function viewChores(req, res) {
+    const barn = await Barn.findById(req.params.id);
+    res.render('barns/chores', {
+        barn,
+        title: 'Chores'
+    })
 }

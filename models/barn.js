@@ -19,6 +19,15 @@ const barnNoteSchema = new Schema({
     timestamps: true
 })
 
+const choreSchema = new Schema({
+    chore: {
+        type: String,
+        possibleValues: ['Muck stalls', 'Fill water', 'Feed grain', 'Feed hay']
+    },
+    notes: String,
+    completed: Boolean
+});
+
 const barnSchema = new Schema({
     name: String,
     address: {
@@ -33,10 +42,7 @@ const barnSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: 'Horse'
     }],
-    chores: [{
-        type: Schema.Types.ObjectId,
-        ref: 'Chore'
-    }],
+    chores: [choreSchema],
     notes: [barnNoteSchema],
 }, {
     timestamps: true

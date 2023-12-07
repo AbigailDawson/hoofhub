@@ -8,6 +8,28 @@
         <h3 class="card-title text-center"><%= barn.name %></h3>
     </div>
         
+    <div class="row mt-5 pb-5">
+        <h4 class="mb-3 text-center">Chore List</h4>
+        <div class="col-12 mb-5">
+            <% if (barn.chores.length) { %>
+                <ul class="list-group">
+                    <% barn.chores.forEach((chore) => { %>
+                        <li class="list-group-item">
+                            <h5><%= chore.chore %> | 
+                                <a href="/barns/<%= barn.id %>/chores/<%= chore._id %>?direction=up">Move Up</a>
+                                <a href="/barns/<%= barn.id %>/chores/<%= chore._id %>?direction=down">Move Down</a>
+                            </h5>
+                            <p><%= chore.notes %></p>
+                            
+                        </li>
+                    <% }) %>
+                </ul>
+                <% } else { %>
+                    <p>No chores yet!</p>
+                <% } %>
+        </div>
+    </div>
+
     <h4 class="mb-3 text-center">Create a Chore</h4>
 
     <form id="create-chore-form" action="/barns/<%= barn.id %>/chores" method="POST">
@@ -26,23 +48,7 @@
         </div>
     </form>
 
-<div class="row mt-5 pb-5">
-    <h4 class="mb-3 text-center">Chore List</h4>
-    <div class="col-12 mb-5">
-        <% if (barn.chores.length) { %>
-            <ul class="list-group">
-                <% barn.chores.forEach((chore) => { %>
-                    <li class="list-group-item">
-                        <h5><%= chore.chore %> | <a href="/barns/<%= barn.id %>/chores/<%= chore._id %>">^</a></h5>
-                        <p><%= chore.notes %></p>
-                        
-                    </li>
-                <% }) %>
-            </ul>
-            <% } else { %>
-                <p>No chores yet!</p>
-            <% } %>
-    </div>
+
 </div>
  
 

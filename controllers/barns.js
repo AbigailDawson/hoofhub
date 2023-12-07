@@ -123,18 +123,16 @@ async function moveChore(req, res) {
 
     const chore = barn.chores.id(req.params.choreId);
     const choreIdx = barn.chores.findIndex(chore => chore._id.toString() === req.params.choreId)
+    const direction = req.query.direction;
 
-    console.log('BEFORE SWAP: ', barn.chores);
+    if (direction === 'up' && choreIdx > 0) {
+        const removedChore = barn.chores.splice(choreIdx, 1)[0];
+        barn.chores.splice(choreIdx - 1, 0, removedChore);
+    } else if (direction === 'down' && choreIdx < barn.chores.length-1) {
+        const removedChore = barn.chores.splice(choreIdx, 1)[0];
+        barn.chores.splice(choreIdx + 1, 0, removedChore);
+    } 
 
-    if (choreIdx > 0) {
-        const removedChore = barn.chores.splice(choreIdx, 1)[0]
-        barn.chores.splice(choreIdx - 1, 0, removedChore)
-    } else {
-        return;
-    }
-    console.log('AFTER SWAP: ', barn.chores);
     await barn.save();
-
-
     res.redirect(`/barns/${barn._id}/chores`);
 }

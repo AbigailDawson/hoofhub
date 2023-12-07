@@ -24,7 +24,7 @@ exports.barns = [
         }
     },
     {
-        name: 'Sporthorse Stable',
+        name: 'High Meadows',
         address: {
             streetAddress: '404 West St',
             city: 'Centreville',

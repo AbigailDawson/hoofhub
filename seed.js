@@ -30,7 +30,7 @@ const data = require('./data');
 
     const willowBrookRanch = results[0][0];
     const pineGroveFarm = results[0][1];
-    const sporthorseStable = results[0][2];
+    const highMeadows = results[0][2];
 
     const luna = results[1][0];
     const max = results[1][1];
@@ -127,7 +127,7 @@ const data = require('./data');
       river._id,
       atlas._id,
       );
-    sporthorseStable.horses.push(
+    highMeadows.horses.push(
       luna._id, 
       max._id, 
       bella._id, 
@@ -153,7 +153,7 @@ const data = require('./data');
     // Push contact IDs into barns
     willowBrookRanch.contacts.push(emily._id, olivia._id);
     pineGroveFarm.contacts.push(emma._id, amelia._id);
-    sporthorseStable.contacts.push(martina._id);
+    highMeadows.contacts.push(martina._id);
 
     // Push contact IDs into horses
     luna.contacts.push(isabella._id, layla._id)
@@ -167,32 +167,32 @@ const data = require('./data');
     misty.contacts.push(harper._id)
 
     // Push barn IDs into horses
-    luna.barns.push(willowBrookRanch._id, pineGroveFarm._id, sporthorseStable._id);
-    max.barns.push(willowBrookRanch._id, pineGroveFarm._id, sporthorseStable._id);
-    bella.barns.push(willowBrookRanch._id, pineGroveFarm._id, sporthorseStable._id);
-    orion.barns.push(willowBrookRanch._id, pineGroveFarm._id, sporthorseStable._id);
-    shadow.barns.push(willowBrookRanch._id, pineGroveFarm._id, sporthorseStable._id);
-    rosie.barns.push(willowBrookRanch._id, pineGroveFarm._id, sporthorseStable._id);
-    spirit.barns.push(willowBrookRanch._id, pineGroveFarm._id, sporthorseStable._id);
-    thunder.barns.push(willowBrookRanch._id, pineGroveFarm._id, sporthorseStable._id);
-    misty.barns.push(willowBrookRanch._id, pineGroveFarm._id, sporthorseStable._id);
-    whisper.barns.push(willowBrookRanch._id, pineGroveFarm._id, sporthorseStable._id);
-    willow.barns.push(willowBrookRanch._id, pineGroveFarm._id, sporthorseStable._id);
-    rala.barns.push(willowBrookRanch._id, pineGroveFarm._id, sporthorseStable._id);
-    amiga.barns.push(willowBrookRanch._id, pineGroveFarm._id, sporthorseStable._id);
-    star.barns.push(willowBrookRanch._id, pineGroveFarm._id, sporthorseStable._id);
-    maggie.barns.push(willowBrookRanch._id, pineGroveFarm._id, sporthorseStable._id);
-    dakota.barns.push(willowBrookRanch._id, pineGroveFarm._id, sporthorseStable._id);
-    apollo.barns.push(willowBrookRanch._id, pineGroveFarm._id, sporthorseStable._id);
-    river.barns.push(willowBrookRanch._id, pineGroveFarm._id, sporthorseStable._id);
-    atlas.barns.push(willowBrookRanch._id, pineGroveFarm._id, sporthorseStable._id);
+    luna.barns.push(willowBrookRanch._id, pineGroveFarm._id, highMeadows._id);
+    max.barns.push(willowBrookRanch._id, pineGroveFarm._id, highMeadows._id);
+    bella.barns.push(willowBrookRanch._id, pineGroveFarm._id, highMeadows._id);
+    orion.barns.push(willowBrookRanch._id, pineGroveFarm._id, highMeadows._id);
+    shadow.barns.push(willowBrookRanch._id, pineGroveFarm._id, highMeadows._id);
+    rosie.barns.push(willowBrookRanch._id, pineGroveFarm._id, highMeadows._id);
+    spirit.barns.push(willowBrookRanch._id, pineGroveFarm._id, highMeadows._id);
+    thunder.barns.push(willowBrookRanch._id, pineGroveFarm._id, highMeadows._id);
+    misty.barns.push(willowBrookRanch._id, pineGroveFarm._id, highMeadows._id);
+    whisper.barns.push(willowBrookRanch._id, pineGroveFarm._id, highMeadows._id);
+    willow.barns.push(willowBrookRanch._id, pineGroveFarm._id, highMeadows._id);
+    rala.barns.push(willowBrookRanch._id, pineGroveFarm._id, highMeadows._id);
+    amiga.barns.push(willowBrookRanch._id, pineGroveFarm._id, highMeadows._id);
+    star.barns.push(willowBrookRanch._id, pineGroveFarm._id, highMeadows._id);
+    maggie.barns.push(willowBrookRanch._id, pineGroveFarm._id, highMeadows._id);
+    dakota.barns.push(willowBrookRanch._id, pineGroveFarm._id, highMeadows._id);
+    apollo.barns.push(willowBrookRanch._id, pineGroveFarm._id, highMeadows._id);
+    river.barns.push(willowBrookRanch._id, pineGroveFarm._id, highMeadows._id);
+    atlas.barns.push(willowBrookRanch._id, pineGroveFarm._id, highMeadows._id);
 
     // push barn IDs into contacts
     emily.barns.push(willowBrookRanch._id);
     olivia.barns.push(willowBrookRanch._id);
     emma.barns.push(pineGroveFarm._id);
     amelia.barns.push(pineGroveFarm._id);
-    martina.barns.push(sporthorseStable._id);
+    martina.barns.push(highMeadows._id);
 
     // push horse IDs into contacts
     isabella.horses.push(luna._id);
@@ -212,12 +212,12 @@ const data = require('./data');
     // Push chore IDs into barns
     willowBrookRanch.chores.push(feedGrain._id, feedHay._id, turnOut._id);
     pineGroveFarm.chores.push(feedGrain._id, feedHay._id, turnIn._id, muckStalls._id, fillWater._id);
-    sporthorseStable.chores.push(muckStalls._id, fillWater._id, groomHorses._id);
+    highMeadows.chores.push(muckStalls._id, fillWater._id, groomHorses._id);
 
     // Save barns
     await willowBrookRanch.save();
     await pineGroveFarm.save();
-    await sporthorseStable.save();
+    await highMeadows.save();
 
     // Save horses
     await luna.save();

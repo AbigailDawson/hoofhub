@@ -103,7 +103,7 @@ h1, h2, h3, h4, h5 {
     font-size: 14px;
 }
 
-.card-title a {
+.section-title a {
     text-decoration: none;
     color: var(--text)
 }
@@ -143,8 +143,7 @@ h1, h2, h3, h4, h5 {
 }
 
 /* BARN and HORSE DETAIL CARD STYLES */
-.title-card,
-.horse-show-card {
+.title-card {
     background-color: var(--background);
     border: none;
     box-shadow: none;

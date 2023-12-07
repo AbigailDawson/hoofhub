@@ -33,8 +33,9 @@
             <ul class="list-group">
                 <% barn.chores.forEach((chore) => { %>
                     <li class="list-group-item">
-                        <h5><%= chore.chore %></h5>
+                        <h5><%= chore.chore %> | <a href="/barns/<%= barn.id %>/chores/<%= chore._id %>">^</a></h5>
                         <p><%= chore.notes %></p>
+                        
                     </li>
                 <% }) %>
             </ul>

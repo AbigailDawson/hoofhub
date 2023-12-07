@@ -17,6 +17,9 @@ router.get('/:id/horses', barnsCtrl.show);
 // GET /barns/:id/chores
 router.get('/:id/chores', barnsCtrl.viewChores);
 
+// GET /barns/:id/chores/:choreId
+router.get('/:id/chores/:choreId', barnsCtrl.moveChore);
+
 // GET /barns/:id/edit
 router.get('/:id/edit', barnsCtrl.edit);
 

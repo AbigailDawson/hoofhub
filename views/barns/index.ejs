@@ -13,7 +13,7 @@
                     <div class="d-sm-none ">
                         <div class="card-body d-flex flex-column">
 
-                            <h5 class="card-title text-center barn-card-title"><a href='/barns/<%= barn.id %>'><%= barn.name %></a></h5>
+                            <h5 class="card-title text-center section-title"><a href='/barns/<%= barn.id %>'><%= barn.name %></a></h5>
 
                             <small class="card-text text-center">
                                 <%= barn.address[0].streetAddress %><br>
@@ -23,7 +23,9 @@
                             <small class="card-text mt-3 text-center barn-contacts-sm">
                                 Primary Contact<br>
                                 Secondary Contact<br>
-                                <button type="button" class="btn barn-edit-btn"><i class="bi bi-pencil-square"></i>&nbsp;</button>
+                                <button type="button" class="btn edit-btn">
+                                    <a href="/barns/<%= barn.id %>/edit"><i class="bi bi-pencil-square"></i></a>
+                                </button>
                             </small>
 
                             <a href="/barns/<%= barn.id %>" class="btn mt-3 btn-md w-100 horses-btn">Barn Details</a>
@@ -37,11 +39,11 @@
 
                             <div class="col-sm-7">
                                 
-                                <h5 class="card-title barn-card-title">
+                                <h5 class="card-title section-title">
 
                                     <%= barn.name %>
-                                    <button type="button" class="btn barn-edit-btn">
-                                        <a href="/barns/<%= barn.id %>/edit"><i class="bi bi-pencil-square"></i>&nbsp;</a>
+                                    <button type="button" class="btn edit-btn">
+                                        <a href="/barns/<%= barn.id %>/edit"><i class="bi bi-pencil-square"></i></a>
                                     </button>
 
                                 </h5>

@@ -97,11 +97,22 @@ h1, h2, h3, h4, h5 {
     font-size: 12px;
 }
 
-.barn-edit-btn {
-    background-color: var(--background);
-    color: var(--accent-drk);
+.edit-btn {
+    background-color: white;
+}
+
+.edit-btn:hover {
+    background-color: white;
+}
+
+.bi-pencil-square {
+    color: var(--text);
     font-size: 14px;
 }
+.bi-pencil-square:hover {
+    color: var(--button-hover);
+}
+
 
 .section-title a {
     text-decoration: none;

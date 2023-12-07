@@ -11,7 +11,8 @@ module.exports = {
     update,
     delete: deleteBarn,
     viewChores,
-    addChore
+    addChore,
+    moveChore
 };
 
 async function index(req, res) {
@@ -104,14 +105,36 @@ async function viewChores(req, res) {
 
 async function addChore(req, res) {
     const barn = await Barn.findById(req.params.id);
-
     req.body.completed = false;    
     barn.chores.push(req.body);
     try {
       await barn.save();
-      console.log('BARN.CHORES: ', barn.chores);
     } catch (err) {
       console.log(err);
     }
     res.redirect(`/barns/${barn._id}/chores`);
   }
+
+async function moveChore(req, res) {
+    
+    const barn = await Barn.findOne({
+        'chores._id': req.params.choreId // look for chore in the array with id that matches request
+    });
+
+    const chore = barn.chores.id(req.params.choreId);
+    const choreIdx = barn.chores.findIndex(chore => chore._id.toString() === req.params.choreId)
+
+    console.log('BEFORE SWAP: ', barn.chores);
+
+    if (choreIdx > 0) {
+        const removedChore = barn.chores.splice(choreIdx, 1)[0]
+        barn.chores.splice(choreIdx - 1, 0, removedChore)
+    } else {
+        return;
+    }
+    console.log('AFTER SWAP: ', barn.chores);
+    await barn.save();
+
+
+    res.redirect(`/barns/${barn._id}/chores`);
+}

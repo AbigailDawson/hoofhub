@@ -2,12 +2,12 @@
 
 <div class="container mt-5">
 
-    <div class="card barn-show-card">
+    <div class="card title-card">
         <h3 class="card-title text-center">Add a Horse</h3>
     </div>
 
-<form id="new-horse-form" action="/horses" method="POST">
-    <h4>Basic Details</h4>
+<form class="pb-5" id="new-horse-form" action="/horses" method="POST">
+    <h4 class="mt-3">Basic Details</h4>
     <div class="form-row d-flex flex-column flex-sm-row">
         <div class="col sm-6">
         <input name="name" type="text" class="form-control" placeholder="Name">
@@ -24,7 +24,7 @@
         <input name="sex" type="text" class="form-control" placeholder="Sex">
         </div>
     </div>
-    <h4>Feeding Schedule</h4>
+    <h4 class="mt-3">Feeding Schedule</h4>
     <div class="form-row d-flex flex-column flex-sm-row">
         <div class="col sm-6">
             <input name="amFeed" type="text" class="form-control" placeholder="AM Feed">
@@ -49,7 +49,7 @@
             <input name="nightFeed" type="text" class="form-control" placeholder="Night feed">
         </div>
     </div>
-    <h4>Daily Care Routine</h4>
+    <h4 class="mt-3">Daily Care Routine</h4>
     <div class="form-row">
         <div class="col">
         <input name="turnout" type="text" class="form-control" placeholder="Turnout">
@@ -58,7 +58,7 @@
         <input name="blanket" type="text" class="form-control" placeholder="Blanket">
         </div>
     </div>
-    <h4>Important Notes</h4>
+    <h4 class="mt-3">Important Notes</h4>
     <div class="form-group">
         <label for="importantInfo">Write additional comments here!</label>
         <textarea name="importantInfo" class="form-control" id="importantInfo" rows="4"></textarea>

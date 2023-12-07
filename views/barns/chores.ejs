@@ -15,11 +15,21 @@
                 <ul class="list-group">
                     <% barn.chores.forEach((chore) => { %>
                         <li class="list-group-item">
-                            <h5><%= chore.chore %> | 
-                                <a href="/barns/<%= barn.id %>/chores/<%= chore._id %>?direction=up">Move Up</a>
-                                <a href="/barns/<%= barn.id %>/chores/<%= chore._id %>?direction=down">Move Down</a>
-                            </h5>
-                            <p><%= chore.notes %></p>
+                            <div class="d-flex flex-column">
+                                <div class="d-flex flex-row justify-content-between">
+                                    <h5><%= chore.chore %></h5>
+                                    <div>
+                                        <a class="btn arrow-btn" href="/barns/<%= barn.id %>/chores/<%= chore._id %>?direction=up"><i class="bi bi-arrow-up-square-fill"></i>
+                                        </a>
+                                        <a  class="btn arrow-btn" href="/barns/<%= barn.id %>/chores/<%= chore._id %>?direction=down"><i class="bi bi-arrow-down-square-fill"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div>
+                                    <p><%= chore.notes %></p>
+                                </div>
+                            </div>
+
                             
                         </li>
                     <% }) %>

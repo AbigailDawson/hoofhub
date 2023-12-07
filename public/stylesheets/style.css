@@ -61,6 +61,7 @@ footer a {
     margin-bottom: -3px;
 }
 
+/* BTN STYLES */
 
 .btn {
     color: var(--text);
@@ -72,6 +73,33 @@ footer a {
     color: var(--button-hover);
     background-color: var(--button-hover-lt);
 }
+
+.edit-btn,
+.arrow-btn {
+    background-color: white;
+}
+
+.edit-btn:hover,
+.arrow-btn:hover {
+    background-color: white;
+}
+
+.arrow-btn {
+    padding: 0;
+}
+
+.bi-arrow-up-square-fill, 
+.bi-arrow-down-square-fill {
+    color: var(--text-lt);
+    font-size: 30px;
+}
+
+.bi-arrow-up-square-fill:hover, 
+.bi-arrow-down-square-fill:hover {
+    color: var(--button-hover);
+}
+
+
 
 h1, h2, h3, h4, h5 {
     font-family: "Francois One", sans-serif;
@@ -96,23 +124,6 @@ h1, h2, h3, h4, h5 {
 .barn-contacts-sm {
     font-size: 12px;
 }
-
-.edit-btn {
-    background-color: white;
-}
-
-.edit-btn:hover {
-    background-color: white;
-}
-
-.bi-pencil-square {
-    color: var(--text);
-    font-size: 14px;
-}
-.bi-pencil-square:hover {
-    color: var(--button-hover);
-}
-
 
 .section-title a {
     text-decoration: none;

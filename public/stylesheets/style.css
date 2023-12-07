@@ -79,7 +79,8 @@ h1, h2, h3, h4, h5 {
 
 /* BARN AND HORSE CARD STYLES */
 
-.barn-card-title {
+.barn-card-title,
+.section-title {
     font-family: "Francois One", sans-serif;
     font-size: 25px;
 }
@@ -142,7 +143,7 @@ h1, h2, h3, h4, h5 {
 }
 
 /* BARN and HORSE DETAIL CARD STYLES */
-.barn-show-card,
+.title-card,
 .horse-show-card {
     background-color: var(--background);
     border: none;

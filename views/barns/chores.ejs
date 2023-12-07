@@ -4,37 +4,45 @@
 
     <a class="btn btn-sm mb-3" href="/barns/<%= barn.id %>" role="button">Go back</a>
 
-    <div class="card barn-show-card">
-        <h3 class="card-title text-center">Chores at <%= barn.name %></h3>
+    <div class="card title-card">
+        <h3 class="card-title text-center"><%= barn.name %></h3>
     </div>
         
-    <h4 class="mb-3">Create a Chore</h4>
+    <h4 class="mb-3 text-center">Create a Chore</h4>
 
     <form id="create-chore-form" action="/barns/<%= barn.id %>/chores" method="POST">
-
         <div class="form-row">
-
             <div class="form-group col-md-12">
                 <label for="chore">Chore</label>
                 <input name="chore" type="text" class="form-control" id="name">
             </div>
-
             <div class="form-group col-md-12">
                 <label for="notes">Notes</label>
                 <textarea name="notes" class="form-control" id="notes" value="notes" placeholder="Add comments or details here!" rows="4" cols="20"></textarea>
             </div>
         </div>
-
         <div class="form-row mt-3">
             <button type="submit" class="btn" value="addChore">Add</button>
         </div>
-
     </form>
 
-
-
-
-</form>
-
+<div class="row mt-5 pb-5">
+    <h4 class="mb-3 text-center">Chore List</h4>
+    <div class="col-12 mb-5">
+        <% if (barn.chores.length) { %>
+            <ul class="list-group">
+                <% barn.chores.forEach((chore) => { %>
+                    <li class="list-group-item">
+                        <h5><%= chore.chore %></h5>
+                        <p><%= chore.notes %></p>
+                    </li>
+                <% }) %>
+            </ul>
+            <% } else { %>
+                <p>No chores yet!</p>
+            <% } %>
+    </div>
+</div>
+ 
 
 <%- include('../partials/footer') %>

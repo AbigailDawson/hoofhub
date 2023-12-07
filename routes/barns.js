@@ -24,7 +24,10 @@ router.get('/:id/chores/:choreId', barnsCtrl.moveChore);
 router.get('/:id/edit', barnsCtrl.edit);
 
 // PUT /barns/:id
-router.put('/:id', barnsCtrl.update)
+router.put('/:id', barnsCtrl.update);
+
+// PUT /barns/:id/chores <-- clear chores
+router.put('/:id/chores', barnsCtrl.clearChores);
 
 // POST /barns
 router.post('/', barnsCtrl.create);

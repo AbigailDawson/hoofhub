@@ -2,14 +2,15 @@
 
 <div class="container mt-5">
 
-    <a class="btn btn-sm mb-3" href="/barns/<%= barn.id %>" role="button">Go back</a>
-
     <div class="card title-card">
-        <h3 class="card-title text-center"><%= barn.name %></h3>
+        <h3 class="card-title section-title text-center"><a href="/barns/<%= barn.id %>"><%= barn.name %></a></h3>
     </div>
         
-    <div class="row mt-5 pb-5">
-        <h4 class="mb-3 text-center">Chore List</h4>
+    <div class="row mt-2">
+        <h4 class="mb-3 text-center">Chores</h4>
+        <form action="/barns/<%= barn.id %>/chores?_method=PUT" method="POST">
+            <button type="submit" class="btn mb-2" value="clearChores">Clear All</button>
+        </form>
         <div class="col-12 mb-5">
             <% if (barn.chores.length) { %>
                 <ul class="list-group">
@@ -20,6 +21,7 @@
                                     <div class="d-flex flex-row align-items-center">
 
                                         <form action="/barns/<%= barn.id %>/chores/<%= chore._id %>" method="POST" class="form-check ms-4 me-1 mb-2">
+                                            <label class="form-check-label" for="completed">
                                             <input 
                                             name="completed" 
                                             class="form-check-input" 
@@ -29,7 +31,7 @@
                                             onChange="this.form.submit()"
                                             <% if (chore.completed) { %> checked <% } %>
                                             >
-                                            <label class="form-check-label" for="completed"></label>
+                                            </label>
                                         </form>
 
                                         <h5 class="mb-0"><%= chore.chore %> </h5>
@@ -54,9 +56,9 @@
         </div>
     </div>
 
-    <h4 class="mb-3 text-center">Create a Chore</h4>
+    <h4 class="mb-3 text-center">Add a Chore</h4>
 
-    <form id="create-chore-form" action="/barns/<%= barn.id %>/chores" method="POST">
+    <form id="create-chore-form" class="pb-5" action="/barns/<%= barn.id %>/chores" method="POST">
         <div class="form-row">
             <div class="form-group col-md-12">
                 <label for="chore">Chore</label>

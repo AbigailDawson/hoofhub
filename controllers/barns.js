@@ -13,7 +13,8 @@ module.exports = {
     viewChores,
     addChore,
     moveChore,
-    checkChore
+    checkChore,
+    clearChores
 };
 
 async function index(req, res) {
@@ -156,4 +157,17 @@ async function checkChore(req, res) {
 
     await barn.save();
     res.redirect(`/barns/${barn._id}/chores`);
+}
+
+async function clearChores(req, res) {
+    const barn = await Barn.findById(req.params.id);
+    barn.chores.forEach((chore) => {
+        chore.completed = false;
+    })
+    
+    await barn.save();
+    res.render('barns/chores', {
+        barn,
+        title: 'Chores'
+    })
 }

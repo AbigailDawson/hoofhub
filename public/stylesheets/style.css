@@ -194,6 +194,12 @@ input[type="text"] {
 
 /* SM SCREENS */
 @media (min-width: 576px) {
+    .homepage {
+        background: url('../images/background-image.jpg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover; 
+    }
     .navbar {
         height: 80px;
     }
@@ -209,12 +215,7 @@ input[type="text"] {
 
 /* MD SCREENS */
 @media (min-width: 768px) {
-    .homepage {
-        background: url('../images/background-image.jpg');
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover; 
-    }
+
 }
 
 /* LG SCREENS */

@@ -18,10 +18,7 @@ body {
 }
 
 .homepage {
-    background: url('../images/background-image.jpg');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover; 
+    background-color: var(--background);
     margin-top: -80px;
 }
 
@@ -34,18 +31,21 @@ footer {
     position: fixed;
     bottom: 0;
     width: 100%;
+    padding: 0;
 }
+
 /* NAVBAR STYLES */
 .navbar {
     background: rgb(237,220,210);
     background: linear-gradient(180deg, rgba(237,220,210,1) 39%, rgba(9,9,121,0) 91%);
 }
 
-.navbar-brand {
-    font-family: "Francois One", sans-serif;
+.navbar-scrolled {
+    background-color: var(--primary);
 }
 
 .navbar .nav-link {
+    font-family: "Francois One", sans-serif;
 }
 
 .navbar .nav-link:hover {
@@ -184,10 +184,18 @@ input[type="text"] {
     color: var(--text-lt);
 }
 
+
+/* XS SCREENS */
+@media (max-width: 576px) {
+    .navbar {
+        background-color: var(--primary);
+    }
+}
+
 /* SM SCREENS */
 @media (min-width: 576px) {
     .navbar {
-      height: 80px;
+        height: 80px;
     }
   
     .navbar-nav .nav-link {
@@ -201,7 +209,12 @@ input[type="text"] {
 
 /* MD SCREENS */
 @media (min-width: 768px) {
-
+    .homepage {
+        background: url('../images/background-image.jpg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover; 
+    }
 }
 
 /* LG SCREENS */

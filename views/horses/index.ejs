@@ -1,26 +1,39 @@
 <%- include('../partials/header') %>
 
-<form action="/horses" method="GET">
-    <input type="text" name="search" placeholder="Search by horse's name">
-    <button type="submit">Search</button>
-</form>
-<% if (!showAllLink) { %>
-    <a href="/horses" class="btn btn-secondary">Show All Horses</a>
-<% } %>
+<div class="card barn-show-card">
+    <h3 class="card-title text-center mt-5 mb-3">Search for a Horse</h3>
+</div>
 
-<p>Sort by:</p>
-<a href='/horses?sort=name'>Name</a>
-<a href='/horses?sort=age'>Age</a>
+<form class="row g-2 justify-content-center" action="/horses" method="GET">
+    <div class="col-auto">
+        <input class="form-control" type="text" name="search" placeholder="Horse's name" aria-label="Search">
+    </div>
+    <div class="col-auto">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+    </div>
+</form>
+
+    <a class="btn" href='/horses?sort=name'>Sort by Name</a>
+    <a class="btn" href='/horses?sort=age'>Sort by Age</a>
+
+    <% if (!showAllLink) { %>
+        <a href="/horses" class="btn">Show All Horses</a>
+    <% } %>
+
+</div>
+
+
+
+
 
 <div class="container mt-5">
+    <div class="row">
     <% horses.forEach((horse) => { %>
-    <div class="row horse-detail-card">
-        <div class="col-6">
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+        <div class="card horse-detail-card">
             <h2 class="mb-2"><%= horse.name %> </h2>
-            <h4 class="mb-2"><%= horse.age %> year old <%= horse.color %> <%= horse.sex %> 
-        </div>
-        <div class="col-6">
-            <a class="btn" href="/horses/<%= horse.id %>">See Details</a>
+            <h4 class="mb-2"><%= horse.age %> year old <%= horse.color %> <%= horse.sex %> </h4>
+            <a class="btn mt-2" href="/horses/<%= horse.id %>">See Details</a>
         </div>
     </div>
        

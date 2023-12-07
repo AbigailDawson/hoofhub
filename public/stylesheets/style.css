@@ -1,7 +1,7 @@
 :root {
     --text: #2E2631;
     --text-lt: #626262;
-    --background: #f0efeb;
+    --background: #fcfaf7;
     --primary: #eddcd2;
     --button: #eddcd2;
     --button-hover: #39A199;
@@ -27,11 +27,16 @@ body {
 }
 
 footer {
+    font-size: 12px;
     background-color: var(--primary);
     position: fixed;
     bottom: 0;
     width: 100%;
-    padding: 0;
+}
+
+footer a {
+    color: var(--text);
+    font-weight: 600;
 }
 
 /* NAVBAR STYLES */
@@ -71,13 +76,6 @@ h1, h2, h3, h4, h5 {
 }
 
 /* BARN AND HORSE CARD STYLES */
-.barn-card {
-    background-color: var(--background);
-    border: none;
-    box-shadow: none;
-    border-radius: 10px;
-    padding: 8px;
-}
 
 .barn-card-title {
     font-family: "Francois One", sans-serif;

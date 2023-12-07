@@ -1,12 +1,12 @@
 <%- include('../partials/header') %>
   
-<div class="container mt-5">
-    <div class="row">
+<div class="container mt-5 d-flex flex-column align-items-center">
+    <div class="row d-flex flex-column">
 
         <% barns.forEach((barn) => { %>
 
             <div class="col-12 mb-4">
-                <div class="card barn-card">
+                <div class="card border rounded-2 p-3 bg-white shadow barn-card">
 
                     <!-- SM SCREEN: MINIMALIST CARDS -->
 
@@ -33,10 +33,9 @@
 
                     <!-- LG SCREEN: BIG CARDS -->
 
-                    <div class="row g-0 d-md-flex barn-card d-none d-md-block">
+                    <div class="row g-0 d-md-flex d-none d-md-block">
 
-
-                            <div class="col-md-6">
+                            <div class="col-md-7">
                                 
                                 <h5 class="card-title barn-card-title">
 
@@ -51,7 +50,7 @@
                                     <%= barn.address[0].city %>, <%= barn.address[0].state %> <%= barn.address[0].zip %></p>
                             </div>
                             
-                            <div class="col-md-6 barn-contacts text-end">
+                            <div class="col-md-5 barn-contacts text-end">
                                 <small> 
                                     Primary contact<br>
                                     Secondary Contact

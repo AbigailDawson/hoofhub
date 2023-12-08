@@ -91,6 +91,13 @@ footer a {
     background-color: white;
 }
 
+.transparent-btn {
+    background-color: var(--background);
+}
+.transparent-btn:hover {
+    background-color: var(--background);
+}
+
 .arrow-btn {
     padding: 0;
 }

@@ -44,6 +44,7 @@ async function index(req, res) {
 
 async function show(req, res) {
     const horse = await Horse.findById(req.params.id).populate('barns');
+    console.log('HORSE.BARNS', horse.barns)
     res.render('horses/show', {
         horse,
         title: horse.name
@@ -51,7 +52,6 @@ async function show(req, res) {
 }
 
 function newHorse(req, res) {
-    
     res.render('horses/new', {
         title: 'Add Horse', 
         errorMsg: '' 
@@ -74,24 +74,19 @@ async function create(req, res) {
 }
 
 async function updateHorses(req, res) {
-    const barn = await Barn.findById(req.params.id);
-    const horseId = req.body.horseId;
+    const barn = await Barn.findById(req.params.id).populate('horses');
+    const horse = await Horse.findOne({ _id: req.body.horseId });
 
-    console.log('BARN.HORSES.LENGTH: ', barn.horses.length)
-    console.log('REQ.QUERY: ', req.query);
-    console.log('REQ.BODY.HORSEID: ', req.body.horseId);
-    
     if (req.query.action === 'add') {
-        barn.horses.push(req.body.horseId);
-    } else {
+        barn.horses.unshift(req.body.horseId);
+        horse.barns.push(barn);
+    } else if (req.query.action === 'remove') {
         const horseIdx = barn.horses.findIndex(horse => horse._id.equals(req.body.horseId));
-        console.log('HORSE IDX: ', horseIdx);
-
         barn.horses.splice(horseIdx, 1);
-        console.log('BARN.HORSES.LENGTH AFTER SPLICE: ', barn.horses.length)
+        horse.barns.splice(0, 1);
     }
-
     await barn.save();
+    await horse.save();
     res.redirect(`/barns/${barn._id}/edit`);
 }
 

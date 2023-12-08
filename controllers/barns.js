@@ -18,7 +18,6 @@ module.exports = {
 
 async function index(req, res) {
     const barns = await Barn.find({}).populate('horses');
-    console.log(barns)
     res.render('barns/index', {
         title: 'All Barns',
         barns
@@ -27,7 +26,6 @@ async function index(req, res) {
 
 async function show(req, res) {
     const barn = await Barn.findById(req.params.id).populate('horses')
-    console.log(barn)
     if (req.query.sort === 'age') {
         barn.horses.sort((a, b) => a[req.query.sort] - b[req.query.sort])
     } else if (req.query.sort === 'name') {
@@ -77,6 +75,7 @@ async function create(req, res) {
 async function edit(req, res) {
     const barn = await Barn.findById(req.params.id).populate('horses');
     const horses = await Horse.find({ _id: { $nin: barn.horses } }).sort('name');
+    console.log('BARN.HORSES', barn.horses)
     res.render('barns/edit', {
         barn,
         horses,
@@ -142,6 +141,7 @@ async function checkChore(req, res) {
     });
 
     const chore = barn.chores.id(req.params.choreId);
+
     if (req.body.completed === 'true') {
         chore.completed = true;
         const choreIdx = barn.chores.findIndex(chore => chore._id.equals(req.params.choreId));

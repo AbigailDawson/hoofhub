@@ -245,11 +245,24 @@ input[type="text"] {
     .navbar-brand {
         font-size: 40px;
     }
+
+    .barn-contacts {
+        font-size: 12px;
+    }
+
+    .barn-card-title-lg {
+        font-size: 20px;
+    }
 }
 
 /* MD SCREENS */
 @media (min-width: 768px) {
-
+.barn-card-title-lg {
+        font-size: 25px;
+    }
+    .barn-contacts {
+        font-size: 14px;
+    }
 }
 
 /* LG SCREENS */

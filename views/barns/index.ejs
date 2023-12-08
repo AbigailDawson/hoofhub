@@ -21,8 +21,10 @@
                             </small>
 
                             <small class="card-text mt-3 text-center barn-contacts-sm">
-                                Primary Contact<br>
-                                Secondary Contact<br>
+                                <strong><%= barn.primaryContact[0].role %>: </strong>
+                                <%= barn.primaryContact[0].name %> | <%= barn.primaryContact[0].phone %><br>
+                                <strong><%= barn.secondaryContact[0].role %>: </strong>
+                                <%= barn.secondaryContact[0].name %> | <%= barn.secondaryContact[0].phone %><br>
                                 <button type="button" class="btn edit-btn">
                                     <a href="/barns/<%= barn.id %>/edit"><i class="bi bi-pencil-square"></i></a>
                                 </button>
@@ -37,9 +39,9 @@
 
                     <div class="row g-0 d-sm-flex d-none d-sm-block">
 
-                            <div class="col-sm-7">
+                            <div class="col-sm-6 col-md-7">
                                 
-                                <h5 class="card-title section-title">
+                                <h5 class="card-title section-title barn-card-title-lg">
 
                                     <%= barn.name %>
                                     <button type="button" class="btn edit-btn">
@@ -48,14 +50,18 @@
 
                                 </h5>
                                 
-                                <p class="card-subtitle fs-6 mt-2"> <%= barn.address[0].streetAddress %><br>
-                                    <%= barn.address[0].city %>, <%= barn.address[0].state %> <%= barn.address[0].zip %></p>
+                                <p class="card-subtitle fs-6 mt-2"> 
+                                    <%= barn.address[0].streetAddress %><br>
+                                    <%= barn.address[0].city %>, <%= barn.address[0].state %> <%= barn.address[0].zip %>
+                                </p>
                             </div>
                             
-                            <div class="col-sm-5 barn-contacts text-end">
+                            <div class="col-sm-6 col-md-5 barn-contacts text-end">
                                 <small> 
-                                    Primary contact<br>
-                                    Secondary Contact
+                                    <strong><%= barn.primaryContact[0].role %>: </strong>
+                                    <%= barn.primaryContact[0].name %> | <%= barn.primaryContact[0].phone %><br>
+                                    <strong><%= barn.secondaryContact[0].role %>: </strong>
+                                    <%= barn.secondaryContact[0].name %> | <%= barn.secondaryContact[0].phone %><br>
                                 </small>
                             </div>
 

@@ -25,8 +25,8 @@ async function index(req, res) {
 }
 
 async function show(req, res) {
-    
     const barn = await Barn.findById(req.params.id).populate('horses')
+    console.log(barn)
     if (req.query.sort === 'age') {
         barn.horses.sort((a, b) => a[req.query.sort] - b[req.query.sort])
     } else if (req.query.sort === 'name') {

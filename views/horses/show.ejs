@@ -1,36 +1,35 @@
 <%- include('../partials/header') %>
 
+
+<%- include('../partials/header') %>
+
 <div class="container mt-5">
 
     <div class="card title-card">
-        <h3 class="card-title text-center"><%= horse.name %></h3>
-    
-        <small class="card-text text-center">
-            <%= horse.age %> year old <%= horse.color %> <%= horse.sex %>
-        </small>
-
-        
-        <small class="card-text text-center">
-            <% if (horse.barns.length) { %>
-                <a href="/barns/<%= horse.barns[0].id %>">Back to <%= horse.barns[0].name %></a>
+        <h2 class="card-title text-center"><%= horse.name %></h2>
+        <p class="mb-0 mt-2 text-center"><%= horse.age %> year old <%= horse.color %> <%= horse.sex %> </p>
+        <% if(horse.barns.length) { %>
+            <p class="mt-2 text-center"><a href="/barns/<%= horse.barns[0].id %> "><%= horse.barns[0].name %></a></p>
             <% } else { %>
-                <p>This horse has not been assigned to a barn.</p>
+                <p class="mt-2 text-center">This horse has not been assigned to a barn yet.</p>
             <% } %>
-        </small>
-        
     </div>
 
+    <h4 class="mb-4">Feeding Schedule</h4>
+    <h5>AM Feed: <span class="feed-text"><%= horse.feed[0].amFeed %></span></h5>
+    <h5>AM Meds: <span class="feed-text"><%= horse.feed[0].amMeds %></span></h5>
+    <h5>Midday Feed: <span class="feed-text"><%= horse.feed[0].middayFeed %></span></h5>
+    <h5>PM Feed: <span class="feed-text"><%= horse.feed[0].pmFeed %></span></h5>
+    <h5>PM Meds: <span class="feed-text"><%= horse.feed[0].pmMeds %></span></h5>
+    <h5>Night Feed: <span class="feed-text"><%= horse.feed[0].nightFeed %></span></h5>
 
-<h3>Feed</h3>
-<% if (horse.feed.length) { %>
-    <p>AM Feed: <%= horse.feed[0].amFeed %></p>
-    <p>AM Meds: <%= horse.feed[0].amMeds %></p>
-    <p>Midday Feed: <%= horse.feed[0].middayFeed %></p>
-    <p>PM Feed: <%= horse.feed[0].pmFeed %></p>
-    <p>PM Meds: <%= horse.feed[0].pmMeds %></p>
-    <p>Night Feed: <%= horse.feed[0].nightFeed %></p>
-<% } else { %>
-    <p>This horse has no feed details.</p>
-<% } %>
+    <h4 class="mb-4 mt-4">Daily Care Routine</h4>
+    <h5>Turnout: <span class="feed-text"><%= horse.turnout %></span></h5>
+    <h5>Blanket: <span class="feed-text"><%= horse.blanket %></span></h5>
+
+    <h4 class="mb-4 mt-4">Important Notes</h4>
+    <p><%= horse.importantInfo %></p>
+
+</div>
 
 <%- include('../partials/footer') %>

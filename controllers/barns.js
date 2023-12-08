@@ -75,7 +75,6 @@ async function create(req, res) {
 async function edit(req, res) {
     const barn = await Barn.findById(req.params.id).populate('horses');
     const horses = await Horse.find({ _id: { $nin: barn.horses } }).sort('name');
-    console.log('BARN.HORSES', barn.horses)
     res.render('barns/edit', {
         barn,
         horses,

@@ -6,7 +6,8 @@ module.exports = {
     show,
     new: newHorse,
     create,
-    updateHorses
+    updateHorses,
+    addToBarn
 };
 
 async function index(req, res) {
@@ -44,9 +45,10 @@ async function index(req, res) {
 
 async function show(req, res) {
     const horse = await Horse.findById(req.params.id).populate('barns');
-    console.log('HORSE.BARNS', horse.barns)
+    const barns = await Barn.find({});
     res.render('horses/show', {
         horse,
+        barns,
         title: horse.name
     })
 }
@@ -90,3 +92,14 @@ async function updateHorses(req, res) {
     res.redirect(`/barns/${barn._id}/edit`);
 }
 
+async function addToBarn(req, res) {
+    const horse = await Horse.findById(req.params.id).populate('barns');
+    const barn = await Barn.findOne({ _id: req.body.barnId });
+
+    horse.barns.push(req.body.barnId);
+    barn.horses.unshift(horse);
+
+    await barn.save();
+    await horse.save();
+    res.redirect(`/horses/${horse._id}`);
+}

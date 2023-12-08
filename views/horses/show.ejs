@@ -11,7 +11,19 @@
         <% if(horse.barns.length) { %>
             <p class="mt-2 text-center"><a href="/barns/<%= horse.barns[0].id %> "><%= horse.barns[0].name %></a></p>
             <% } else { %>
-                <p class="mt-2 text-center">This horse has not been assigned to a barn yet.</p>
+                <p class="mt-2 text-center">This horse has not been assigned to a barn yet. Add to barn?</p>
+                <form id="add-horse-form" action="/horses/<%= horse._id %>/barns" method="POST">
+                    <select class="form-control form-control-md" name="barnId">
+                        <% if (barns.length) { %>
+                            <%- barns.map(barn => 
+                            `<option value="${barn._id}">${barn.name}</option>`
+                            ).join('') %>
+                        <% } else { %>
+                            <option>No barns available to add</option>
+                        <% } %>
+                    </select>
+                    <button type="submit" class="btn mt-3">Add to Barn</button> 
+                </form>
             <% } %>
     </div>
 

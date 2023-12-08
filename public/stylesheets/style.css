@@ -82,13 +82,19 @@ footer a {
 }
 
 .edit-btn,
-.arrow-btn {
+.arrow-btn,
+.trash-btn {
     background-color: white;
 }
 
 .edit-btn:hover,
-.arrow-btn:hover {
+.arrow-btn:hover,
+.trash-btn:hover {
     background-color: white;
+}
+
+.trash-btn:hover {
+    color: rgb(177, 0, 0);
 }
 
 .transparent-btn {
@@ -100,6 +106,10 @@ footer a {
 
 .arrow-btn {
     padding: 0;
+}
+
+.trash-btn {
+    font-size: 16px;
 }
 
 .bi-arrow-up-square-fill, 

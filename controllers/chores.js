@@ -7,6 +7,7 @@ module.exports = {
     moveChore,
     checkChore,
     clearChores,
+    deleteChore
 };
 
 async function viewChores(req, res) {
@@ -83,4 +84,14 @@ async function clearChores(req, res) {
         barn,
         title: 'Chores'
     })
+}
+
+async function deleteChore(req, res) {
+    const barn = await Barn.findOne({
+        'chores._id': req.params.choreId // look for chore in the array with id that matches request
+    });
+
+    barn.chores.remove(req.params.choreId);
+    await barn.save();
+    res.redirect(`/barns/${barn._id}/chores`);
 }

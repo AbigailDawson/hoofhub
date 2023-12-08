@@ -17,4 +17,7 @@ router.post('/barns/:id/chores', choresCtrl.addChore)
 // POST /barns/:id/chores/:choreID
 router.post('/barns/:id/chores/:choreId', choresCtrl.checkChore);
 
+// DELETE /barns/:id/chores/:choreID
+router.delete('/chores/:choreId', choresCtrl.deleteChore);
+
 module.exports = router;

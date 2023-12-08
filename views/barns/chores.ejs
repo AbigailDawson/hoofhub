@@ -20,7 +20,7 @@
                                 <div class="d-flex flex-row justify-content-between">
                                     <div class="d-flex flex-row align-items-center">
 
-                                        <form action="/barns/<%= barn.id %>/chores/<%= chore._id %>" method="POST" class="form-check ms-4 me-1 mb-2">
+                                        <form action="/barns/<%= barn.id %>/chores/<%= chore._id %>" method="POST" class="form-check ms-4 me-1 mb-1">
                                             <label class="form-check-label" for="completed">
                                             <input 
                                             name="completed" 
@@ -34,7 +34,10 @@
                                             </label>
                                         </form>
 
-                                        <h5 class="mb-0"><%= chore.chore %> </h5>
+                                        <h5 class="mb-0"><%= chore.chore %> </h5> 
+                                        <form class="d-inline" action="/chores/<%= chore._id %>?_method=DELETE" method="POST">
+                                            <button class="btn trash-btn" type="submit"><i class="bi bi-trash"></i></button>
+                                        </form>
                                     </div>
                                     <div>
                                         <a class="btn arrow-btn" href="/barns/<%= barn.id %>/chores/<%= chore._id %>?direction=up"><i class="bi bi-arrow-up-square-fill"></i>
@@ -45,6 +48,7 @@
                                 </div>
                                 <div>
                                     <p class="mt-1"><%= chore.notes %></p>
+                                    
                                 </div>
                             </div>     
                         </li>

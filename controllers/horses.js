@@ -39,7 +39,6 @@ async function index(req, res) {
     res.render('horses/index', {
         title: 'All Horses',
         horses,
-        showAllLink: !req.query.search
     })
 }
 

@@ -1,7 +1,7 @@
 <%- include('../partials/header') %>
 
 <div class="card title-card">
-    <h4 class="card-title text-center mt-5 mb-3">Search for a Horse</h4>
+    <h2 class="card-title text-center mt-5 mb-4">My Herd</h2>
 </div>
 
 <form class="row g-2 justify-content-center" action="/horses" method="GET">
@@ -22,11 +22,14 @@
     </div>
 </div>
 
-    <% if (!showAllLink) { %>
-        <a href="/horses" class="btn">Show All Horses</a>
-    <% } %>
-
+<div class="row mt-3 g-2 justify-content-center">
+    <div class="col-auto">
+        <% if (!showAllLink) { %>
+            <a href="/horses" class="btn">Show All Horses</a>
+        <% } %>
+    </div>
 </div>
+
 
 <div class="container mt-5">
     <div class="row">
@@ -43,6 +46,4 @@
 
 </div>
   
-<a href="/horses/new">Add a Horse</a>
-
 <%- include('../partials/footer') %>

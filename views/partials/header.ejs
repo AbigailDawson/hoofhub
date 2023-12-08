@@ -31,7 +31,7 @@
 
         <ul class="navbar-nav">
           <li class="nav-item ms-3">
-            <a class="nav-link" href="/barns">Barns</a>
+            <a class="nav-link" href="/barns">My Barns</a>
           </li>
           <li class="nav-item ms-3">
             <a class="nav-link" href="/horses">My Herd</a>
@@ -54,6 +54,16 @@
         navEl.classList.remove('navbar-scrolled');
       }
     })
+
+    const navLinks = document.querySelectorAll('.nav-link');
+    navLinks.forEach(link => {
+      if (link.href === window.location.href) {
+        link.classList.add('active'); 
+      } else {
+        link.classList.remove('active'); 
+      }
+    });
+
   </script>
 
   <main>

@@ -68,6 +68,10 @@ footer a {
     margin-bottom: -3px;
 }
 
+.navbar .nav-link.active {
+    color: var(--button-hover);
+}
+
 /* BTN STYLES */
 
 .btn {

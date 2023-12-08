@@ -8,10 +8,12 @@ exports.barns = [
             zip: '12345'
         },
         primaryContact: {
+          role: 'Owner',
           name: 'Sophia Reynolds',
           phone: '555-789-1234'
         },
         secondaryContact: {
+          role: 'Vet',
           name: 'Jackie Clarke',
           phone: '555-456-7890'
         },
@@ -28,10 +30,12 @@ exports.barns = [
             zip: '54321'
         },
         primaryContact: {
+          role: 'Barn Manager',
           name: 'Emily Smith',
           phone: '555-234-5678'
         },
         secondaryContact: {
+          role: 'Vet',
           name: 'Haymarket Veterinary Clinic',
           phone: '555-987-6543'
         },
@@ -48,10 +52,12 @@ exports.barns = [
             zip: '40404'
         },
         primaryContact: {
+          role: 'Barn Manager',
           name: 'Olivia Jacobs',
           phone: '555-321-8765'
         },
         secondaryContact: {
+          role: 'Vet',
           name: 'Joe Martinez',
           phone: '555-876-5432'
         },

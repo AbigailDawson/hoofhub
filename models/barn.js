@@ -9,6 +9,11 @@ const addressSchema = new Schema({
     zip: String
 });
 
+const contactSchema = new Schema({
+    name: String,
+    phone: String
+})
+
 const barnNoteSchema = new Schema({
     dateAdded: Date,
     content: {
@@ -34,10 +39,8 @@ const barnSchema = new Schema({
         type: [addressSchema],
         default: [],
     },
-    contacts: [{
-        type: Schema.Types.ObjectId,
-        ref: 'Contact'
-    }],
+    primaryContact: [contactSchema],
+    secondaryContact: [contactSchema],
     horses: [{
         type: Schema.Types.ObjectId,
         ref: 'Horse'

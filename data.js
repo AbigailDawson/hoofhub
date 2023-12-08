@@ -7,6 +7,14 @@ exports.barns = [
             state: 'VA',
             zip: '12345'
         },
+        primaryContact: {
+          name: 'Sophia Reynolds',
+          phone: '555-789-1234'
+        },
+        secondaryContact: {
+          name: 'Jackie Clarke',
+          phone: '555-456-7890'
+        },
         notes: {
             content: 'Use second driveway'
         }
@@ -19,6 +27,14 @@ exports.barns = [
             state: 'VA',
             zip: '54321'
         },
+        primaryContact: {
+          name: 'Emily Smith',
+          phone: '555-234-5678'
+        },
+        secondaryContact: {
+          name: 'Haymarket Veterinary Clinic',
+          phone: '555-987-6543'
+        },
         notes: {
             content: 'Park behind barn'
         }
@@ -30,6 +46,14 @@ exports.barns = [
             city: 'Centreville',
             state: 'VA',
             zip: '40404'
+        },
+        primaryContact: {
+          name: 'Olivia Jacobs',
+          phone: '555-321-8765'
+        },
+        secondaryContact: {
+          name: 'Joe Martinez',
+          phone: '555-876-5432'
         },
         notes: {
             content: 'Send text to owner when leaving for the day!'

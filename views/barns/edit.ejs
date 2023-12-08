@@ -54,9 +54,7 @@
       </div>
 
     <h5 class="mt-2">Add a Horse</h5>
-
-    <form id="add-horse" action="/barns/<%= barn._id %>/horses" method="POST">
-
+    <form id="add-horse-form" action="/barns/<%= barn._id %>/horses?action=add" method="POST">
         <select class="form-control form-control-md" name="horseId">
             <% if (horses.length) { %>
                 <%- horses.map(horse => 
@@ -65,13 +63,23 @@
             <% } else { %>
                 <option>No horses available to add</option>
             <% } %>
-            
         </select>
-
         <button type="submit" class="btn mt-3">Add Horse</button> 
-
     </form>
 
+    <h5 class="mt-2">Remove a Horse</h5>
+    <form id="remove-horse-form" action="/barns/<%= barn._id %>/horses?action=remove" method="POST">
+        <select class="form-control form-control-md" name="horseId">
+            <% if (barn.horses.length) { %>
+                <%- barn.horses.map(horse => 
+                `<option value="${horse._id}">${horse.name}</option>`
+                ).join('') %>
+            <% } else { %>
+                <option>No horses left to remove.</option>
+            <% } %>
+        </select>
+        <button type="submit" class="btn mt-3">Remove Horse</button> 
+    </form>
     <br><br>
 
     <form action="/barns/<%= barn.id %>?_method=DELETE" method="POST">

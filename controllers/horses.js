@@ -6,7 +6,7 @@ module.exports = {
     show,
     new: newHorse,
     create,
-    addHorseToBarn
+    updateHorses
 };
 
 async function index(req, res) {
@@ -73,9 +73,24 @@ async function create(req, res) {
     }
 }
 
-async function addHorseToBarn(req, res) {
+async function updateHorses(req, res) {
     const barn = await Barn.findById(req.params.id);
-    barn.horses.push(req.body.horseId);
+    const horseId = req.body.horseId;
+
+    console.log('BARN.HORSES.LENGTH: ', barn.horses.length)
+    console.log('REQ.QUERY: ', req.query);
+    console.log('REQ.BODY.HORSEID: ', req.body.horseId);
+    
+    if (req.query.action === 'add') {
+        barn.horses.push(req.body.horseId);
+    } else {
+        const horseIdx = barn.horses.findIndex(horse => horse._id.equals(req.body.horseId));
+        console.log('HORSE IDX: ', horseIdx);
+
+        barn.horses.splice(horseIdx, 1);
+        console.log('BARN.HORSES.LENGTH AFTER SPLICE: ', barn.horses.length)
+    }
+
     await barn.save();
     res.redirect(`/barns/${barn._id}/edit`);
 }

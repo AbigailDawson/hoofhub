@@ -10,6 +10,7 @@ const addressSchema = new Schema({
 });
 
 const contactSchema = new Schema({
+    role: String,
     name: String,
     phone: String
 })

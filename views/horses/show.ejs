@@ -33,18 +33,4 @@
     <p>This horse has no feed details.</p>
 <% } %>
 
-<h3>Contacts</h3>
-
-<% if (horse.barns.length) { %>
-    <% horse.contacts.forEach((contact) => { %>
-    <p><%= contact.firstName %> <%= contact.lastName %></p>
-    <p><%= contact.role %></p>
-    <p><%= contact.phone %></p> 
-    <p><%= contact.email %></p>
-<% }) %>
-<% } else { %>
-    <p>This horse has not been assigned any contacts.</p>
-<% } %>
-  
-
 <%- include('../partials/footer') %>

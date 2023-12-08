@@ -11,13 +11,9 @@
 <% }) %>
 </ul>
 
-<h3>Contacts</h3>
-<% if(barn.contacts.length) { %>
-    <ul>
-    <% barn.contacts.forEach((contact) => { %>
-        <li><%= contact.firstName %> <%= contact.lastName %>
-    <% }) %>
-    </ul>
+<h3>Contact</h3>
+<% if(barn.contact.length) { %>
+<p><%= contact.firstName %> <%= contact.lastName %></p>
 <% } else { %>
     <p>No Contacts Yet</p>
 <% } %>

@@ -1,7 +1,17 @@
 <%- include('../partials/header') %>
   
-<div class="container mt-5 d-flex flex-column align-items-center">
-    <div class="row d-flex flex-column">
+<div class="container mt-5 pb-5 d-flex flex-column align-items-center">
+
+    <div class="card title-card">
+        <h4 class="card-title text-center mb-4 fs-2">My Barns</h4>
+    </div>    
+    <div class="row g-2 justify-content-center">
+        <div class="col-auto">
+            <a class="btn" href='/barns/new'>Add a Barn</a>
+        </div>
+    </div>
+
+    <div class="row mt-4 d-flex flex-column">
 
         <% barns.forEach((barn) => { %>
 
@@ -21,10 +31,8 @@
                             </small>
 
                             <small class="card-text mt-3 text-center barn-contacts-sm">
-                                <strong><%= barn.primaryContact[0].role %>: </strong>
-                                <%= barn.primaryContact[0].name %> | <%= barn.primaryContact[0].phone %><br>
-                                <strong><%= barn.secondaryContact[0].role %>: </strong>
-                                <%= barn.secondaryContact[0].name %> | <%= barn.secondaryContact[0].phone %><br>
+                                <strong><%= barn.contact[0].role %>: </strong>
+                                <%= barn.contact[0].contactName %> | <%= barn.contact[0].phone %><br>
                                 <button type="button" class="btn edit-btn">
                                     <a href="/barns/<%= barn.id %>/edit"><i class="bi bi-pencil-square"></i></a>
                                 </button>
@@ -58,10 +66,8 @@
                             
                             <div class="col-sm-6 col-md-5 barn-contacts text-end">
                                 <small> 
-                                    <strong><%= barn.primaryContact[0].role %>: </strong>
-                                    <%= barn.primaryContact[0].name %> | <%= barn.primaryContact[0].phone %><br>
-                                    <strong><%= barn.secondaryContact[0].role %>: </strong>
-                                    <%= barn.secondaryContact[0].name %> | <%= barn.secondaryContact[0].phone %><br>
+                                    <strong><%= barn.contact[0].role %>: </strong>
+                                <%= barn.contact[0].contactName %> | <%= barn.contact[0].phone %><br>
                                 </small>
                             </div>
 
@@ -76,9 +82,5 @@
         <% }) %>
     </div>
 </div>
-
-<a href="/barns/new">Add a Barn</a>
-
-
   
 <%- include('../partials/footer') %>

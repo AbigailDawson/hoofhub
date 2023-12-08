@@ -10,12 +10,13 @@
         <%= barn.address[0].city %>, <%= barn.address[0].state %> <%= barn.address[0].zip %>
     </small>
     
-    <small class="card-text mt-3 text-center barn-contacts-sm">
-        <strong><%= barn.primaryContact[0].role %>: </strong> 
-        <%= barn.primaryContact[0].name %> | <%= barn.primaryContact[0].phone %><br>
-        <strong><%= barn.secondaryContact[0].role %>: </strong>
-        <%= barn.secondaryContact[0].name %> | <%= barn.secondaryContact[0].phone %>
-    </small>
+    <% if (barn.contact.length) { %>
+        <small class="card-text mt-3 text-center barn-contacts-sm">
+            <strong><%= barn.contact[0].role %>: </strong>
+            <%= barn.contact[0].contactName %> | <%= barn.contact[0].phone %><br>
+        </small>
+        <% }  %>
+    
 </div>
 
 <a href="/barns/<%= barn.id %>/chores">Chores</a>

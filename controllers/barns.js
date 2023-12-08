@@ -18,6 +18,7 @@ module.exports = {
 
 async function index(req, res) {
     const barns = await Barn.find({}).populate('horses');
+    console.log(barns)
     res.render('barns/index', {
         title: 'All Barns',
         barns
@@ -57,11 +58,13 @@ async function newBarn(req, res) {
 }
 
 async function create(req, res) {
+    console.log('REQ.BODY IN CREATE FUNCTION: ', req.body)
     for (let key in req.body) {
         if (req.body[key] === '') delete req.body[key];
     }
     try {
         const barn = await Barn.create(req.body);
+        barn.contact.push(req.body);
         barn.address.push(req.body);
         await barn.save();
         res.redirect(`/barns/${barn._id}`);

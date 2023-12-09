@@ -6,6 +6,8 @@
     --button: #eddcd2;
     --button-hover: #39A199;
     --button-hover-lt: #f3e6de;
+    --accent-blu: #23655f;
+    --accent-prp: #987174;
 }
 
 body {
@@ -14,6 +16,7 @@ body {
     background-color: var(--background);
     font-family: "Roboto", sans-serif;
     padding-top: 80px;
+    margin-bottom: 50px;
 }
 
 .homepage {
@@ -238,12 +241,34 @@ h1, h2, h3, h4, h5 {
 
 /* FORM STYLES */
 
+.form-container {
+    background-color: white;
+    padding: 30px 70px;
+    border-radius: 10px;
+    box-shadow: 2px 4px 15px 0px rgba(0,0,0,0.25);
+    max-width: 650px;
+}
+
+.form-container h2 {
+    color: var(--accent-prp);
+    font-size: 25px;
+}
+
+.form-title {
+    font-size: 30px;
+}
+
 label {
-    font-size: 12px;
+    margin-top: 5px;
+    color: var(--text);
 }
 
 input[type="text"] {
     color: var(--text-lt);
+}
+
+input[type="text"]:focus{
+    outline: 2px solid var(--button-hover);
 }
 
 #create-chore-form label {

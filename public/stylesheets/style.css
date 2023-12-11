@@ -3,24 +3,20 @@
     --text-lt: #626262;
     --background: #fcfaf7;
     --primary: #eddcd2;
-    --button: #eddcd2;
+    --button-blu: #39A199;
+    --button-lt: #eddcd2;
     --button-hover: #39A199;
-    --button-hover-lt: #f3e6de;
     --accent-blu: #23655f;
     --accent-prp: #987174;
 }
 
 body {
-    height: 100vh;
-    max-height: 100vh;
     background-color: var(--background);
     font-family: "Roboto", sans-serif;
     padding-top: 80px;
-    margin-bottom: 50px;
 }
 
 .homepage {
-    background-color: var(--background);
     margin-top: -80px;
 }
 
@@ -31,9 +27,6 @@ body {
 footer {
     font-size: 12px;
     background-color: var(--primary);
-    position: fixed;
-    bottom: 0;
-    width: 100%;
 }
 
 a {
@@ -43,11 +36,6 @@ a {
 
 a:hover {
     color: var(--button-hover);
-}
-
-footer a {
-    color: var(--text);
-    font-weight: 600;
 }
 
 /* NAVBAR STYLES */
@@ -63,6 +51,7 @@ footer a {
 
 .navbar .nav-link {
     font-family: "Francois One", sans-serif;
+    transition: 0.3s;
 }
 
 .navbar .nav-link:hover {
@@ -75,26 +64,62 @@ footer a {
     color: var(--button-hover);
 }
 
-/* BTN STYLES */
+/* BTN & ICON STYLES */
 
 .btn {
+    font-family: "Francois One", sans-serif;
     color: var(--text);
-    background-color: var(--button);
+    background-color: var(--button-lt);
     border: none;
+    transition: 0.2s;
 }
 
 .btn:hover {
-    color: var(--button-hover);
-    background-color: var(--button-hover-lt);
+    color: var(--button-blu);
+    background-color: var(--button-lt);
+    border: none;
+    outline: 2px solid var(--button-blu);
 }
 
-.edit-btn,
-.arrow-btn,
+.edit-btn-white:hover,
+.edit-icon-white:hover {
+    outline: none;
+    color: var(--button-blu);
+}
+
+.edit-btn-brwn,
+.edit-icon-brwn {
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+    background-color: var(--background);
+}
+
+.edit-btn-brwn:hover,
+.edit-icon-brwn:hover {
+    outline: none;
+    color: var(--button-blu);
+}
+
+.remove-btn {
+    color: rgb(178, 0, 0);
+}
+
+.remove-btn:hover {
+    outline: 2px solid rgb(178, 0, 0);
+    color: rgb(178, 0, 0);
+}
+
+.remove-btn-txt {
+    font-size: 12px;
+    color: rgb(178, 0, 0);
+}
+
+
+/* .arrow-btn,
 .trash-btn {
     background-color: white;
 }
 
-.edit-btn:hover,
 .arrow-btn:hover,
 .trash-btn:hover {
     background-color: white;
@@ -137,16 +162,20 @@ footer a {
 .bi-arrow-up-square-fill:hover, 
 .bi-arrow-down-square-fill:hover {
     color: var(--button-hover);
+} */
+
+.horses-btn,
+.chores-btn,
+.contacts-btn {
+    height: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
-.form-check-input {
-    outline: 1px solid var(--text);
-    font-size: 25px;
-}
 
-.form-check-input:checked {
-    background-color: var(--button-hover);
-}
+
 
 h1, h2, h3, h4, h5 {
     font-family: "Francois One", sans-serif;
@@ -176,29 +205,6 @@ h1, h2, h3, h4, h5 {
     color: var(--text)
 }
 
-.horses-btn,
-.chores-btn,
-.contacts-btn {
-    background-color: var(--button);
-    font-family: "Francois One", sans-serif;
-    height: 50px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.horses-btn {
-    background-color: var(--button);
-}
-
-.chores-btn {
-    background-color: var(--button);
-}
-
-.contacts-btn {
-    background-color: var(--button);
-}
 
 .card-body {
     overflow: hidden;
@@ -277,6 +283,10 @@ input[type="text"]:focus{
 }
 
 /* --- SPECIFIC FORM STYLES --- */
+/* .list-group-item {
+    width: 600px;
+} */
+
 #create-chore-form label {
     margin: 8px 0 5px 0;
     font-size: 16px;
@@ -287,18 +297,13 @@ input[type="text"]:focus{
     overflow: scroll;
 }
 
-.remove-btn {
-    color: rgb(178, 0, 0);
+.form-check-input {
+    outline: 1px solid var(--text);
+    font-size: 25px;
 }
 
-.remove-btn:hover {
-    outline: 2px solid rgb(178, 0, 0);
-    color: rgb(178, 0, 0);
-}
-
-.remove-btn-txt {
-    font-size: 12px;
-    color: rgb(178, 0, 0);
+.form-check-input:checked {
+    background-color: var(--button-hover);
 }
 
 /* XS SCREENS */

@@ -6,26 +6,25 @@
     <h2 class="section-title text-center"><a href='/barns/<%= barn.id %>'><%= barn.name %></a></h2>
 
     <small class="card-text text-center">
-        <%= barn.address[0].streetAddress %><br>
-        <%= barn.address[0].city %>, <%= barn.address[0].state %> <%= barn.address[0].zip %>
+        <%= barn.address[0].streetAddress %>, <%= barn.address[0].city %>, <%= barn.address[0].state %> <%= barn.address[0].zip %>
     </small>
     
     <% if (barn.contact.length) { %>
-        <small class="card-text mt-3 text-center barn-contacts-sm">
+        <small class="card-text mt-2 text-center barn-contacts-sm">
             <strong><%= barn.contact[0].role %>: </strong>
             <%= barn.contact[0].contactName %> | <%= barn.contact[0].phone %><br>
         </small>
         <% }  %>
     
-    <button type="button" class="btn mt-3 edit-btn transparent-btn">
-        <a href="/barns/<%= barn.id %>/edit"><i class="bi bi-pencil-square"></i> &nbsp; Edit Barn Details</a> 
+    <button type="button" class="btn mt-1 edit-btn edit-btn-brwn" style="background-color: var(--background)">
+        <a href="/barns/<%= barn.id %>/edit"><i class="bi bi-pencil-square edit-icon-brwn" style="background-color: var(--background)"></i> &nbsp; Edit Barn Details</a> 
     </button>
     
 </div>
 
 <div class="row mt-2 justify-content-center">
     <div class="col-auto">
-        <a class="btn" href='/barns/<%= barn.id %>/chores'>Chores</a>
+        <a class="btn btn-lg" href='/barns/<%= barn.id %>/chores'>Barn Chores</a>
     </div>
 </div>
 

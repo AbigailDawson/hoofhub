@@ -3,46 +3,92 @@
 
 <%- include('../partials/header') %>
 
-<div class="container mt-5">
+<div class="container mt-5 mb-5 d-flex flex-column align-items-center">
 
-    <div class="card title-card">
-        <h2 class="card-title text-center"><%= horse.name %></h2>
-        <a href="/horses/<%= horse.id %>/edit">Edit Horse Details</a>
-        <p class="mb-0 mt-2 text-center"><%= horse.age %> year old <%= horse.color %> <%= horse.sex %> </p>
-        <% if(horse.barns.length) { %>
-            <p class="mt-2 text-center"><a href="/barns/<%= horse.barns[0].id %> "><%= horse.barns[0].name %></a></p>
-            <% } else { %>
-                <p class="mt-2 text-center">This horse has not been assigned to a barn yet. Add to barn?</p>
-                <form id="add-horse-form" action="/horses/<%= horse._id %>/barns" method="POST">
-                    <select class="form-control form-control-md" name="barnId">
-                        <% if (barns.length) { %>
-                            <%- barns.map(barn => 
-                            `<option value="${barn._id}">${barn.name}</option>`
-                            ).join('') %>
-                        <% } else { %>
-                            <option>No barns available to add</option>
-                        <% } %>
-                    </select>
-                    <button type="submit" class="btn mt-3">Add to Barn</button> 
-                </form>
-            <% } %>
+    <div class="form-container mt-5 mb-5 overflow-hidden" style="width: 100%">
+
+        <div class="row">
+            <div class="col-12 d-flex flex-column align-items-center">
+                <h4 class="form-title text-center"><%= horse.name %></h4>
+                <p class="text-center"><%= horse.age %> year old <%= horse.color %> <%= horse.sex %> </p>
+                <% if(horse.barns.length) { %>
+                    <p class="text-center"><a href="/barns/<%= horse.barns[0].id %> "><%= horse.barns[0].name %></a></p>
+                    <% } else { %>
+                        <p class="text-center">This horse has not been assigned to a barn yet. Add to barn?</p>
+                        <form id="add-horse-form" action="/horses/<%= horse._id %>/barns" method="POST">
+                            <select class="form-control form-control-md" name="barnId">
+                                <% if (barns.length) { %>
+                                    <%- barns.map(barn => 
+                                    `<option value="${barn._id}">${barn.name}</option>`
+                                    ).join('') %>
+                                <% } else { %>
+                                    <option>No barns available to add</option>
+                                <% } %>
+                            </select>
+                            <button type="submit" class="btn mt-3">Add to Barn</button> 
+                        </form>
+                    <% } %>
+            </div>
+        </div>
+        <div class="row mt-4 mb-2">
+            <div class="col-12">
+                <h2>Feeding Schedule</h2>
+            </div>
+        </div>
+        <div class="form-row d-sm-flex gx-0 w-100">
+            <div class="col-12 col-sm-6 me-sm-1">
+                <p class="fs-6 mb-1">AM Feed</p>
+                <p class="ms-2  mt-0 feed-text"><%= horse.feed[0].amFeed %></p>
+            </div>
+            <div class="col-12 col-sm-6">
+                <p class="fs-6 mb-1">AM Meds</p>
+                <p class="ms-2 mt-0 feed-text"><%= horse.feed[0].amMeds %></p>
+            </div>
+        </div>
+        <div class="form-row d-sm-flex gx-0 w-100">
+            <div class="col-12 col-sm-6 me-sm-1">
+                <p class="fs-6 mb-1">PM Feed</p>
+                <p class="ms-2 mt-0 feed-text"><%= horse.feed[0].pmFeed %></p>
+            </div>
+            <div class="col-12 col-sm-6">
+                <p class="fs-6 mb-1">PM Meds</p>
+                <p class="ms-2 mt-0 feed-text"><%= horse.feed[0].pmMeds %></p>
+            </div>
+        </div>
+        <div class="form-row d-sm-flex gx-0 w-100">
+            <div class="col-12 col-sm-6 me-sm-1">
+                <p class="fs-6 mb-1">Midday Feed</p>
+                <p class="ms-2 mt-0 feed-text"><%= horse.feed[0].middayFeed %></p>
+            </div>
+            <div class="col-12 col-sm-6">
+                <p class="fs-6 mb-1">Night Feed</p>
+                <p class="ms-2 mt-0 feed-text"><%= horse.feed[0].nightFeed %></p>
+            </div>
+        </div>
+        <div class="row mt-4 mb-2">
+            <div class="col-12">
+                <h2>Daily Care Routine</h2>
+            </div>
+        </div>
+        <div class="form-row d-sm-flex gx-0 w-100">
+            <div class="col-12 col-sm-6 me-sm-1">
+                <p class="fs-6 mb-1">Turnout</p>
+                <p class="ms-2 mt-0 feed-text"><%= horse.turnout %></p>
+            </div>
+            <div class="col-12 col-sm-6">
+                <p class="fs-6 mb-1">Blanket</p>
+                <p class="ms-2 mt-0 feed-text"><%= horse.blanket %></p>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-12">
+                <h2>Important Information</h2>
+            </div>
+        </div>
+        <div class="col-12 col-sm-6">
+            <p class="ms-2 mt-0 feed-text"><%= horse.importantInfo %></p>
+        </div>
     </div>
-
-    <h4 class="mb-4">Feeding Schedule</h4>
-    <h5>AM Feed: <span class="feed-text"><%= horse.feed[0].amFeed %></span></h5>
-    <h5>AM Meds: <span class="feed-text"><%= horse.feed[0].amMeds %></span></h5>
-    <h5>Midday Feed: <span class="feed-text"><%= horse.feed[0].middayFeed %></span></h5>
-    <h5>PM Feed: <span class="feed-text"><%= horse.feed[0].pmFeed %></span></h5>
-    <h5>PM Meds: <span class="feed-text"><%= horse.feed[0].pmMeds %></span></h5>
-    <h5>Night Feed: <span class="feed-text"><%= horse.feed[0].nightFeed %></span></h5>
-
-    <h4 class="mb-4 mt-4">Daily Care Routine</h4>
-    <h5>Turnout: <span class="feed-text"><%= horse.turnout %></span></h5>
-    <h5>Blanket: <span class="feed-text"><%= horse.blanket %></span></h5>
-
-    <h4 class="mb-4 mt-4">Important Notes</h4>
-    <p><%= horse.importantInfo %></p>
-
 </div>
 
 <%- include('../partials/footer') %>

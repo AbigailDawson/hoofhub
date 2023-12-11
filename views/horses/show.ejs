@@ -7,6 +7,7 @@
 
     <div class="card title-card">
         <h2 class="card-title text-center"><%= horse.name %></h2>
+        <a href="/horses/<%= horse.id %>/edit">Edit Horse Details</a>
         <p class="mb-0 mt-2 text-center"><%= horse.age %> year old <%= horse.color %> <%= horse.sex %> </p>
         <% if(horse.barns.length) { %>
             <p class="mt-2 text-center"><a href="/barns/<%= horse.barns[0].id %> "><%= horse.barns[0].name %></a></p>

@@ -7,17 +7,16 @@ module.exports = {
     new: newHorse,
     create,
     updateHorses,
-    addToBarn
+    addToBarn,
+    edit,
+    updateHorse
 };
 
 async function index(req, res) {
-    console.log(req.query.sort)
-
     let query = {};
     if (req.query.search) {
         query = { name: { $regex: new RegExp(req.query.search, 'i') } };
     }
-
     const horses = await Horse.find(query).sort({ [req.query.sort]: 1 });
 
     if (req.query.sort === 'age') {
@@ -100,6 +99,21 @@ async function addToBarn(req, res) {
     barn.horses.unshift(horse);
 
     await barn.save();
+    await horse.save();
+    res.redirect(`/horses/${horse._id}`);
+}
+
+async function edit(req, res) {
+    const horse = await Horse.findById(req.params.id).populate('barns');
+    res.render('horses/edit', {
+        title: 'Edit Horse Details',
+        horse
+    });
+}
+
+async function updateHorse(req, res) {
+    const horse = await Horse.findOneAndUpdate( { _id: req.params.id }, req.body);
+    horse.feed.splice(0, 1, req.body);
     await horse.save();
     res.redirect(`/horses/${horse._id}`);
 }

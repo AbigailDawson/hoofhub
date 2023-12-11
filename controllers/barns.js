@@ -80,6 +80,7 @@ async function edit(req, res) {
 async function update(req, res) {
     const barn = await Barn.findOneAndUpdate( { _id: req.params.id }, req.body);
     barn.address.splice(0, 1, req.body);
+    barn.contact.splice(0, 1, req.body);
     await barn.save();
     res.redirect('/barns')
 }

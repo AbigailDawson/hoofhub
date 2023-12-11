@@ -11,6 +11,12 @@ router.get('/horses/new', horsesCtrl.new);
 // GET /horses/:id
 router.get('/horses/:id', horsesCtrl.show);
 
+// GET /horses/:id/edit
+router.get('/horses/:id/edit', horsesCtrl.edit);
+
+// PUT /horses/:id
+router.put('/horses/:id', horsesCtrl.updateHorse)
+
 // POST /horses
 router.post('/horses', horsesCtrl.create);
 

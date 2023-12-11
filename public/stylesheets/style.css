@@ -8,20 +8,16 @@
     --button-hover: #39A199;
     --accent-blu: #23655f;
     --accent-prp: #987174;
+    --headings-font: "Francois One", sans-serif;
+    --body-font: "Roboto", sans-serif;
 }
+
+/*  ====  GLOBAL  ====  */
 
 body {
     background-color: var(--background);
-    font-family: "Roboto", sans-serif;
+    font-family: var(--body-font);
     padding-top: 80px;
-}
-
-.homepage {
-    margin-top: -80px;
-}
-
-.login-box {
-    margin-top: 100px;
 }
 
 footer {
@@ -38,7 +34,22 @@ a:hover {
     color: var(--button-hover);
 }
 
-/* NAVBAR STYLES */
+h1, h2, h3, h4, h5 {
+    font-family: var(--headings-font);
+}
+
+/*  ====  LOGIN PAGE  ====  */
+
+.homepage {
+    margin-top: -80px;
+}
+
+.login-box {
+    margin-top: 100px;
+}
+
+/*  ====  NAV  ====  */
+
 .navbar {
     background: rgb(237,220,210);
     background: linear-gradient(180deg, rgba(237,220,210,1) 39%, rgba(9,9,121,0) 91%);
@@ -50,7 +61,7 @@ a:hover {
 }
 
 .navbar .nav-link {
-    font-family: "Francois One", sans-serif;
+    font-family: var(--headings-font);
     transition: 0.3s;
 }
 
@@ -64,10 +75,10 @@ a:hover {
     color: var(--button-hover);
 }
 
-/* BTN & ICON STYLES */
+/*  ====  BUTTONS & ICONS  ====  */
 
 .btn {
-    font-family: "Francois One", sans-serif;
+    font-family: var(--headings-font);
     color: var(--text);
     background-color: var(--button-lt);
     border: none;
@@ -81,15 +92,27 @@ a:hover {
     outline: 2px solid var(--button-blu);
 }
 
+.trash-btn:hover,
+.trash-icon:hover {
+    color: rgb(177, 0, 0);
+    outline: none;
+}
+
+.arrow-btn {
+    color: var(--accent-prp);
+}
+
 .edit-btn-white:hover,
-.edit-icon-white:hover {
+.edit-icon-white:hover,
+.arrow-btn:hover,
+.arrow-icon:hover {
     outline: none;
     color: var(--button-blu);
 }
 
 .edit-btn-brwn,
 .edit-icon-brwn {
-    font-family: "Roboto", sans-serif;
+    font-family: var(--body-font);
     font-size: 14px;
     background-color: var(--background);
 }
@@ -114,143 +137,7 @@ a:hover {
     color: rgb(178, 0, 0);
 }
 
-
-/* .arrow-btn,
-.trash-btn {
-    background-color: white;
-}
-
-.arrow-btn:hover,
-.trash-btn:hover {
-    background-color: white;
-}
-
-.trash-btn:hover {
-    color: rgb(177, 0, 0);
-}
-
-.transparent-btn {
-    background-color: var(--background);
-}
-.transparent-btn:hover {
-    background-color: var(--background);
-}
-
-.arrow-btn {
-    padding: 0;
-}
-
-.trash-btn {
-    font-size: 16px;
-}
-
-.edit-horse-details-btn {
-    font-size: 13px;
-    background-color: white;
-}
-
-.edit-horse-details-btn:hover {
-    background-color: white;
-}
-
-.bi-arrow-up-square-fill, 
-.bi-arrow-down-square-fill {
-    color: var(--text-lt);
-    font-size: 30px;
-}
-
-.bi-arrow-up-square-fill:hover, 
-.bi-arrow-down-square-fill:hover {
-    color: var(--button-hover);
-} */
-
-.horses-btn,
-.chores-btn,
-.contacts-btn {
-    height: 50px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-
-
-
-h1, h2, h3, h4, h5 {
-    font-family: "Francois One", sans-serif;
-}
-
-/* BARN AND HORSE CARD STYLES */
-.barn-card-title,
-.section-title {
-    font-family: "Francois One", sans-serif;
-    font-size: 30px;
-}
-
-.barn-contacts,
-.barn-edit {
-    display: flex;
-    justify-content: flex-end;
-    align-self: flex-end;
-    flex-direction: row;
-}
-
-.barn-contacts-sm {
-    font-size: 12px;
-}
-
-.section-title a {
-    text-decoration: none;
-    color: var(--text)
-}
-
-
-.card-body {
-    overflow: hidden;
-}
-
-.feed-text {
-    font-size: 14px;
-}
-
-/* BARN and HORSE DETAIL CARD STYLES */
-.horse-feed-title {
-
-}
-
-.title-card {
-    background-color: var(--background);
-    border: none;
-    box-shadow: none;
-    border-radius: 10px;
-    padding: 8px;}
-
-.horse-detail-card {
-    background-color: var(--background);
-    color: var(--text);
-    margin-bottom: 5px;
-    padding: 15px;
-    text-align: center;
-}
-
-.horse-detail-card h3,
-.horse-detail-card h4 {
-    font-size: 14px;
-    margin: 5px 0 5px 0;
-}
-
-.horse-detail-card h4 {
-    font-family: "Roboto", sans-serif;
-}
-
-
-.horse-detail-card p {
-    font-size: 14px;
-    margin: 0;
-}
-
-/* FORM TEMPLATE STYLES */
+/*  ====  FORMS  ====  */
 
 .form-container {
     background-color: white;
@@ -282,21 +169,6 @@ input[type="text"]:focus{
     outline: 2px solid var(--button-hover);
 }
 
-/* --- SPECIFIC FORM STYLES --- */
-/* .list-group-item {
-    width: 600px;
-} */
-
-#create-chore-form label {
-    margin: 8px 0 5px 0;
-    font-size: 16px;
-}
-
-.horse-list {
-    max-height: 225px;
-    overflow: scroll;
-}
-
 .form-check-input {
     outline: 1px solid var(--text);
     font-size: 25px;
@@ -306,10 +178,71 @@ input[type="text"]:focus{
     background-color: var(--button-hover);
 }
 
+/*  ====  SECTIONS & CARDS  ====  */
+
+.section-title {
+    font-family: var(--headings-font);
+    font-size: 30px;
+}
+
+.horse-card {
+    background-color: var(--background);
+    color: var(--text);
+    margin-bottom: 5px;
+    padding: 15px;
+    text-align: center;
+}
+
+.horse-card p {
+    font-size: 14px;
+    margin: 0;
+}
+
+.feed-text {
+    font-size: 14px;
+}
+
 /* XS SCREENS */
 @media (max-width: 576px) {
+    .homepage {
+        background: url('../images/background-image.jpg');
+        background-position: 50% 100%;
+        background-size: 70vh;
+        background-repeat: no-repeat;
+        background-color: white;
+    }
+
+    .login-box {
+        position: relative;
+        margin-top: 20%;
+        padding-bottom: 0;
+        height: 250px;
+        width: 80%;
+    }
+
+    .img-wrapper {
+        width: 100px;
+    }
+
+    .login-btn {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 0;
+        height: 35px;
+        font-size: 14px;
+    }
+
     .navbar {
         background-color: var(--primary);
+    }
+
+    .barn-card-title {
+        font-size: 20px;
+    }
+
+    .barn-contact {
+        font-size: 10px;
     }
 }
 
@@ -317,10 +250,25 @@ input[type="text"]:focus{
 @media (min-width: 576px) {
     .homepage {
         background: url('../images/background-image.jpg');
-        background-position: center;
+        background-position: 50% 100%;
+        background-size: 100%;
         background-repeat: no-repeat;
-        background-size: cover; 
+        background-color: white;
     }
+
+    .login-box {
+        width: 80%;
+        height: 250px;
+    }
+
+    .img-wrapper {
+        width: 100px;
+    }
+    
+    .login-btn {
+        height: 35px;
+    }
+
     .navbar {
         height: 80px;
     }
@@ -333,22 +281,40 @@ input[type="text"]:focus{
         font-size: 40px;
     }
 
-    .barn-contacts {
+    .barn-contact {
         font-size: 12px;
     }
 
-    .barn-card-title-lg {
-        font-size: 20px;
+    .barn-card-title {
+        font-size: 22px;
+    }
+
+    .chores-list {
+        min-width: 400px;
     }
 }
 
 /* MD SCREENS */
 @media (min-width: 768px) {
-.barn-card-title-lg {
+    .barn-card-title {
         font-size: 25px;
     }
-    .barn-contacts {
+    .barn-contact {
         font-size: 14px;
+    }
+
+    .login-box {
+        height: 350px;
+        width: 350px;
+    }
+
+    .img-wrapper {
+        margin-top: 15px;
+        width: 150px;
+    }
+    
+    .login-btn {
+        height: 45px;
     }
 }
 

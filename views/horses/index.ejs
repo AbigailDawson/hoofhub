@@ -1,10 +1,8 @@
 <%- include('../partials/header') %>
 
-<div class="container mt-5">
+<div class="container mt-5 pb-5 d-flex flex-column align-items-center">
 
-<div class="card title-card">
-    <h2 class="card-title text-center mb-4">My Herd</h2>
-</div>
+<h2 class="mb-4">My Herd</h2>
 
 <form class="row g-2 justify-content-center" action="/horses" method="GET">
     <div class="col-auto">
@@ -39,9 +37,9 @@
 <div class="row mt-5 justify-content-center">
     <% horses.forEach((horse) => { %>
     <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
-        <div class="card rounded-2 p-3 bg-white shadow horse-detail-card">
+        <div class="card rounded-2 p-3 bg-white shadow horse-card">
             <h2 class="mb-2"><%= horse.name %> </h2>
-            <h4 class="mb-2"><%= horse.age %> year old <%= horse.color %> <%= horse.sex %> </h4>
+            <p class="mb-2"><%= horse.age %> year old <%= horse.color %> <%= horse.sex %> </p>
             <a class="btn mt-2" href="/horses/<%= horse.id %>">See Details</a>
         </div>
     </div>

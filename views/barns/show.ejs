@@ -1,9 +1,8 @@
 <%- include('../partials/header') %>
 
-<div class="container mt-5">
+<div class="container mt-5 pb-5 d-flex flex-column align-items-center">
 
-<div class="card title-card">
-    <h2 class="section-title text-center"><a href='/barns/<%= barn.id %>'><%= barn.name %></a></h2>
+    <h2><a href='/barns/<%= barn.id %>'><%= barn.name %></a></h2>
 
     <small class="card-text text-center">
         <%= barn.address[0].streetAddress %>, <%= barn.address[0].city %>, <%= barn.address[0].state %> <%= barn.address[0].zip %>
@@ -20,18 +19,14 @@
         <a href="/barns/<%= barn.id %>/edit"><i class="bi bi-pencil-square edit-icon-brwn" style="background-color: var(--background)"></i> &nbsp; Edit Barn Details</a> 
     </button>
     
-</div>
-
 <div class="row mt-2 justify-content-center">
     <div class="col-auto">
         <a class="btn btn-lg" href='/barns/<%= barn.id %>/chores'>Barn Chores</a>
     </div>
 </div>
 
-<div class="row mt-3 g-2 justify-content-center">
-    <div class="card title-card">
-        <h3 class="card-title text-center">Horses</h3>
-    </div>
+<div class="row mt-4 g-2 justify-content-center">
+    <h3 class="text-center">Horses</h3>
     <div class="col-auto">
         <a class="btn" href='/barns/<%= barn.id %>/horses?sort=name'>Sort by Name</a>
     </div>
@@ -44,10 +39,10 @@
     <% barn.horses.forEach((horse) => { %>
 
         <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
-            <div class="card rounded-2 p-3 bg-white shadow horse-detail-card">
+            <div class="card rounded-2 p-3 bg-white shadow horse-card">
                 <h2 class="mb-2"><%= horse.name %> </h2>
                 <p class="mb-2"><%= horse.age %> year old <%= horse.color %> <%= horse.sex %> </p>
-                <a href="/horses/<%= horse.id %>" class="btn mt-1 btn-md w-100 horses-btn">Horse Details</a>
+                <a href="/horses/<%= horse.id %>" class="btn mt-1 btn-md w-100">Horse Details</a>
      
             </div>
         </div>

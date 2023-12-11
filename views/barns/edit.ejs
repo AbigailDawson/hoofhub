@@ -88,6 +88,7 @@
         </div>
         <form id="add-horse-form" action="/barns/<%= barn._id %>/horses?action=add" method="POST">
             <select class="form-control form-control-md" name="horseId">
+                <option value="">-- Select a horse</option>
                 <% if (horses.length) { %>
                     <%- horses.map(horse => 
                     `<option value="${horse._id}">${horse.name}</option>`
@@ -105,6 +106,7 @@
         </div>
         <form id="remove-horse-form" action="/barns/<%= barn._id %>/horses?action=remove" method="POST">
             <select class="form-control form-control-md" name="horseId">
+                <option value="">-- Select a horse</option>
                 <% if (barn.horses.length) { %>
                     <%- barn.horses.map(horse => 
                     `<option value="${horse._id}">${horse.name}</option>`

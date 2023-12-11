@@ -13,26 +13,27 @@ module.exports = {
 };
 
 async function index(req, res) {
+    const horses = await Horse.find({ user: req.user._id }).sort({ [req.query.sort]: 1 });
+
     let query = {};
     if (req.query.search) {
         query = { name: { $regex: new RegExp(req.query.search, 'i') } };
-    }
-    const horses = await Horse.find(query).sort({ [req.query.sort]: 1 });
-
-    if (req.query.sort === 'age') {
-        horses.sort((a, b) => a[req.query.sort] - b[req.query.sort])
-    } else if (req.query.sort === 'name') {
-        horses.sort((a, b) => {
-            const horseA = a.name.toLowerCase();
-            const horseB = b.name.toLowerCase();
-            if (horseA < horseB) {
-                return -1;
-              }
-              if (horseA > horseB) {
-                return 1;
-              }
-            return horseA - horseB
-          })
+        horses = await Horse.find(query).sort({ [req.query.sort]: 1 });
+        if (req.query.sort === 'age') {
+            horses.sort((a, b) => a[req.query.sort] - b[req.query.sort])
+        } else if (req.query.sort === 'name') {
+            horses.sort((a, b) => {
+                const horseA = a.name.toLowerCase();
+                const horseB = b.name.toLowerCase();
+                if (horseA < horseB) {
+                    return -1;
+                  }
+                  if (horseA > horseB) {
+                    return 1;
+                  }
+                return horseA - horseB
+              })
+        }
     }
 
     res.render('horses/index', {
@@ -44,7 +45,7 @@ async function index(req, res) {
 
 async function show(req, res) {
     const horse = await Horse.findById(req.params.id).populate('barns');
-    const barns = await Barn.find({});
+    const barns = await Barn.find({ user: req.user._id });
     console.log('HORSE: ', horse)
     res.render('horses/show', {
         horse,
@@ -61,6 +62,7 @@ function newHorse(req, res) {
 }
 
 async function create(req, res) {
+    req.body.user = req.user._id;
     for (let key in req.body) {
         if (req.body[key] === '') delete req.body[key];
     }

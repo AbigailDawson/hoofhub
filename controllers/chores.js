@@ -19,6 +19,7 @@ async function viewChores(req, res) {
 }
 
 async function addChore(req, res) {
+    req.body.user = req.user._id;
     const barn = await Barn.findById(req.params.id);
     req.body.completed = false;    
     barn.chores.push(req.body);

@@ -26,6 +26,10 @@ const barnNoteSchema = new Schema({
 })
 
 const choreSchema = new Schema({
+    user: {
+        type: Schema.Types.ObjectId,
+        ref: 'User'
+    },
     chore: String,
     notes: String,
     completed: {
@@ -35,6 +39,10 @@ const choreSchema = new Schema({
 });
 
 const barnSchema = new Schema({
+    user: {
+        type: Schema.Types.ObjectId,
+        ref: 'User'
+    },
     name: String,
     address: {
         type: [addressSchema],

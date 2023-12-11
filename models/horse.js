@@ -22,6 +22,10 @@ const horseNoteSchema = new Schema({
 });
 
 const horseSchema = new Schema({
+    user: {
+        type: Schema.Types.ObjectId,
+        ref: 'User'
+    },
     barns: [{
         type: Schema.Types.ObjectId,
         ref: 'Barn'

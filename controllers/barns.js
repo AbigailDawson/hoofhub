@@ -12,7 +12,7 @@ module.exports = {
 };
 
 async function index(req, res) {
-    const barns = await Barn.find({}).populate('horses');
+    const barns = await Barn.find({ user: req.user._id }).populate('horses');
     res.render('barns/index', {
         title: 'All Barns',
         barns
@@ -51,7 +51,7 @@ async function newBarn(req, res) {
 }
 
 async function create(req, res) {
-    console.log('REQ.BODY IN CREATE FUNCTION: ', req.body)
+    req.body.user = req.user._id;
     for (let key in req.body) {
         if (req.body[key] === '') delete req.body[key];
     }

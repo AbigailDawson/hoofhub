@@ -195,12 +195,6 @@ h1, h2, h3, h4, h5 {
     overflow: hidden;
 }
 
-/* HORSE LIST STYLES */
-.horse-list {
-    max-height: 300px;
-    overflow: scroll;
-}
-
 .feed-text {
     font-family: "Roboto", sans-serif;
     font-size: 18px;
@@ -239,7 +233,7 @@ h1, h2, h3, h4, h5 {
     margin: 0;
 }
 
-/* FORM STYLES */
+/* FORM TEMPLATE STYLES */
 
 .form-container {
     background-color: white;
@@ -271,11 +265,30 @@ input[type="text"]:focus{
     outline: 2px solid var(--button-hover);
 }
 
+/* --- SPECIFIC FORM STYLES --- */
 #create-chore-form label {
     margin: 8px 0 5px 0;
     font-size: 16px;
 }
 
+.horse-list {
+    max-height: 225px;
+    overflow: scroll;
+}
+
+.remove-btn {
+    color: rgb(178, 0, 0);
+}
+
+.remove-btn:hover {
+    outline: 2px solid rgb(178, 0, 0);
+    color: rgb(178, 0, 0);
+}
+
+.remove-btn-txt {
+    font-size: 12px;
+    color: rgb(178, 0, 0);
+}
 
 /* XS SCREENS */
 @media (max-width: 576px) {

@@ -119,6 +119,15 @@ footer a {
     font-size: 16px;
 }
 
+.edit-horse-details-btn {
+    font-size: 13px;
+    background-color: white;
+}
+
+.edit-horse-details-btn:hover {
+    background-color: white;
+}
+
 .bi-arrow-up-square-fill, 
 .bi-arrow-down-square-fill {
     color: var(--text-lt);

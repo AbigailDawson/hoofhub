@@ -15,8 +15,9 @@
                     <p class="text-center"><a href="/barns/<%= horse.barns[0].id %> "><%= horse.barns[0].name %></a></p>
                     <% } else { %>
                         <p class="text-center">This horse has not been assigned to a barn yet. Add to barn?</p>
-                        <form id="add-horse-form" action="/horses/<%= horse._id %>/barns" method="POST">
+                        <form class="d-flex flex-column align-items-center mb-2" id="add-horse-to-barn-form" action="/horses/<%= horse._id %>/barns" method="POST">
                             <select class="form-control form-control-md" name="barnId">
+                                <option value="">-- Select a barn</option>
                                 <% if (barns.length) { %>
                                     <%- barns.map(barn => 
                                     `<option value="${barn._id}">${barn.name}</option>`
@@ -28,6 +29,9 @@
                             <button type="submit" class="btn mt-3">Add to Barn</button> 
                         </form>
                     <% } %>
+                <button type="button" class="btn edit-horse-details-btn transparent-btn">
+                    <a href="/horses/<%= horse.id %>/edit"><i class="bi bi-pencil-square"></i> &nbsp; Edit Horse Details</a> 
+                </button>
             </div>
         </div>
         <div class="row mt-4 mb-2">
@@ -85,7 +89,7 @@
                 <h2>Important Information</h2>
             </div>
         </div>
-        <div class="col-12 col-sm-6">
+        <div class="col-12">
             <p class="ms-2 mt-0 feed-text"><%= horse.importantInfo %></p>
         </div>
     </div>

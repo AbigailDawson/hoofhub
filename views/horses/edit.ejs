@@ -1,0 +1,97 @@
+<%- include('../partials/header') %>
+
+<div class="container mt-5 mb-5 d-flex flex-column align-items-center">
+    <div class="form-container mb-5 overflow-hidden">
+        <form class="form" id="new-horse-form" action="/horses" method="POST">
+            <div class="row d-flex justify-content-center">
+                <img class="img-fluid mb-3" src="/images/horse-icon-2.png" style="max-width: 150px" alt="Horse icon"> 
+                <h4 class="form-title mb-4 text-center">Edit Horse Details</h4>
+            </div>
+            <div class="row mt-4">
+                <div class="col-12">
+                    <h2>Basic Details</h2>
+                </div>
+            </div>
+            <div class="form-row d-sm-flex gx-0 w-100">
+                <div class="col-12 col-sm-6 me-sm-1">
+                    <label for="name">Name</label>
+                    <input name="name" type="text" class="form-control" id="name" value="<%= horse.name %>">
+                </div>
+                <div class="col-12 col-sm-3">
+                    <label for="state">Age</label>
+                    <input name="age" type="number" class="form-control" id="age" value="<%= horse.age %>">
+                </div>
+                <div class="col-12 col-sm-3 ms-sm-1">
+                    <label for="sex">Sex</label>
+                    <input name="sex" type="text" class="form-control" id="sex" value="<%= horse.sex %>">
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-12">
+                    <h2>Feeding Schedule</h2>
+                </div>
+            </div>
+            <div class="form-row d-sm-flex gx-0 w-100">
+                <div class="col-12 col-sm-4 me-sm-1">
+                    <label for="amFeed">AM Feed</label>
+                    <input name="amFeed" type="text" class="form-control" id="amFeed" value="<%= horse.feed[0].amFeed %>">
+                </div>
+                <div class="col-12 col-sm-4">
+                    <label for="amMeds">AM Meds</label>
+                    <input name="amMeds" type="text" class="form-control" id="amMeds" value="<%= horse.feed[0].amMeds %>">
+                </div>
+                <div class="col-12 col-sm-4 ms-sm-1">
+                    <label for="middayFeed">Midday Feed</label>
+                    <input name="middayFeed" type="text" class="form-control" id="middayFeed" value="<%= horse.feed[0].middayFeed %>">
+                </div>
+            </div>
+            <div class="form-row d-sm-flex gx-0 w-100">
+                <div class="col-12 col-sm-4 me-sm-1">
+                    <label for="pmFeed">PM Feed</label>
+                    <input name="pmFeed" type="text" class="form-control" id="pmFeed" value="<%= horse.feed[0].pmFeed %>">
+                </div>
+                <div class="col-12 col-sm-4">
+                    <label for="pmMeds">PM Meds</label>
+                    <input name="pmMeds" type="text" class="form-control" id="pmMeds" value="<%= horse.feed[0].pmMeds %>">
+                </div>
+                <div class="col-12 col-sm-4 ms-sm-1">
+                    <label for="nightFeed">Night Feed</label>
+                    <input name="nightFeed" type="text" class="form-control" id="nightFeed" value="<%= horse.feed[0].nightFeed %>">
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-12">
+                    <h2>Daily Care Routine</h2>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col-12">
+                    <label for="turnout">Turnout</label>
+                    <input name="turnout" type="text" class="form-control" id="turnout">                
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col-12">
+                    <label for="blanket">Blanket</label>
+                    <input name="blanket" type="text" class="form-control" id="blanket">
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-12">
+                    <h2>Important Information</h2>
+                </div>
+            </div>
+            <div class="col-12">
+                <label for="importantInfo">Write additional comments here!</label>
+                <textarea name="importantInfo" class="form-control" id="importantInfo" rows="4"></textarea>
+            </div>
+            <div class="form-row">
+                <div class="col-12">
+                    <button type="submit" class="btn mt-4 w-100" value="Add">Add Horse</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<%- include('../partials/footer') %>

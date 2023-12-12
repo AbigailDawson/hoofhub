@@ -31,7 +31,7 @@ HTML, CSS, JavaScript | Node.js & Express.js | Mongoose & MongoDB | Bootstrap 5
 #### <div align="center">Mobile-Friendly User Interface</div>
 Because farm sitters are always on the go, it was important to me to build HoofHub with mobile use in mind. Users may choose to create and organize their notes using HoofHub's desktop layout on larger screens, but can also enjoy the same features on smaller screens with HoofHub's mobile-friendly user interface.
 
-> *Developer's Note* I taught myself Bootstrap specifically for this project because of its mobile-first approach to responsive design. Given the unique needs of HoofHub's target users, developing the app with a mobile-friendly user interface was a priority. Bootstrap 5's responsive grid system, form templates and other styling packages contributed to the consistent appearance and feel across all app pages and features.
+I taught myself Bootstrap specifically for this project because of its mobile-first approach to responsive design. Given the unique needs of HoofHub's target users, developing the app with a mobile-friendly user interface was a priority. Bootstrap 5's responsive grid system, form templates and other styling packages contributed to the consistent appearance and feel across all app pages and features.
 
 ## Next Steps
 

@@ -10,8 +10,6 @@ Kästlee has been running her own farm sitting business for four years, but has 
 HoofHub eliminates the need for multiple apps, trackers and notes systems, and helps users like Kästlee stay focused on providing exceptional horse care. HoofHub continues to be developed with the unique needs of horse care professionals in mind.
 
 ## <div align="center">Using the HoofHub App</div>
-HoofHub has not yet been deployed to the public.
-
 #### *Logging In*
 HoofHub uses Google OAuth authentication system and users must be signed in to enjoy the app's features. Use the Sign In button to easily sign up using a Google account. HoofHub does not send emails to users.
 
@@ -24,14 +22,17 @@ Finding a specific horse is easy with the search feature on the **My Herd** page
 #### *Managing Chores*
 Users who care for horses at multiple barns will enjoy HoofHub's chore management system, which allows for a customized chore list to be created for each barn. Users can add chores quickly with a simple form and use the up and down arrows to reorder the list to suit their needs. Checking off a chore moves it to the bottom of the list, and the Clear All button resets the list by un-checking all items on the list.
 
-### <div align="center">Mobile-Friendly User Flow</div>
-Because farm sitters are always on the go, it was important to me to build HoofHub with mobile use in mind. Users may choose to create and organize their notes using HoofHub's desktop layout on larger screens, but can also enjoy the same features on smaller screens with HoofHub's mobile-friendly design.
+### <div align="center">Mobile-Friendly User Interface</div>
+Because farm sitters are always on the go, it was important to me to build HoofHub with mobile use in mind. Users may choose to create and organize their notes using HoofHub's desktop layout on larger screens, but can also enjoy the same features on smaller screens with HoofHub's mobile-friendly user interface.
 
 ## Tech Stack
 
-HoofHub was created with HTML, CSS, JavaScript, Node.js, Express.js, Bootstrap, Mongoose, MongoDB.
+* HTML, CSS, JavaScript
+* Node.js, Express.js
+* Mongoose, MongoDB
+* Bootstrap 5
 
-> For this project 
+> I taught myself Bootstrap specifically for this project because of its mobile-first approach to responsive design. Given the unique needs of HoofHub's target users, developing the app with a mobile-friendly user interface was a priority. Bootstrap 5's responsive grid system, form templates and other styling packages contributed to the consistent appearance and feel across all app pages and features.
 
 ## Next Steps
 

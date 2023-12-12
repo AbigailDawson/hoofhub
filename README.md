@@ -7,8 +7,7 @@
 HoofHub provides a platform for busy horse care professionals to keep all of their horse and barn notes organized and up to date in one place. With detailed horse and barn profiles, dedicated space for custom horse notes, and a chore management system for users to create, order and check off chores, HoofHub has everything a farm sitter needs to streamline their business workflow.
 
 ### <div align="center">Meet Kästlee, a self-employed farm sitter</div>
-<img src="./public/images/kastlee.jpg" width="200" height="200" />
-![Kästlee with a horse](./public/images/kastlee.jpg)
+<img src="./public/images/kastlee.jpg" height="300" />
 Kästlee has been running her own farm sitting business for four years, but has never found an organizational system that meets her needs. She manages up to 6 barns at a time with up to 20 horses each, and keeps notes saved in the small details section of her calendar app. With this system, Kästlee finds it difficult to look up important information about specific horses and keep track of communication from the barn owners.
 
 HoofHub eliminates the need for multiple apps, trackers and notes systems, and helps users like Kästlee stay focused on providing exceptional horse care. HoofHub continues to be developed with the unique needs of horse care professionals in mind.

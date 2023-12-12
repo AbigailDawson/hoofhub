@@ -40,12 +40,12 @@ async function index(req, res) {
     res.render('horses/index', {
         title: 'All Horses',
         horses,
-        showAllLink: !req.query.search
+        showAllLink: !req.query.search,
     })
 }
 
 async function show(req, res) {
-    const horse = await Horse.findById(req.params.id).populate('barns');
+    const horse = await Horse.findOne({ _id: req.params.id, user: req.user._id }).populate('barns');
     const barns = await Barn.find({ user: req.user._id });
     res.render('horses/show', {
         horse,
@@ -78,7 +78,7 @@ async function create(req, res) {
 }
 
 async function updateHorses(req, res) {
-    const barn = await Barn.findById(req.params.id).populate('horses');
+    const barn = await Barn.findOne({ _id: req.params.id, user: req.user._id }).populate('barns');
     const horse = await Horse.findOne({ _id: req.body.horseId });
 
     if (req.query.action === 'add') {
@@ -95,7 +95,7 @@ async function updateHorses(req, res) {
 }
 
 async function addToBarn(req, res) {
-    const horse = await Horse.findById(req.params.id).populate('barns');
+    const horse = await Horse.findOne({ _id: req.params.id, user: req.user._id }).populate('barns');
     const barn = await Barn.findOne({ _id: req.body.barnId });
 
     horse.barns.push(req.body.barnId);
@@ -107,7 +107,7 @@ async function addToBarn(req, res) {
 }
 
 async function edit(req, res) {
-    const horse = await Horse.findById(req.params.id).populate('barns');
+    const horse = await Horse.findOne({ _id: req.params.id, user: req.user._id }).populate('barns');
     res.render('horses/edit', {
         title: 'Edit Horse Details',
         horse
@@ -115,7 +115,7 @@ async function edit(req, res) {
 }
 
 async function updateHorse(req, res) {
-    const horse = await Horse.findOneAndUpdate( { _id: req.params.id }, req.body);
+    const horse = await Horse.findOneAndUpdate( { _id: req.params.id, user: req.user._id }, req.body);
     horse.feed.splice(0, 1, req.body);
     await horse.save();
     res.redirect(`/horses/${horse._id}`);

@@ -11,7 +11,7 @@ module.exports = {
 };
 
 async function viewChores(req, res) {
-    const barn = await Barn.findById(req.params.id);
+    const barn = await Barn.findOne({ _id: req.params.id, user: req.user._id });
     res.render('barns/chores', {
         barn,
         title: 'Chores'
@@ -33,7 +33,8 @@ async function addChore(req, res) {
 
 async function moveChore(req, res) {
     const barn = await Barn.findOne({
-        'chores._id': req.params.choreId // look for chore in the array with id that matches request
+        'chores._id': req.params.choreId, // look for chore in the array with id that matches request
+        user: req.user._id
     });
 
     const chore = barn.chores.id(req.params.choreId);
@@ -53,7 +54,8 @@ async function moveChore(req, res) {
 
 async function checkChore(req, res) {
     const barn = await Barn.findOne({
-        'chores._id': req.params.choreId // look for chore in the array with id that matches request
+        'chores._id': req.params.choreId, // look for chore in the array with id that matches request
+        user: req.user._id
     });
 
     const chore = barn.chores.id(req.params.choreId);
@@ -75,7 +77,7 @@ async function checkChore(req, res) {
 }
 
 async function clearChores(req, res) {
-    const barn = await Barn.findById(req.params.id);
+    const barn = await Barn.findOne({ _id: req.params.id, user: req.user._id }).populate('barns');
     barn.chores.forEach((chore) => {
         chore.completed = false;
     })
@@ -89,7 +91,8 @@ async function clearChores(req, res) {
 
 async function deleteChore(req, res) {
     const barn = await Barn.findOne({
-        'chores._id': req.params.choreId // look for chore in the array with id that matches request
+        'chores._id': req.params.choreId, // look for chore in the array with id that matches request
+        user: req.user._id
     });
 
     barn.chores.remove(req.params.choreId);

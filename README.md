@@ -12,7 +12,11 @@ HoofHub eliminates the need for multiple apps, trackers and notes systems, and h
 ## <div align="center">Getting Started</div>
 HoofHub has not yet been deployed to the public.
 
-#### *A subtitle*
+#### *Logging In*
+HoofHub uses Google OAuth authentication system and users must be signed in to enjoy the app's features. Use the Sign In button to easily sign up using a Google account. HoofHub does not send emails to users.
+
+#### *Adding Horses and Barns*
+Users can get started right away customizing the app to suit their needs. Barns and horses can be added by filling out a quick form, 
 
 1. An ordered list item
 

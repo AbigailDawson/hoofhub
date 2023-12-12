@@ -27,15 +27,32 @@
 
 <div class="row mt-4 g-2 justify-content-center">
     <h3 class="text-center">Horses</h3>
-    <div class="col-auto">
-        <a class="btn" href='/barns/<%= barn.id %>/horses?sort=name'>Sort by Name</a>
-    </div>
-    <div class="col-auto">
-        <a class="btn" href='/barns/<%= barn.id %>/horses?sort=age'>Sort by Age</a>
-    </div>
+    <% if (barn.horses.length) { %>
+        <div class="col-auto">
+            <a class="btn" href='/barns/<%= barn.id %>/horses?sort=name'>Sort by Name</a>
+        </div>
+        <div class="col-auto">
+            <a class="btn" href='/barns/<%= barn.id %>/horses?sort=age'>Sort by Age</a>
+        </div>
+        <div class="col-auto">
+            <a class="btn" href='/horses/new'>Add a Horse</a>
+        </div>
+    <% } else { %>
+        <div class="row mt-4 g-2 justify-content-center">
+            <div class="col-auto">
+            <p>No horses have been added to this barn yet!</p>
+            </div>
+        </div>
+        <div class="row mt-4 g-2 justify-content-center">
+            <div class="col-auto">
+                <a class="btn" href='/horses/new'>Add a Horse</a>
+            </div>
+        </div>
+        <% } %>
+    
 </div>
     
-<div class="row mt-5">
+<div class="row mt-5 d-flex flex-column flex-sm-row">
     <% barn.horses.forEach((horse) => { %>
 
         <div class="col-12 col-sm-6 mb-4">
@@ -43,7 +60,6 @@
                 <h2 class="mb-2"><%= horse.name %> </h2>
                 <p class="mb-2"><%= horse.age %> year old <%= horse.color %> <%= horse.sex %> </p>
                 <a href="/horses/<%= horse.id %>" class="btn mt-1 btn-md w-100">Horse Details</a>
-     
             </div>
         </div>
     <% }) %>

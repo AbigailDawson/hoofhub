@@ -5,9 +5,22 @@
     <h2 class="mb-4 fs-2">My Barns</h2>
 
     <div class="row g-2 justify-content-center">
-        <div class="col-auto">
-            <a class="btn" href='/barns/new'>Add a Barn</a>
-        </div>
+        <% if (barns.length) { %>
+            <div class="col-auto">
+                <a class="btn" href='/barns/new'>Add a Barn</a>
+            </div>
+            <% } else { %>
+                <div class="row g-2 justify-content-center">
+                    <div class="col-auto">
+                        <p>No barns have been added yet!</p>
+                    </div>
+                </div>
+                <div class="row g-2 justify-content-center">
+                    <div class="col-auto">
+                        <a class="btn" href='/barns/new'>Add a Barn</a>
+                    </div>
+                </div>
+                <% } %>
     </div>
 
     <div class="row mt-4 d-flex flex-column">

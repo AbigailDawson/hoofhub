@@ -8,6 +8,7 @@
         <div class="col-12">
             <h4 class="mb-3 text-center">Chores</h4>
         </div>
+    </div>
     <div class="row mt-2 d-flex flex-column">
         <div class="col-12 mb-5">
             <% if (barn.chores.length) { %>
@@ -62,7 +63,7 @@
         </div>
     </div>
 
-    <div class="form-container mb-5 overflow-hidden" style="width: 100%">
+    <div class="form-container mb-5" style="width: 100%">
         <form class="form" id="create-chore-form" class="pb-5" action="/barns/<%= barn.id %>/chores" method="POST">
             <div class="row d-flex justify-content-center">
                 <h4 class="form-title mb-4 text-center">Add a Chore</h4>
@@ -80,7 +81,7 @@
                 </div>
             </div>
             <div class="form-row mt-3">
-                <button type="submit" class="btn" value="addChore">Add</button>
+                <button type="submit" class="btn w-100" value="addChore">Add</button>
             </div>
         </form>
     </div>

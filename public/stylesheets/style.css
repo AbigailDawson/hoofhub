@@ -245,6 +245,10 @@ input[type="text"]:focus{
     .barn-contact {
         font-size: 10px;
     }
+
+    .horse-card {
+        width: 300px;
+    }
 }
 
 /* SM SCREENS */

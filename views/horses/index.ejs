@@ -37,7 +37,7 @@
 <div class="row mt-5 justify-content-center">
 
     <% horses.forEach((horse) => { %>
-        <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+        <div class="col-12 col-sm-6 d-flex flex-column align-items-center">
         <div class="card rounded-2 p-3 bg-white shadow horse-card">
             <h2 class="mb-2"><%= horse.name %> </h2>
             <p class="mb-2"><%= horse.age %> year old <%= horse.color %> <%= horse.sex %> </p>

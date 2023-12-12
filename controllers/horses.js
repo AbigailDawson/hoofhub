@@ -13,7 +13,7 @@ module.exports = {
 };
 
 async function index(req, res) {
-    let horses = await Horse.find({ user: req.user._id }).sort({ [req.query.sort]: 1 });
+    let horses = await Horse.find({ user: req.user._id });
 
     let query = {};
     if (req.query.search) {

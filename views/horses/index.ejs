@@ -2,64 +2,63 @@
 
 <div class="container mt-5 pb-5 d-flex flex-column align-items-center">
 
-<h2 class="mb-4">My Herd</h2>
+    <h2 class="mb-4">My Herd</h2>
 
-<form class="row g-2 justify-content-center" action="/horses" method="GET">
-    <div class="col-auto">
-        <input class="form-control" type="text" name="search" placeholder="Horse's name" aria-label="Search">
-    </div>
-    <div class="col-auto">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-    </div>
-</form>
+    <form class="row g-2 justify-content-center" action="/horses" method="GET">
+        <div class="col-auto">
+            <input class="form-control" type="text" name="search" placeholder="Horse's name" aria-label="Search">
+        </div>
+        <div class="col-auto">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+        </div>
+    </form>
 
-<div class="row mt-3 g-2 justify-content-center">
-    <% if (horses.length) { %>
-        <div class="col-auto">
-            <a class="btn" href='/horses?sort=name'>Sort by Name</a>
-        </div>
-        <div class="col-auto">
-            <a class="btn" href='/horses?sort=age'>Sort by Age</a>
-        </div>
-        <div class="col-auto">
-            <a class="btn" href='/horses/new'>Add a Horse</a>
-        </div>
-    <% } else if { %>
-        <div class="row mt-4 g-2 justify-content-center">
+    <div class="row mt-3 g-2 justify-content-center">
+        <% if (horses.length) { %>
             <div class="col-auto">
-            <p>No horses have been added to this barn yet!</p>
+                <a class="btn" href='/horses?sort=name'>Sort by Name</a>
             </div>
-        </div>
-        <div class="row mt-4 g-2 justify-content-center">
+            <div class="col-auto">
+                <a class="btn" href='/horses?sort=age'>Sort by Age</a>
+            </div>
             <div class="col-auto">
                 <a class="btn" href='/horses/new'>Add a Horse</a>
             </div>
-        </div>
-        <% } %>
-</div>
+        <% } else { %>
+            <div class="row mt-4 g-2 justify-content-center">
+                <div class="col-auto">
+                <p>No horses have been added to this barn yet!</p>
+                </div>
+            </div>
+            <div class="row mt-4 g-2 justify-content-center">
+                <div class="col-auto">
+                    <a class="btn" href='/horses/new'>Add a Horse</a>
+                </div>
+            </div>
+            <% } %>
+    </div>
 
-<div class="row mt-3 g-2 justify-content-center">
-    <div class="col-auto">
-        <% if (!showAllLink) { %>
-            <a href="/horses" class="btn">Show All Horses</a>
-        <% } %>
+    <div class="row mt-3 g-2 justify-content-center">
+        <div class="col-auto">
+            <% if (!showAllLink) { %>
+                <a href="/horses" class="btn">Show All Horses</a>
+            <% } %>
+        </div>
+    </div>
+    
+    <div class="row mt-5 d-flex flex-column flex-sm-row">
+        <% horses.forEach((horse) => { %>
+            <div class="col-12 col-sm-6 col-md-4 mb-4">
+                <div class="card rounded-2 p-3 bg-white shadow horse-card">
+                    <h2 class="mb-2"><%= horse.name %> </h2>
+                    <p class="mb-2"><%= horse.age %> year old <%= horse.sex %> </p>
+                    <a class="btn mt-2" href="/horses/<%= horse.id %>">See Details</a>
+                </div>
+            </div>
+        <% }) %>
+
     </div>
 </div>
 
 
-<div class="row mt-5 justify-content-center">
-
-    <% horses.forEach((horse) => { %>
-        <div class="col-12 col-sm-6 d-flex flex-column align-items-center">
-        <div class="card rounded-2 p-3 bg-white shadow horse-card">
-            <h2 class="mb-2"><%= horse.name %> </h2>
-            <p class="mb-2"><%= horse.age %> year old <%= horse.color %> <%= horse.sex %> </p>
-            <a class="btn mt-2" href="/horses/<%= horse.id %>">See Details</a>
-        </div>
-    </div>
-       
-    <% }) %>
-
-</div>
-  
 <%- include('../partials/footer') %>

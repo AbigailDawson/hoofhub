@@ -9,38 +9,29 @@ Kästlee has been running her own farm sitting business for four years, but has 
 
 HoofHub eliminates the need for multiple apps, trackers and notes systems, and helps users like Kästlee stay focused on providing exceptional horse care. HoofHub continues to be developed with the unique needs of horse care professionals in mind.
 
-## <div align="center">Getting Started</div>
+## <div align="center">Using the HoofHub App</div>
 HoofHub has not yet been deployed to the public.
 
 #### *Logging In*
 HoofHub uses Google OAuth authentication system and users must be signed in to enjoy the app's features. Use the Sign In button to easily sign up using a Google account. HoofHub does not send emails to users.
 
 #### *Adding Horses and Barns*
-Users can get started right away customizing the app to suit their needs. Barns and horses can be added by filling out a quick form, 
+Users can get started right away customizing the app to suit their needs. Barns and horses can be added by filling out a quick form, and horses can be assigned to barns from either the horse's details page or from the edit barn page. 
 
-1. An ordered list item
+#### *Searching*
+Finding a specific horse is easy with the search feature on the **My Herd** page. Quickly search for any horse from any barn using the search bar, or sort horses alphabetically by name or by age (ascending). Sort functionality is also available for each barn.
 
-    >Indented text.
+#### *Managing Chores*
+Users who care for horses at multiple barns will enjoy HoofHub's chore management system, which allows for a customized chore list to be created for each barn. Users can add chores quickly with a simple form and use the up and down arrows to reorder the list to suit their needs. Checking off a chore moves it to the bottom of the list, and the Clear All button resets the list by un-checking all items on the list.
 
-2. An ordered list item with some **bold** text.
+### <div align="center">Mobile-Friendly User Flow</div>
+Because farm sitters are always on the go, it was important to me to build HoofHub with mobile use in mind. Users may choose to create and organize their notes using HoofHub's desktop layout on larger screens, but can also enjoy the same features on smaller screens with HoofHub's mobile-friendly design.
 
+## Tech Stack
 
-## <div align="center">Special Features</div>
-Some of the features of the app. 
+HoofHub was created with HTML, CSS, JavaScript, Node.js, Express.js, Bootstrap, Mongoose, MongoDB.
 
-### <div align="center">A Subtitle, If Needed</div>
-
-Some Text Here
-
-***
-
-### <div align="center">Another Subtitle, If Needed</div>
-
-More text here!
-
-## Tech
-
-HTML, CSS, JavaScript, Node.js, Express.js, Bootstrap, Mongoose, MongoDB
+> For this project 
 
 ## Next Steps
 

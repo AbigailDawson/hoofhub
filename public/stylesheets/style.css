@@ -238,6 +238,11 @@ input[type="text"]:focus{
         background-color: var(--primary);
     }
 
+    .navbar-nav .nav-link {
+        font-size: 22px;
+        margin-top: 3px;
+      }
+
     .barn-card-title {
         font-size: 20px;
     }

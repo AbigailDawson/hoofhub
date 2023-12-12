@@ -78,7 +78,7 @@ async function create(req, res) {
 }
 
 async function updateHorses(req, res) {
-    const barn = await Barn.findOne({ _id: req.params.id, user: req.user._id }).populate('barns');
+    const barn = await Barn.findOne({ _id: req.params.id, user: req.user._id }).populate('horses');
     const horse = await Horse.findOne({ _id: req.body.horseId }).populate('barns');
 
     if (req.query.action === 'add') {
@@ -96,7 +96,7 @@ async function updateHorses(req, res) {
 
 async function addToBarn(req, res) {
     const horse = await Horse.findOne({ _id: req.params.id, user: req.user._id }).populate('barns');
-    const barn = await Barn.findOne({ _id: req.body.barnId }).populate('barns');
+    const barn = await Barn.findOne({ _id: req.body.barnId }).populate('horses');
 
     horse.barns.push(req.body.barnId);
     barn.horses.unshift(horse);

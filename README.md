@@ -34,9 +34,14 @@ Users who care for horses at multiple barns will enjoy HoofHub's chore managemen
 
 ## <div align="center">Tech</div>
 
-<div align="center">
+### <div align="center">
 HTML, CSS, JavaScript | Node.js & Express.js | Mongoose & MongoDB | Bootstrap 5
 </div>
+
+<div align="center"><img src="./public/images/screenshot-m-1.png" height="400" alt="HoofHub HoofHub Mobile View" /><img src="./public/images/screenshot-m-2.png" height="400" alt="HoofHub Mobile View" /><img src="./public/images/screenshot-m-3.png" height="400" alt="HoofHub Mobile View" /><br>
+<img src="./public/images/screenshot-m-4.png" height="400" alt="HoofHub HoofHub Mobile View" /><img src="./public/images/screenshot-m-5.png" height="400" alt="HoofHub Mobile View" /><img src="./public/images/screenshot-m-6.png" height="400" alt="HoofHub Mobile View" />
+</div>
+
 
 ### Mobile-Friendly User Interface
 Because farm sitters are always on the go, it was important to me to build HoofHub with mobile use in mind. Users may choose to create and organize their notes using HoofHub's desktop layout on larger screens, but can also enjoy the same features on smaller screens with HoofHub's mobile-friendly user interface.

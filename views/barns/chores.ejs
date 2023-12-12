@@ -9,7 +9,7 @@
             <h4 class="mb-3 text-center">Chores</h4>
         </div>
     </div>
-    <div class="row mt-2 d-flex flex-column">
+    <div class="row mt-2 d-flex flex-column w-100" style="max-width: 650px">
         <div class="col-12 mb-5">
             <% if (barn.chores.length) { %>
                 <form action="/barns/<%= barn.id %>/chores?_method=PUT" method="POST">

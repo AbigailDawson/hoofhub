@@ -7,7 +7,7 @@
 HoofHub provides a platform for busy horse care professionals to keep all of their horse and barn notes organized and up to date in one place. With detailed horse and barn profiles, dedicated space for custom horse notes, and a chore management system for users to create, order and check off chores, HoofHub has everything a farm sitter needs to streamline their business workflow.
 
 ### <div align="center">Meet Kästlee, a self-employed farm sitter</div>
-<div align="center"><img src="./public/images/kastlee.jpg" height="300" alt="Kästlee with a horse" /></div>
+<div align="center"><img src="./public/images/kastlee.jpg" height="350" alt="Kästlee with a horse" /></div>
 
 Kästlee has been running her own farm sitting business for four years, but has never found an organizational system that meets her needs. She manages up to 6 barns at a time with up to 20 horses each, and keeps notes saved in the small details section of her calendar app. With this system, Kästlee finds it difficult to look up important information about specific horses and keep track of communication from the barn owners.
 
@@ -45,7 +45,12 @@ I taught myself Bootstrap specifically for this project because of its mobile-fi
 
 ## Next Steps
 
-Write about next steps for this app.
+There are a number of additional features currently in development:
 
-1. A lit item
-* A bullet point
+1. **Notebook** - A designated notebook page for each horse and barn for users to add quick notes
+
+2. **Contact information for horses** - Space to add contacts for each horse, such as owner and veterinary information
+
+3. **Sort chores by shift** - Assign chores to AM, PM, Midday or Overnight shifts
+
+4. **Scheduling & Google Calendar integration** - Organize barns and chores into a schedule that can be exported to Google Calendar

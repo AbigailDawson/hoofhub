@@ -19,7 +19,7 @@ HoofHub uses Google OAuth authentication system and users must be signed in to e
 
 #### *Horses and Barns*
 Users can get started right away customizing the app to suit their needs. Barns and horses can be added by filling out a quick form, and horses can be assigned to barns from either the horse's details page or from the edit barn page. 
-<div align="center"><img src="./public/images/screenshot-3.png" height="500" alt="HoofHub Add Horse Form" /><img src="./public/images/screenshot-5.png" height="500" alt="HoofHub Edit Barn Form /></div>
+<div align="center"><img src="./public/images/screenshot-3.png" height="500" alt="HoofHub Add Horse Form" /><img src="./public/images/screenshot-5.png" height="500" alt="HoofHub Edit Barn Form" /></div>
 
 #### *Searching*
 Finding a specific horse is easy with the search feature on the **My Herd** page. Quickly search for any horse from any barn using the search bar, or sort horses alphabetically by name or by age (ascending). Sort functionality is also available for each barn.

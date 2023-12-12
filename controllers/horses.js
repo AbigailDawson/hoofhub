@@ -13,27 +13,28 @@ module.exports = {
 };
 
 async function index(req, res) {
-    const horses = await Horse.find({ user: req.user._id }).sort({ [req.query.sort]: 1 });
+    let horses = await Horse.find({ user: req.user._id }).sort({ [req.query.sort]: 1 });
 
     let query = {};
     if (req.query.search) {
         query = { name: { $regex: new RegExp(req.query.search, 'i') } };
-        horses = await Horse.find(query).sort({ [req.query.sort]: 1 });
-        if (req.query.sort === 'age') {
-            horses.sort((a, b) => a[req.query.sort] - b[req.query.sort])
-        } else if (req.query.sort === 'name') {
-            horses.sort((a, b) => {
-                const horseA = a.name.toLowerCase();
-                const horseB = b.name.toLowerCase();
-                if (horseA < horseB) {
-                    return -1;
-                  }
-                  if (horseA > horseB) {
-                    return 1;
-                  }
-                return horseA - horseB
-              })
-        }
+        horses = await Horse.find(query);
+    }
+
+    if (req.query.sort === 'age') {
+        horses.sort((a, b) => a[req.query.sort] - b[req.query.sort])
+    } else if (req.query.sort === 'name') {
+        horses.sort((a, b) => {
+            const horseA = a.name.toLowerCase();
+            const horseB = b.name.toLowerCase();
+            if (horseA < horseB) {
+                return -1;
+              }
+              if (horseA > horseB) {
+                return 1;
+              }
+            return horseA - horseB
+          })
     }
 
     res.render('horses/index', {

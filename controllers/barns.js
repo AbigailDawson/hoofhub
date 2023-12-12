@@ -69,7 +69,12 @@ async function create(req, res) {
 
 async function edit(req, res) {
     const barn = await Barn.findById(req.params.id).populate('horses');
-    const horses = await Horse.find({ _id: { $nin: barn.horses } }).sort('name');
+    const horses = await Horse.find({
+        $and: [
+            { _id: { $nin: barn.horses } }, // Horses not in the specified barn
+            { barns: { $size: 0 } } // Horses with an empty 'barns' array
+        ]
+    }).sort('name');
     res.render('barns/edit', {
         barn,
         horses,

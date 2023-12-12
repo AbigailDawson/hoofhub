@@ -304,6 +304,10 @@ input[type="text"]:focus{
     .chores-list {
         min-width: 400px;
     }
+
+    .horse-card {
+        width: 200px;
+    }
 }
 
 /* MD SCREENS */
@@ -324,5 +328,14 @@ input[type="text"]:focus{
         margin-top: 15px;
         width: 150px;
     }
+    .horse-card {
+        width: 200px;
+    }
+}
 
+/* LG SCREENS */
+@media (min-width: 768px) {
+    .horse-card {
+        width: 300px;
+    }
 }

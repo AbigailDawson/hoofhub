@@ -1,11 +1,16 @@
 # <div align="center">HoofHub</div>
 ### <div align="center">A horse care app for self-employed farm sitters and horse care professionals<div>
 
-## <div align="center">Inspiration</div>
-Write about the inspiration for the project.
+## <div align="center">Introduction</div>
+HoofHub provides a platform for busy horse care professionals to keep all of their horse and barn notes organized and up to date in one place. With detailed horse and barn profiles, dedicated space for custom horse notes, and a chore management system for users to create, order and check off chores, HoofHub has everything a farm sitter needs to streamline their business workflow.
+
+### <div align="center">Meet Kästlee, a self-employed farm sitter</div>
+Kästlee has been running her own farm sitting business for four years, but has never found an organizational system that meets her needs. She manages up to 6 barns at a time with up to 20 horses each, and keeps notes saved in the small details section of her calendar app. With this system, Kästlee finds it difficult to look up important information about specific horses and keep track of communication from the barn owners.
+
+HoofHub eliminates the need for multiple apps, trackers and notes systems, and helps users like Kästlee stay focused on providing exceptional horse care. HoofHub continues to be developed with the unique needs of horse care professionals in mind.
 
 ## <div align="center">Getting Started</div>
-Instructions on how to use the app.
+HoofHub has not yet been deployed to the public.
 
 #### *A subtitle*
 

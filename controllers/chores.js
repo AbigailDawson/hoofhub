@@ -77,7 +77,7 @@ async function checkChore(req, res) {
 }
 
 async function clearChores(req, res) {
-    const barn = await Barn.findOne({ _id: req.params.id, user: req.user._id }).populate('barns');
+    const barn = await Barn.findOne({ _id: req.params.id, user: req.user._id });
     barn.chores.forEach((chore) => {
         chore.completed = false;
     })

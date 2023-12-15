@@ -315,27 +315,22 @@ input[type="text"]:focus{
     .barn-card-title {
         font-size: 25px;
     }
+    
     .barn-contact {
         font-size: 14px;
     }
 
     .login-box {
-        height: 350px;
-        width: 350px;
+        height: 600px;
+        width: 600px;
     }
 
     .img-wrapper {
         margin-top: 15px;
-        width: 150px;
-    }
-    .horse-card {
         width: 200px;
     }
-}
 
-/* LG SCREENS */
-@media (min-width: 768px) {
     .horse-card {
-        width: 300px;
+        width: 200px;
     }
 }

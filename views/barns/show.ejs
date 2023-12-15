@@ -1,6 +1,6 @@
 <%- include('../partials/header') %>
 
-<div class="container mt-5 pb-5 d-flex flex-column align-items-center">
+<div class="container mt-5 pb-5 d-flex flex-column align-items-center justify-content-center">
 
     <h2><a href='/barns/<%= barn.id %>'><%= barn.name %></a></h2>
 
@@ -53,10 +53,10 @@
     </div>
 
     
-    <div class="row mt-5 d-flex flex-column flex-sm-row">
+    <div class="row mt-5 d-flex flex-column flex-sm-row justify-content-center">
         <% barn.horses.forEach((horse) => { %>
-            <div class="col-12 col-sm-6 col-md-4 mb-4">
-                <div class="card rounded-2 p-3 bg-white shadow horse-card">
+            <div class="col-12 col-sm-auto">
+                <div class="card rounded-2 p-3 mb-4 bg-white shadow horse-card">
                     <h2 class="mb-2"><%= horse.name %> </h2>
                     <p class="mb-2"><%= horse.age %> year old <%= horse.sex %> </p>
                     <a href="/horses/<%= horse.id %>" class="btn mt-1 btn-md w-100">Horse Details</a>
